@@ -36,7 +36,7 @@
         </c:if>
         <a class="p-2 text-dark" href="#">Menu</a>
         <a class="p-2 text-dark" href="#">Find Us</a>
-        <a class="p-2 text-dark" href="#"><img src="images/img.png" alt="Cart" height="25" width="27" /></a>
+        <a class="p-2 text-dark" href="#"><img src="images/shopping chart.png" alt="Cart" height="20" width="20" /></a>
     </nav>
 
     <div>
