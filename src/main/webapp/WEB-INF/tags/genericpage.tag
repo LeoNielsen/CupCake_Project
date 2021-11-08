@@ -33,9 +33,9 @@
             <c:if test="${addHomeLink == null }">
                 <a class="p-2 text-dark" href="<%=request.getContextPath()%>">Home</a>
             </c:if>
-            <a class="p-2 text-dark" href="#">Orders</a>
-            <a class="p-2 text-dark" href="#">Profile</a>
-            <a class="p-2 text-dark" href="#">About</a>
+            <a class="p-2 text-dark" href="#">Menu</a>
+            <a class="p-2 text-dark" href="#">Find Us</a>
+            <a class="p-2 text-dark" href="#"><img src="images/img.png" alt="Cart" height="25" width="27" /></a>
         </nav>
 
         <div>
@@ -62,7 +62,7 @@
         </div>
     </c:if>
     </header>
-    <img src="../../images/olskercupcakes.png" alt="Logo" height="299" width="1280"/>
+    <img src="images/index.png" alt="Logo" height="265" width="213"/>
 
     <div id="body" class="container" style="min-height: 20vh;">
         <jsp:doBody/>
