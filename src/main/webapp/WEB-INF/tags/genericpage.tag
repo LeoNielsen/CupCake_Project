@@ -62,7 +62,6 @@
         </div>
     </c:if>
     </header>
-    <img src="../../images/olskercupcakes.png" alt="Logo" height="299" width="1280"/>
 
     <div id="body" class="container" style="min-height: 20vh;">
         <jsp:doBody/>
