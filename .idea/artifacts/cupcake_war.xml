@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="sem2-startcode:war">
+  <artifact type="war" name="cupcake:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
       <options>
