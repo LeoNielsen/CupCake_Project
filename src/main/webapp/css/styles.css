@@ -22,6 +22,22 @@ body, h1, h2, h3, h4, h5, h6 {
     padding: 0 0 0 20px;
 }
 
+.topnav li .link-button{
+    display: block;
+    color: #3D3D3D;
+    text-align: center;
+    padding: 10px 24px;
+    text-decoration: none;
+    border-radius: 20px;
+    border: none;
+}
+
+.topnav li .link-button:hover:not(.active) {
+    background-color: #3C1460;
+    color: white;
+    cursor: pointer;
+}
+
 .small-container {
     height: 200px;
     position: relative;
@@ -76,37 +92,6 @@ body, h1, h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
 }
 
-.shopping-cart-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 10px;
-}
-
-.shopping-cart-container div {
-}
-
-.shopping-cart-section {
-    grid-column: 1 / 2;
-    background: white;
-    padding: 20px;
-}
-
-.shopping-cart-list table {
-    width: 100%;
-    border:  1px solid black;
-}
-
-.shopping-cart-list table th, td {
-    border: 1px solid black;
-}
-
-.order-summerary-section {
-    grid-column: 3;
-    background-color: #3C1460;
-    color: white;
-    padding: 20px;
-}
-
 .img-container {
     width: 100%;
     height: 700px;
@@ -140,7 +125,7 @@ button {
 
 }
 
-.purple-small-button {
+.purple-small-link-button{
     display: block;
     padding: 10px 24px;
     color: white;
@@ -149,11 +134,10 @@ button {
     border: none;
     border-radius: 20px;
     text-decoration: none;
-
 }
 
-.purple-small-button:hover {
-    background-color: purple;
+.purple-small-link-button:hover {
+    background-color: rebeccapurple;
     color: white;
 }
 
@@ -195,27 +179,18 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 20px;
-    text-decoration: none;
-
 }
 
 .white-small-button:hover {
     background-color: #3C1460;
     color: white;
 }
-
-.shopping-cart-button, .remove-button{
+.remove-button{
     background-color: transparent;
     border: none;
-    color: black;
+    color: #3D3D3D;
     padding: 10px 24px;
 }
-
-.shopping-cart-button:hover {
-    background-color: #3C1460;
-    color: white;
-}
-
 .remove-button:hover {
     color: red;
 }
@@ -231,4 +206,68 @@ button {
     color: black;
 }
 
+.center-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 70px;
+    background-color: #cccccc;
+}
 
+.shopping-cart-container {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 20px;
+}
+
+.shopping-cart-container div {
+    padding: 20px;
+}
+
+.shopping-cart-section {
+    min-width: 500px;
+    background-color: white;
+    color: black;
+    display: grid;
+    grid-template-rows: auto auto auto;
+}
+
+.order-cart-section {
+    min-width: 300px;
+    background-color: #3C1460;
+    color: white;
+}
+
+.shopping-cart-section .top-grid-element {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding-bottom: 20px;
+}
+
+.left-grid {
+    grid-column: 1;
+    text-align: left;
+}
+
+.right-grid {
+    grid-column: 3;
+    text-align: right;
+}
+
+.shopping-cart-section .center-grid-element {
+    text-align: center;
+    padding: 0;
+}
+
+.shopping-cart-section .center-grid-element th {
+    min-width: 30px;
+}
+
+.shopping-cart-section .center-grid-element .table-labels {
+    color: #3D3D3D;
+}
+
+.shopping-cart-section .bottom-section {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}

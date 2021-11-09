@@ -10,9 +10,15 @@
     </jsp:attribute>
 
     <jsp:body>
-        <h1>Hello ${sessionScope.email} </h1>
-        You are now logged in as a Customer of our wonderful site.
-        Role: ${sessionScope.role}
+        <!-- IMAGE BANNER -->
+        <div class="img-container" style="background-image: url('images/img.png')">
+            <div class="inner-container">
+                <h1>Welcome to ####@gmail.com</h1>
+                <h3>Det er endnu et dybdeøkologisk iværksættereventyr fra Bornholm, som har ramt den helt rigtige
+                    opskrift.</h3>
+                <button class="white-small-button"><h4>See more</h4></button>
+            </div>
+        </div>
     </jsp:body>
 
 </t:genericpage>

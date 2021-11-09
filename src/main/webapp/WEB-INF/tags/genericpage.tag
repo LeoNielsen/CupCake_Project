@@ -29,32 +29,31 @@
     <div class="topnav">
         <ul>
             <li>
-                <a class="purple-small-button" href="fc/loginpage"><h4>Login</h4></a>
+                <a class="purple-small-link-button" href="fc/loginpage"><h4>Login</h4></a>
             </li>
             <li>
-                <a class="shopping-cart-button"><i class="fas fa-shopping-cart"></i></a>
+                <a class="link-button" href="fc/shoppingcartpage"><i class="fas fa-shopping-cart"></i></a>
             </li>
             <li>
-                <a class="shopping-cart-button"><h4>Find us</h4></a>
+                <a class="link-button"><h4>Find us</h4></a>
             </li>
             <li>
-                <a class="shopping-cart-button"><h4>Menu</h4></a>
+                <a class="link-button"><h4>Menu</h4></a>
             </li>
             <li>
                 <c:if test="${addHomeLink == null }">
-                    <a class="shopping-cart-button" href="<%=request.getContextPath()%>"><h4>Home</h4></a>
+                    <a class="link-button" href="<%=request.getContextPath()%>"><h4>Home</h4></a>
                 </c:if>
             </li>
         </ul>
     </div>
-
-
-    <!-- LOGO -->
-    <img src="images/logo.png" style="position: fixed; left: 80px; top: 0; height: 150px">
 </header>
+
 
 <jsp:doBody/>
 
-
+<jsp:invoke fragment="footer"/>
+<!-- LOGO -->
+<img src="images/logo.png" style="position: fixed; left: 80px; top: 0; height: 150px">
 </body>
 </html>

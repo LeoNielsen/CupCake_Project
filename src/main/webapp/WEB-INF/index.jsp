@@ -37,8 +37,5 @@
             <p><a href="fc/customerpage">Customer Page</a>
                 </c:if>
         </main>
-        <footer>
-
-        </footer>
     </jsp:body>
 </t:genericpage>

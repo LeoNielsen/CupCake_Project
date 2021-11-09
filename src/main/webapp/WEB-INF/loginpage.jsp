@@ -37,5 +37,9 @@
             </div>
         </div>
 
+        <footer>
+
+        </footer>
+
     </jsp:body>
 </t:genericpage>
