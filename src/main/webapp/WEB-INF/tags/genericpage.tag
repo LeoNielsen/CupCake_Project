@@ -29,7 +29,7 @@
     <div class="topnav">
         <ul>
             <li>
-                <a class="purple-small-button" href="fc/logincommand"><h4>Login</h4></a>
+                <a class="purple-small-button" href="fc/loginpage"><h4>Login</h4></a>
             </li>
             <li>
                 <a class="shopping-cart-button"><i class="fas fa-shopping-cart"></i></a>
@@ -53,65 +53,8 @@
     <img src="images/logo.png" style="position: fixed; left: 80px; top: 0; height: 150px">
 </header>
 
+<jsp:doBody/>
 
 
-    <!--
-    <div class="my-0 me-md-auto fw-normal">
-        <img src="images/index.png" alt="Logo" height="80" width="70"/>
-        email@email.com
-    </div>
-    <div class="h5 me-md-auto fw-normal">
-        <p style="font-size: larger; text-align: center">
-            <jsp:invoke fragment="header"/>
-        </p>
-    </div>
-
-    <nav class="my-2 my-md-0 me-md-3">
-        <c:if test="${addHomeLink == null }">
-            <a class="p-2 text-dark" href="<%=request.getContextPath()%>">Home</a>
-        </c:if>
-        <a class="p-2 text-dark" href="#">Menu</a>
-        <a class="p-2 text-dark" href="#">Find Us</a>
-        <a class="p-2 text-dark" href="#"><img src="images/shopping chart.png" alt="Cart" height="20" width="20"/></a>
-    </nav>
-
-    <div>
-
-        <c:if test="${sessionScope.user != null }">
-            ${sessionScope.user.email}
-        </c:if>
-
-        <c:set var="thisPage" value="${pageContext.request.servletPath}"/>
-        <c:set var="isNotLoginPage" value="${!fn:endsWith(thisPage,'loginpage.jsp')}"/>
-        <c:set var="isNotRegisterPage" value="${!fn:endsWith(thisPage,'registerpage.jsp')}"/>
-
-        <c:if test="${isNotLoginPage && isNotRegisterPage}">
-        <c:if test="${sessionScope.user != null }">
-            <a type="button" class="btn btn-sm  btn-outline-secondary"
-               href="${pageContext.request.contextPath}/fc/logoutcommand">Logout</a>
-        </c:if>
-        <c:if test="${sessionScope.user == null }">
-            <a type="button" class="btn btn-sm  btn-outline-secondary"
-               href="${pageContext.request.contextPath}/fc/loginpage">Login</a>
-            <a type="button" class="btn btn-sm  btn-outline-secondary"
-               href="${pageContext.request.contextPath}/fc/registerpage">Sign up</a>
-        </c:if>
-    </div>
-    </c:if>
-</header>
-
-<div id="body" class="container" style="min-height: 20vh;">
-    <jsp:doBody/>
-</div>
-
--->
-<!-- Footer
-<div class="container">
-    <br>
-    <hr>
-    <br>
-    <jsp:invoke fragment="footer"/>
-</div>
--->
 </body>
 </html>
