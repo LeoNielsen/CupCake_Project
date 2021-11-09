@@ -16,15 +16,21 @@ public class UserMapper
 
     public void createUser(User user) throws UserException
     {
+        //TODO: fix address.
         try (Connection connection = database.connect())
         {
-            String sql = "INSERT INTO users (email, password, role) VALUES (?, ?, ?)";
+            String sql = "INSERT INTO users (email, password, role, account_balance, firstname, lastname, id_adresse, phone_nr) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
             {
                 ps.setString(1, user.getEmail());
                 ps.setString(2, user.getPassword());
                 ps.setString(3, user.getRole());
+                ps.setFloat(4, user.getAccountbalance());
+                ps.setString(5, user.getFirstname());
+                ps.setString(6, user.getLastname());
+                ps.setInt(7, 1);
+                ps.setString(8, user.getPhoneNr());
                 ps.executeUpdate();
                 ResultSet ids = ps.getGeneratedKeys();
                 ids.next();
@@ -46,7 +52,7 @@ public class UserMapper
     {
         try (Connection connection = database.connect())
         {
-            String sql = "SELECT id, role FROM users WHERE email=? AND password=?";
+            String sql = "SELECT id, role, firstname FROM users WHERE email=? AND password=?";
 
             try (PreparedStatement ps = connection.prepareStatement(sql))
             {
@@ -56,8 +62,9 @@ public class UserMapper
                 if (rs.next())
                 {
                     String role = rs.getString("role");
+                    String firstname = rs.getString("firstname");
                     int id = rs.getInt("id");
-                    User user = new User(email, password, role);
+                    User user = new User(email, password, role, firstname);
                     user.setId(id);
                     return user;
                 } else
