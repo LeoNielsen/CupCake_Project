@@ -16,7 +16,7 @@
             <div class="login-container">
                 <h1>Log in</h1>
 
-                <form name="login" action="${pageContext.request.contextPath}/fc/logincomand" method="post">
+                <form name="login" action="${pageContext.request.contextPath}/fc/logincommand" method="post">
                     <div class="text-input-container">
                         <div class="text-input-element">
                             <label for="email">Enter email:</label><br>
