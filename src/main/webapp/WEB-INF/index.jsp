@@ -27,8 +27,5 @@
         <main>
 
         </main>
-        <footer>
-
-        </footer>
     </jsp:body>
 </t:genericpage>
