@@ -47,7 +47,6 @@
 
                 </c:if>
 
-
             </li>
             <li>
                 <a class="link-button" href="${pageContext.request.contextPath}/fc/shoppingcartpage"><i
