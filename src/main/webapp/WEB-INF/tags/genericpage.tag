@@ -73,6 +73,6 @@
 
 <jsp:invoke fragment="footer"/>
 <!-- LOGO -->
-<img src="images/logo.png" style="position: fixed; left: 80px; top: 0; height: 150px">
+<img src="${pageContext.request.contextPath}/images/logo.png" style="position: fixed; left: 80px; top: 0; height: 150px">
 </body>
 </html>
