@@ -29,10 +29,27 @@
     <div class="topnav">
         <ul>
             <li>
-                <a class="purple-small-link-button" href="${pageContext.request.contextPath}/fc/loginpage"><h4>Login</h4></a>
+                <c:set var="thisPage" value="${pageContext.request.servletPath}"/>
+                <c:set var="isNotLoginPage" value="${!fn:endsWith(thisPage,'loginpage.jsp')}"/>
+                <c:set var="isNotRegisterPage" value="${!fn:endsWith(thisPage,'registerpage.jsp')}"/>
+
+                <c:if test="${isNotLoginPage && isNotRegisterPage}">
+                    <c:if test="${sessionScope.user == null }">
+                        <a type="button" class="purple-small-link-button" href="${pageContext.request.contextPath}/fc/loginpage"><h4>
+                            Login</h4></a>
+                    </c:if>
+                    <c:if test="${sessionScope.user =! null}">
+                        <a type="button" class="purple-small-link-button" href="${pageContext.request.contextPath}/fc/logoutcommand">
+                            <h4>
+                                Logout</h4></a>
+                    </c:if>
+                </c:if>
+
+
             </li>
             <li>
-                <a class="link-button" href="${pageContext.request.contextPath}/fc/shoppingcartpage"><i class="fas fa-shopping-cart"></i></a>
+                <a class="link-button" href="${pageContext.request.contextPath}/fc/shoppingcartpage"><i
+                        class="fas fa-shopping-cart"></i></a>
             </li>
             <li>
                 <a class="link-button"><h4>Find us</h4></a>
