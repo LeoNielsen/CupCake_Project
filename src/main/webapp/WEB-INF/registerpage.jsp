@@ -17,12 +17,12 @@
                     <div>
                         <div class="col2-grid">
                             <div>
-                                <label for="fname">First name</label><br>
-                                <input type="text" id="fname" name="fname" placeholder="Enter your first name ..."><br>
+                                <label for="firstname">First name</label><br>
+                                <input type="text" id="firstname" name="firstname" placeholder="Enter your first name ..."><br>
                             </div>
                             <div>
-                                <label for="lname">Last name</label><br>
-                                <input type="text" id="lname" name="lname" placeholder="Enter your first name ..."><br>
+                                <label for="lastname">Last name</label><br>
+                                <input type="text" id="lastname" name="lastname" placeholder="Enter your first name ..."><br>
                             </div>
                         </div>
                         <div>
@@ -32,16 +32,16 @@
                     </div>
 
                     <div>
-                        <label for="password">Enter password:</label><br>
-                        <input type="password" id="password" name="password"
+                        <label for="password1">Enter password:</label><br>
+                        <input type="password" id="password1" name="password"
                                placeholder="Enter your password ..."><br>
-                        <label for="password1">Enter password again:</label><br>
-                        <input type="password" id="password1" name="password1"
+                        <label for="password2">Enter password again:</label><br>
+                        <input type="password" id="password2" name="password2"
                                placeholder="Enter your password again ..."><br>
                     </div>
                     <div>
-                        <label for="phonenumber">Enter your phonenumber:</label><br>
-                        <input type="text" id="phonenumber" name="phonenumber" placeholder="Enter phonenumber ..."><br>
+                        <label for="phonenr">Enter your phonenumber:</label><br>
+                        <input type="text" id="phonenr" name="phonenr" placeholder="Enter phonenumber ..."><br>
                     </div>
 
                     <div>
@@ -49,8 +49,8 @@
                             <label for="streetname">Enter your street:</label><br>
                             <input type="text" id="streetname" name="streetname" placeholder="Enter street ..."><br>
 
-                            <label for="housenumber">Enter your housenumber:</label><br>
-                            <input type="text" id="housenumber" name="housenumber"
+                            <label for="housenr">Enter your housenumber:</label><br>
+                            <input type="text" id="housenr" name="housenr"
                                    placeholder="Enter housenumber ..."><br>
                         </div>
                     </div>
