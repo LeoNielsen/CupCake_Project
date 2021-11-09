@@ -27,6 +27,9 @@
 
     <!-- NAVIGATION BAR -->
     <div class="topnav">
+        <c:if test="${sessionScope.user != null}">
+            <p>${sessionScope.firstname}</p>
+        </c:if>
         <ul>
             <li>
                 <c:set var="thisPage" value="${pageContext.request.servletPath}"/>
@@ -73,8 +76,6 @@
 <jsp:invoke fragment="footer"/>
 <!-- LOGO -->
 <img src="${pageContext.request.contextPath}/images/logo.png" style="position: fixed; left: 80px; top: 0; height: 150px">
-<c:if test="${sessionScope.user != null}">
-    ${sessionScope.firstname}
-</c:if>
+
 </body>
 </html>
