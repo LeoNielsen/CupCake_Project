@@ -37,12 +37,14 @@
                     <c:if test="${sessionScope.user == null }">
                         <a type="button" class="purple-small-link-button" href="${pageContext.request.contextPath}/fc/loginpage"><h4>
                             Login</h4></a>
+
                     </c:if>
-                    <c:if test="${sessionScope.user =! null}">
+                    <c:if test="${sessionScope.user != null}">
                         <a type="button" class="purple-small-link-button" href="${pageContext.request.contextPath}/fc/logoutcommand">
                             <h4>
                                 Logout</h4></a>
                     </c:if>
+
                 </c:if>
 
 
