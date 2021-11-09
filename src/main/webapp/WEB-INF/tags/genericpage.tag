@@ -29,10 +29,10 @@
     <div class="topnav">
         <ul>
             <li>
-                <a class="purple-small-link-button" href="fc/loginpage"><h4>Login</h4></a>
+                <a class="purple-small-link-button" href="${pageContext.request.contextPath}/fc/loginpage"><h4>Login</h4></a>
             </li>
             <li>
-                <a class="link-button" href="fc/shoppingcartpage"><i class="fas fa-shopping-cart"></i></a>
+                <a class="link-button" href="${pageContext.request.contextPath}/fc/shoppingcartpage"><i class="fas fa-shopping-cart"></i></a>
             </li>
             <li>
                 <a class="link-button"><h4>Find us</h4></a>
