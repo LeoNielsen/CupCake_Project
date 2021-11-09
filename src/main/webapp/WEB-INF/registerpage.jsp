@@ -13,7 +13,7 @@
         <div class="center-container">
             <div class="register-container">
                 <div><h1>Create account</h1></div>
-                <form>
+                <form action="${pageContext.request.contextPath}/fc/registercommand" method="post">
                     <div>
                         <div class="col2-grid">
                             <div>
@@ -33,7 +33,7 @@
 
                     <div>
                         <label for="password1">Enter password:</label><br>
-                        <input type="password" id="password1" name="password"
+                        <input type="password" id="password1" name="password1"
                                placeholder="Enter your password ..."><br>
                         <label for="password2">Enter password again:</label><br>
                         <input type="password" id="password2" name="password2"
