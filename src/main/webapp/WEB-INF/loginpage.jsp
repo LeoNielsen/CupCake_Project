@@ -20,17 +20,18 @@
                     <div class="text-input-container">
                         <div class="text-input-element">
                             <label for="email">Enter email:</label><br>
-                            <input type="text" id="email" name="email" placeholder="Enter your email..."><br>
+                            <input type="text" id="email" name="email" placeholder="Enter your email ..."><br>
                         </div>
                         <div class="text-input-element">
                             <label for="password">Enter password:</label><br>
-                            <input type="password" id="password" name="password" placeholder="Enter your password..."><br>
+                            <input type="password" id="password" name="password"
+                                   placeholder="Enter your password ..."><br>
                             <a class="blue-link">Forgot password?</a>
                         </div>
                     </div>
                     <div class="clickable-input-container">
                         <input class="purple-large-input-submit" type="submit" value="Login"><br>
-<%--                        <input class="green-large-input-submit" type="submit" value="Create new profile"><br>--%>
+                        <a class="green-large-link-button" href="${pageContext.request.contextPath}/fc/registerpage">Create account</a><br>
                     </div>
 
                 </form>

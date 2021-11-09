@@ -64,18 +64,25 @@ body, h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-.login-container input[type=text], input[type=password] {
-    width: 100%;
+
+input[type=text], input[type=password] {
     padding: 12px 20px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 20px;
     box-sizing: border-box;
     outline: none;
+    width: 100%;
 }
 
-.login-container input[type=text]:focus, input[type=password]:focus {
+
+
+.login-container input[type=text], input[type=password] {
+    width: 100%;
+    margin: 8px 0;
+}
+
+input[type=text]:focus, input[type=password]:focus {
     border: 2px solid #3C1460;
 }
 
@@ -88,7 +95,7 @@ body, h1, h2, h3, h4, h5, h6 {
     padding-bottom: 20px;
 }
 
-.login-container .clickable-input-container input[type=submit] {
+.login-container .clickable-input-container input[type=submit]{
     margin-bottom: 20px;
 }
 
@@ -156,7 +163,8 @@ button {
     color: white;
 }
 
-.green-large-input-submit {
+.green-large-link-button {
+    display: block;
     width: 100%;
     border: none;
     border-radius: 20px;
@@ -164,10 +172,10 @@ button {
     padding: 12px 24px;
     color: white;
     background-color: #0D883E;
-
+    text-decoration: none;
 }
 
-.green-large-input-submit:hover {
+.green-large-link-button:hover {
     background-color: green;
     color: white;
 }
@@ -270,4 +278,28 @@ button {
 .shopping-cart-section .bottom-section {
     display: grid;
     grid-template-columns: auto auto auto;
+}
+
+.register-container {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.register-container h1 {
+    text-align: center;
+}
+
+.register-container div {
+    padding-bottom: 25px;
+}
+
+.col2-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 10px;
+    padding-bottom: 0;
 }
