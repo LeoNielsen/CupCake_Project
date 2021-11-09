@@ -14,9 +14,8 @@
         <jsp:invoke fragment="header"/>
     </title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/styles.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <meta name="theme-color" content="#7952b3">
 </head>
 <body>
@@ -24,7 +23,39 @@
     This header is inspired by this bootstrap
     example: https://getbootstrap.com/docs/5.0/examples/pricing/
 -->
-<header class="d-flex flex-column flex-md-row align-items-center p-3 pb-0 px-md-4 mb-4 bg-white border-bottom shadow-sm">
+<header>
+
+    <!-- NAVIGATION BAR -->
+    <div class="topnav">
+        <ul>
+            <li>
+                <a class="purple-small-button" href="fc/logincommand"><h4>Login</h4></a>
+            </li>
+            <li>
+                <a class="shopping-cart-button"><i class="fas fa-shopping-cart"></i></a>
+            </li>
+            <li>
+                <a class="shopping-cart-button"><h4>Find us</h4></a>
+            </li>
+            <li>
+                <a class="shopping-cart-button"><h4>Menu</h4></a>
+            </li>
+            <li>
+                <c:if test="${addHomeLink == null }">
+                    <a class="shopping-cart-button" href="<%=request.getContextPath()%>"><h4>Home</h4></a>
+                </c:if>
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- LOGO -->
+    <img src="images/logo.png" style="position: fixed; left: 80px; top: 0; height: 150px">
+</header>
+
+
+
+    <!--
     <div class="my-0 me-md-auto fw-normal">
         <img src="images/index.png" alt="Logo" height="80" width="70"/>
         email@email.com
@@ -73,13 +104,14 @@
     <jsp:doBody/>
 </div>
 
-<!-- Footer -->
+-->
+<!-- Footer
 <div class="container">
     <br>
     <hr>
     <br>
     <jsp:invoke fragment="footer"/>
 </div>
-
+-->
 </body>
 </html>

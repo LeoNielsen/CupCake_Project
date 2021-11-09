@@ -11,33 +11,31 @@
     </jsp:attribute>
 
     <jsp:body>
-        <div style="margin-top: 5em;" class="container">
-            <form name="login" action="${pageContext.request.contextPath}/fc/logincommand"  method="POST">
-                <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="email">Email</label>
-                    <div class="col-sm-4">
-                        <input class="form-control" type="text" name="email" placeholder="someone@nowhere.com">
+        <!-- LOGIN -->
+        <div class="large-container">
+            <div class="login-container">
+                <h1>Log in</h1>
+
+                <form>
+                    <div class="text-input-container">
+                        <div class="text-input-element">
+                            <label for="email">Enter email:</label><br>
+                            <input type="text" id="email" name="email" placeholder="Enter your email..."><br>
+                        </div>
+                        <div class="text-input-element">
+                            <label for="password">Enter password:</label><br>
+                            <input type="password" id="password" name="password" placeholder="Enter your password..."><br>
+                            <a class="blue-link">Forgot password?</a>
+                        </div>
                     </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="password">Password</label>
-                    <div class="col-sm-4">
-                        <input class="form-control" type="password" name="password" placeholder="sesam">
+                    <div class="clickable-input-container">
+                        <input class="purple-large-input-submit" type="submit" value="Login"><br>
+                        <input class="green-large-input-submit" type="submit" value="Create new profile"><br>
                     </div>
-                </div>
-                <c:if test="${requestScope.error != null }">
-                    <p style="color:red">
-                            ${requestScope.error}
-                    </p>
-                </c:if>
 
-                <c:if test="${not empty param.msg}">
-                    <p style="font-size: large">${param.msg}</p>
-                </c:if>
-                <button class="btn btn-primary" type="submit" value="Login">Sign in</button>
-            </form>
-
-
+                </form>
+            </div>
         </div>
+
     </jsp:body>
 </t:genericpage>

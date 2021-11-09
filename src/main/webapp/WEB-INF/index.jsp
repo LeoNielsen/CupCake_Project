@@ -14,26 +14,21 @@
 
     <jsp:body>
 
-        <div>
-            <h2>Our Cool Site</h2>
-
-            <div style="margin-top: 3em;margin-bottom: 3em;">
-                Main page for this 2. semester start project used at cphbusiness.dk
+        <!-- IMAGE BANNER -->
+        <div class="img-container" style="background-image: url('images/img.png')">
+            <div class="inner-container">
+                <h1>Welcome to Olsker Cupcake</h1>
+                <h3>Det er endnu et dybdeøkologisk iværksættereventyr fra Bornholm, som har ramt den helt rigtige
+                    opskrift.</h3>
+                <button class="white-small-button"><h4>See more</h4></button>
             </div>
-
-            <c:if test="${sessionScope.role == 'employee' }">
-                <p style="font-size: larger">This is what you can do,
-                    since your are logged in as an employee</p>
-                 <p><a href="fc/employeepage">Employee Page</a>
-             </c:if>
-
-             <c:if test="${sessionScope.role == 'customer' }">
-                <p style="font-size: larger">This is what you can do, since your
-                    are logged in as a customer</p>
-                <p><a href="fc/customerpage">Customer Page</a>
-            </c:if>
-
         </div>
 
+        <main>
+
+        </main>
+        <footer>
+
+        </footer>
     </jsp:body>
 </t:genericpage>
