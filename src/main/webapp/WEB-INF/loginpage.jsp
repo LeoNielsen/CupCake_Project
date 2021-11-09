@@ -30,7 +30,7 @@
                     </div>
                     <div class="clickable-input-container">
                         <input class="purple-large-input-submit" type="submit" value="Login"><br>
-                        <input class="green-large-input-submit" type="submit" value="Create new profile"><br>
+<%--                        <input class="green-large-input-submit" type="submit" value="Create new profile"><br>--%>
                     </div>
 
                 </form>
