@@ -19,7 +19,7 @@
                             <h2>Shopping cart</h2>
                         </div>
                         <div class="right-grid">
-                            <h2>## Items</h2>
+                            <h2>${sessionScope.cart.cupcakes.size()} Items</h2>
                         </div>
                     </div>
                     <c:if test="${sessionScope.cartlist == null}">
@@ -56,12 +56,24 @@
 
                     <div class="bottom-section">
                         <div class="left-grid">
-                            <a class="purple-small-link-button" href="">Go back to menu</a>
+                            <a class="purple-small-link-button" href="${pageContext.request.contextPath}/fc/shopcupcakepage">Go back to menu</a>
                         </div>
                     </div>
                 </div>
                 <div class="order-cart-section">
-                    <h2>Order summary</h2>
+                    <div class="title-container">
+                        <h2>Order summary</h2>
+                    </div>
+                    <div style="color: white; display: inline">
+                        <h3>TOTAL:</h3>
+                        <c:if test="${sessionScope.cart != null}">
+                            <h3>${sessionScope.cart.total} kr.</h3>
+                        </c:if>
+                        <c:if test="${sessionScope.cart == null}">
+                            <h3>0.00 kr.</h3>
+                        </c:if>
+                    </div>
+
                     <form>
                         <input class="purple-large-input-submit" type="submit" value="Make order">
                     </form>
