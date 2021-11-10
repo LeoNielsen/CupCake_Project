@@ -34,8 +34,8 @@
                     <div class="section2">
                         <form action="${pageContext.request.contextPath}/fc/shopcupcakecommand" method="post">
                             <div>
-                                <label for="amount">Quantity:</label>
-                                <input type="number" id="amount" name="amount" min="1" max="20" value="1">
+                                <label for="quantity">Quantity:</label>
+                                <input type="number" id="quantity" name="quantity" min="1" max="20" value="1">
                             </div>
                             <div>
                                 <label for="topping">Choose topping:</label>
