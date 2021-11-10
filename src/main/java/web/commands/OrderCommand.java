@@ -26,7 +26,7 @@ public class OrderCommand extends CommandProtectedPage{
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
 
         String status = "Pending";
-        Order order = orderFacade.saveOrder(cart.getCupcakes(), cart.getUser(), status);
+        Order order = orderFacade.saveOrder(cart.getCupcakes(), cart.getUser(), status, cart.getTotal());
 
         session.setAttribute("status", order);
 

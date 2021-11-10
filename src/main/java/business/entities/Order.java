@@ -12,10 +12,11 @@ public class Order {
 
     private float totalPrice;
 
-    public Order(ArrayList<Cupcake> cupcakes, User user, String status) {
+    public Order(ArrayList<Cupcake> cupcakes, User user, String status, float totalPrice) {
         this.cupcakes = cupcakes;
         this.user = user;
         this.status = status;
+        this.totalPrice = totalPrice;
         orderDate = new Timestamp(System.currentTimeMillis());
     }
 

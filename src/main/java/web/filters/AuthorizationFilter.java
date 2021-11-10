@@ -43,6 +43,8 @@ public class AuthorizationFilter implements Filter
                 String roleFromCommand = ((CommandProtectedPage) command).getRole();
                 if (session == null || session.getAttribute("user") == null)
                 {
+
+
                     handleIllegalAccess(
                             req,
                             res,

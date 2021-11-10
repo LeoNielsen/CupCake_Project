@@ -17,8 +17,8 @@ public class OrderFacade {
         orderMapper = new OrderMapper(database);
     }
 
-    public Order saveOrder(ArrayList<Cupcake> cupcakes, User user, String status){
-        Order order = new Order(cupcakes,user,status);
+    public Order saveOrder(ArrayList<Cupcake> cupcakes, User user, String status, float totalprice){
+        Order order = new Order(cupcakes,user,status, totalprice);
         orderMapper.saveOrder(order);
         return order;
     }
