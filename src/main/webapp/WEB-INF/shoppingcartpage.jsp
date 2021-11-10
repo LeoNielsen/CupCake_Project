@@ -62,6 +62,10 @@
                 </div>
                 <div class="order-cart-section">
                     <h2>Order summary</h2>
+                    <form>
+                        <input class="purple-large-input-submit" type="submit" value="Make order">
+                    </form>
+
                 </div>
             </div>
         </div>
