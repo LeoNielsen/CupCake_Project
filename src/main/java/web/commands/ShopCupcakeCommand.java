@@ -18,20 +18,20 @@ public class ShopCupcakeCommand extends CommandUnprotectedPage{
         String topping = request.getParameter("topping");
         String bottom = request.getParameter("bottom");
         int quantity = Integer.parseInt(request.getParameter("quantity"));
-        ShoppingCart cart;
 
         HttpSession session = request.getSession();
-
-        if(session.getAttribute("user") != null) {
-            cart = new ShoppingCart((User) session.getAttribute("user"));
-        } else {
+        ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+        if(cart == null) {
             cart = new ShoppingCart();
         }
-        session.setAttribute("cartlist", cart.getCupcakes());
 
         //TODO: hent data om topping og bottom pris fra databasen
         cart.add(new Cupcake(new Topping(topping, 5), new Bottom(bottom, 5), quantity));
         session.setAttribute("cart", cart);
+        session.setAttribute("cartlist", cart.getCupcakes());
+        for(Cupcake c :cart.getCupcakes()) {
+            System.out.println(c.getTopping().getName());
+        }
 
         return "shopcupcakepage";
     }
