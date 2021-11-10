@@ -74,7 +74,7 @@
                         </c:if>
                     </div>
 
-                    <form>
+                    <form action="${pageContext.request.contextPath}/fc/paymentcommand" method="post">
                         <input class="purple-large-input-submit" type="submit" value="Make order">
                     </form>
 

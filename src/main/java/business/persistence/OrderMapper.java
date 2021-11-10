@@ -17,8 +17,8 @@ public class OrderMapper {
 
         try (Connection connection = database.connect()) {
 
-            String sql = "INSERT INTO order (id_user, status, total_price, order_date) " +
-                    "VALUES(?,?,?,?) ON DUPLICATE KEY UPDATE status=?";
+            String sql = "INSERT INTO user_order (id_user, status, total_price, order_date) " +
+                    "VALUES(?,?,?,?)";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 ps.setInt(1, order.getUser().getId());
@@ -27,6 +27,10 @@ public class OrderMapper {
                 ps.setTimestamp(4, order.getOrderDate());
 
                 ps.executeUpdate();
+                ResultSet ids = ps.getGeneratedKeys();
+                ids.next();
+                int id = ids.getInt(1);
+                order.setId(id);
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
