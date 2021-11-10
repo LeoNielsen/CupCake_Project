@@ -34,9 +34,15 @@ public class LoginCommand extends CommandUnprotectedPage
         session.setAttribute("role", user.getRole());
         session.setAttribute("email", email);
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
-        if(cart.getUser() == null) {
-            cart.setUser(user);
+
+        if(cart == null){
+           cart = new ShoppingCart();
         }
+
+        cart.setUser(user);
+
+        session.setAttribute("cart", cart);
+
         String pageToShow =  user.getRole() + "page";
         return REDIRECT_INDICATOR + pageToShow;
         }
