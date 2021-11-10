@@ -10,6 +10,8 @@ public class Order {
     private String status;
     private Timestamp orderDate;
 
+    private float totalPrice;
+
     public Order(ArrayList<Cupcake> cupcakes, User user, String status) {
         this.cupcakes = cupcakes;
         this.user = user;
@@ -55,5 +57,13 @@ public class Order {
 
     public void setOrderDate(Timestamp orderDate) {
         this.orderDate = orderDate;
+    }
+
+    public float getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(float totalPrice) {
+        this.totalPrice = totalPrice;
     }
 }
