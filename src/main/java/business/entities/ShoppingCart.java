@@ -6,9 +6,14 @@ public class ShoppingCart {
     private ArrayList<Cupcake> cupcakes;
     private User user;
 
-    public ShoppingCart(ArrayList<Cupcake> cupcakes, User user) {
-        this.cupcakes = cupcakes;
+    public ShoppingCart( User user) {
+        cupcakes = new ArrayList<>();
         this.user = user;
+    }
+
+    public ShoppingCart() {
+        cupcakes = new ArrayList<>();
+        user = null;
     }
 
     public void add(Cupcake cupcake) {

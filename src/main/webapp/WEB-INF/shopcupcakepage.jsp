@@ -19,11 +19,6 @@
                 <div class="col3-grid">
                     <div class="section1">
                         <div style="display: grid; grid-auto-rows: auto auto auto; gap: 0">
-                            <div>
-                                <c:if test="${sessionScope.topping != null}">
-                                    <h1>${sessionScope.topping}</h1>
-                                </c:if>
-                            </div>
                             <div style="grid-column: 2; padding: 0; display: block">
                                 <img src="${pageContext.request.contextPath}/images/cupcake/topping/bluecheese.png"
                                      style="position: relative; height: auto; width: 150px; display: block">
@@ -46,24 +41,24 @@
                                 <label for="topping">Choose topping:</label>
                                 <select name="topping" id="topping">
                                     <option value="chocolate">Chocolate</option>
-                                    <option value="">Blueberry</option>
-                                    <option value="">Raspberry</option>
-                                    <option value="">Crispy</option>
-                                    <option value="">Strawberry</option>
-                                    <option value="">Rum/Raisin</option>
-                                    <option value="">Orange</option>
-                                    <option value="">Lemon</option>
-                                    <option value="">Blue cheese</option>
+                                    <option value="blueberry">Blueberry</option>
+                                    <option value="raspberry">Raspberry</option>
+                                    <option value="crispy">Crispy</option>
+                                    <option value="strawberry">Strawberry</option>
+                                    <option value="rum">Rum/Raisin</option>
+                                    <option value="orange">Orange</option>
+                                    <option value="lemon">Lemon</option>
+                                    <option value="bluecheese">Blue cheese</option>
                                 </select>
 
 
                                 <label for="bottom">Choose bottom:</label>
                                 <select name="bottom" id="bottom">
-                                    <option value="">Chocolate</option>
-                                    <option value="">Vanilla</option>
-                                    <option value="">Nutmeg</option>
-                                    <option value="">Pistacio</option>
-                                    <option value="">Almond</option>
+                                    <option value="chocolate">Chocolate</option>
+                                    <option value="vanilla">Vanilla</option>
+                                    <option value="nutmeg">Nutmeg</option>
+                                    <option value="pistacio">Pistacio</option>
+                                    <option value="almond">Almond</option>
                                 </select>
                             </div>
 

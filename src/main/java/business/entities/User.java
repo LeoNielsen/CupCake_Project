@@ -32,6 +32,7 @@ public class User
     private String city;
     private String phoneNr;
 
+
     public User(String email, String password, String role, String firstname)
     {
         this.email = email;

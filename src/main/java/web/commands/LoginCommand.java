@@ -1,5 +1,6 @@
 package web.commands;
 
+import business.entities.ShoppingCart;
 import business.entities.User;
 import business.services.UserFacade;
 import business.exceptions.UserException;
@@ -32,7 +33,10 @@ public class LoginCommand extends CommandUnprotectedPage
         session.setAttribute("user", user);
         session.setAttribute("role", user.getRole());
         session.setAttribute("email", email);
-
+        ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+        if(cart.getUser() == null) {
+            cart.setUser(user);
+        }
         String pageToShow =  user.getRole() + "page";
         return REDIRECT_INDICATOR + pageToShow;
         }
