@@ -48,4 +48,12 @@ public class Order {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public Timestamp getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Timestamp orderDate) {
+        this.orderDate = orderDate;
+    }
 }
