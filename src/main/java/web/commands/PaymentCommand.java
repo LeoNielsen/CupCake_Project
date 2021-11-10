@@ -17,10 +17,15 @@ public class PaymentCommand extends CommandUnprotectedPage{
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
-
         if(user == null){
             return "loginpage";
         }
+        if (cart.getCupcakes().size() == 0){
+            return "shoppingcartpage";
+        }
+
+
+
         user.setAccountbalance(user.getAccountbalance() - cart.getTotal());
 
         //TODO: lave betallings side

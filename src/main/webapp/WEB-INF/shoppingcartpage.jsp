@@ -56,7 +56,8 @@
 
                     <div class="bottom-section">
                         <div class="left-grid">
-                            <a class="purple-small-link-button" href="${pageContext.request.contextPath}/fc/shopcupcakepage">Go back to menu</a>
+                            <a class="purple-small-link-button"
+                               href="${pageContext.request.contextPath}/fc/shopcupcakepage">Go back to menu</a>
                         </div>
                     </div>
                 </div>
