@@ -17,12 +17,13 @@
                     <h1>Design your cupcake</h1>
                 </div>
                 <div class="col3-grid">
+
                     <div class="section1">
                         <div style="display: grid; grid-auto-rows: auto auto auto; gap: 0">
                             <div style="grid-column: 2; padding: 0; display: block">
-                                <img src="${pageContext.request.contextPath}/images/cupcake/topping/bluecheese.png"
+                                <img src="${pageContext.request.contextPath}/images/cupcake/topping/${sessionScope.topping}.png"
                                      style="position: relative; height: auto; width: 150px; display: block">
-                                <img src="${pageContext.request.contextPath}/images/cupcake/bottom/almond.png"
+                                <img src="${pageContext.request.contextPath}/images/cupcake/bottom/${sessionScope.botton}.png"
                                      style="position: relative; height: auto; width: 150px; display: block">
                             </div>
                         </div>

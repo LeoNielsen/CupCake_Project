@@ -29,6 +29,8 @@ public class ShopCupcakeCommand extends CommandUnprotectedPage{
         cart.add(new Cupcake(new Topping(topping, 5), new Bottom(bottom, 5), quantity));
         session.setAttribute("cart", cart);
         session.setAttribute("cartlist", cart.getCupcakes());
+        session.setAttribute("topping", topping);
+        session.setAttribute("botton", bottom);
         for(Cupcake c :cart.getCupcakes()) {
             System.out.println(c.getTopping().getName());
         }
