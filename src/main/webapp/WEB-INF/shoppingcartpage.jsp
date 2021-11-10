@@ -22,27 +22,36 @@
                         <h2>## Items</h2>
                     </div>
                 </div>
-                <table class="center-grid-element">
-                    <tr class="table-labels">
-                        <th>PRODUCT DETAILS</th>
-                        <th>QUANTITY</th>
-                        <th>COST</th>
-                        <th>TOTAL</th>
-                        <th></th>
-                    </tr>
-                    <tr>
-                        <th>
-                            <div class="left-grid">
-                                <h4>#### cupcake</h4>
-                                <h5>with #### topping</h5>
-                            </div>
-                        </th>
-                        <th><h4>##</h4></th>
-                        <th><h4>##</h4></th>
-                        <th><h4>##</h4></th>
-                        <th><button class="remove-button"><i class="fas fa-remove"></i></button></th>
-                    </tr>
-                </table>
+                <c:if test="${sessionScope.cartlist == null}">
+                    <div class="title-container">Your cart is empty</div>
+                </c:if>
+                <c:if test="${sessionScope.cartlist != null}">
+                    <table class="center-grid-element">
+                        <tr class="table-labels">
+                            <th>PRODUCT DETAILS</th>
+                            <th>QUANTITY</th>
+                            <th>COST</th>
+                            <th>TOTAL</th>
+                            <th></th>
+                        </tr>
+
+                        <c:forEach items="${sessionScope.cartlist}" var="cupcake">
+                            <tr>
+                                <th>
+                                    <div class="left-grid">
+                                        <h4>cupcake</h4>
+                                        <h5>with #### topping</h5>
+                                    </div>
+                                </th>
+                                <th><h4>##</h4></th>
+                                <th><h4>##</h4></th>
+                                <th><h4>##</h4></th>
+                                <th><button class="remove-button"><i class="fas fa-remove"></i></button></th>
+                            </tr>
+                        </c:forEach>
+                    </table>
+                </c:if>
+
                 <div class="bottom-section">
                     <div class="left-grid">
                         <a class="purple-small-link-button" href="">Go back to menu</a>

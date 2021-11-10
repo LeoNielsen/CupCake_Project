@@ -27,6 +27,8 @@ public class ShopCupcakeCommand extends CommandUnprotectedPage{
         } else {
             cart = new ShoppingCart();
         }
+        session.setAttribute("cartlist", cart.getCupcakes());
+
         //TODO: hent data om topping og bottom pris fra databasen
         cart.add(new Cupcake(new Topping(topping, 5), new Bottom(bottom, 5), quantity));
         session.setAttribute("cart", cart);
