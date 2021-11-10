@@ -16,6 +16,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/styles.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="theme-color" content="#7952b3">
 </head>
 <body>
@@ -61,7 +62,7 @@
                 <a class="link-button"><h4>Find us</h4></a>
             </li>
             <li>
-                <a class="link-button"><h4>Menu</h4></a>
+                <a class="link-button" href="${pageContext.request.contextPath}/fc/shopcupcakepage"><h4>Menu</h4></a>
             </li>
             <li>
                 <c:if test="${addHomeLink == null }">
