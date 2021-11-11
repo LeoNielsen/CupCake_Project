@@ -5,6 +5,8 @@ import business.persistence.Database;
 import business.persistence.UserMapper;
 import business.exceptions.UserException;
 
+import java.sql.SQLException;
+
 public class UserFacade
 {
     UserMapper userMapper;
@@ -24,6 +26,11 @@ public class UserFacade
         User user = new User(email, password, "customer",0,firstname, lastname, streetname, houseNr, zipcode, city, phoneNr);
         userMapper.createUser(user);
         return user;
+    }
+
+    public boolean updateBalance(int userId, float balance)throws SQLException
+    {
+        return userMapper.updateBalance(userId, balance);
     }
 
 }
