@@ -58,8 +58,8 @@ public class UserMapper
 
             try (PreparedStatement ps = connection.prepareStatement(sql))
             {
-                ps.setString(1, email);
                 ps.setString(2, password);
+                ps.setString(1, email);
                 ResultSet rs = ps.executeQuery();
                 if (rs.next())
                 {
