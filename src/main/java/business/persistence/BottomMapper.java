@@ -4,6 +4,7 @@ import business.entities.Order;
 import business.exceptions.UserException;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class BottomMapper {
 
@@ -54,6 +55,27 @@ public class BottomMapper {
 
         } catch (SQLException throwables) {
             throw new Exception("Could not find base");
+        }
+    }
+
+    public ArrayList<String> getAllBottoms() throws Exception {
+        ArrayList<String> bottoms = new ArrayList<>();
+
+        try (Connection connection = database.connect()) {
+            String sql = "SELECT name FROM base";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    String name = rs.getString("name");
+                    bottoms.add(name);
+                }
+                return bottoms;
+            } catch (Exception e) {
+                throw new Exception("Cloud not validate bottom");
+            }
+        } catch (SQLException throwables) {
+            throw new Exception("Cloud not validate bottom");
         }
     }
 }

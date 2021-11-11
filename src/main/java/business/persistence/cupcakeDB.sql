@@ -5,26 +5,27 @@
 -- Project: Name of the project
 -- Author: leoni
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+SET @OLD_UNIQUE_CHECKS = @@UNIQUE_CHECKS, UNIQUE_CHECKS = 0;
+SET @OLD_FOREIGN_KEY_CHECKS = @@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS = 0;
+SET @OLD_SQL_MODE = @@SQL_MODE, SQL_MODE =
+        'ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
+CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8;
 
 ALTER TABLE `cupcake`.`users`
     ADD INDEX `fk_users_zipcode1_idx` (`user_zipcode` ASC) VISIBLE,
-    DROP INDEX `fk_users_zipcode1_idx` ;
+    DROP INDEX `fk_users_zipcode1_idx`;
 ;
 
 ALTER TABLE `cupcake`.`cupcake`
     DROP COLUMN `topping_name`,
     DROP COLUMN `base_name`,
-    ADD COLUMN `base_name` VARCHAR(45) NOT NULL AFTER `id_order`,
+    ADD COLUMN `base_name`    VARCHAR(45) NOT NULL AFTER `id_order`,
     ADD COLUMN `topping_name` VARCHAR(45) NOT NULL AFTER `base_name`,
     ADD INDEX `fk_cupcake_topping1_idx` (`topping_name` ASC) VISIBLE,
     ADD INDEX `fk_cupcake_base1_idx` (`base_name` ASC) VISIBLE,
-    DROP INDEX `fk_cupcake_base1_idx` ,
-    DROP INDEX `fk_cupcake_topping1_idx` ;
+    DROP INDEX `fk_cupcake_base1_idx`,
+    DROP INDEX `fk_cupcake_topping1_idx`;
 ;
 
 ALTER TABLE `cupcake`.`users`
@@ -59,6 +60,28 @@ ALTER TABLE `cupcake`.`cupcake`
             ON UPDATE NO ACTION;
 
 
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+SET SQL_MODE = @OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS = @OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS = @OLD_UNIQUE_CHECKS;
+
+LOCK TABLES `topping` WRITE;
+INSERT INTO `topping`VALUES
+('chocolate', 5),
+('blueberry', 5),
+('raspberry', 5),
+('crispy', 5),
+('strawberry', 5),
+('rum', 5),
+('orange', 5),
+('lemon', 5),
+('bluecheese', 5);
+UNLOCK TABLES;
+
+LOCK TABLES `base` WRITE;
+INSERT INTO `base`VALUES
+('chocolate', 5),
+('vanilla', 5),
+('nutmeg', 5),
+('pistacio', 5),
+('almond', 5);
+UNLOCK TABLES;
