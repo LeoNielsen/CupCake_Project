@@ -41,15 +41,18 @@
                             <div>
                                 <label for="topping">Choose topping:</label>
                                 <select name="topping" id="topping">
-                                    <option value="chocolate">Chocolate</option>
-                                    <option value="blueberry">Blueberry</option>
-                                    <option value="raspberry">Raspberry</option>
-                                    <option value="crispy">Crispy</option>
-                                    <option value="strawberry">Strawberry</option>
-                                    <option value="rum">Rum/Raisin</option>
-                                    <option value="orange">Orange</option>
-                                    <option value="lemon">Lemon</option>
-                                    <option value="bluecheese">Blue cheese</option>
+                                    <c:forEach var="topping" items="${sessionScope.toppings}">
+                                            <option value="${topping}">${topping}</option>
+                                    </c:forEach>
+<%--                                    <option value="chocolate">Chocolate</option>--%>
+<%--                                    <option value="blueberry">Blueberry</option>--%>
+<%--                                    <option value="raspberry">Raspberry</option>--%>
+<%--                                    <option value="crispy">Crispy</option>--%>
+<%--                                    <option value="strawberry">Strawberry</option>--%>
+<%--                                    <option value="rum">Rum/Raisin</option>--%>
+<%--                                    <option value="orange">Orange</option>--%>
+<%--                                    <option value="lemon">Lemon</option>--%>
+<%--                                    <option value="bluecheese">Blue cheese</option>--%>
                                 </select>
 
 
