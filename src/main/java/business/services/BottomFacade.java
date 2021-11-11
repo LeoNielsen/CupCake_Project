@@ -5,6 +5,8 @@ import business.entities.Topping;
 import business.persistence.BottomMapper;
 import business.persistence.Database;
 
+import java.util.ArrayList;
+
 public class BottomFacade {
 
     BottomMapper bottomMapper;
@@ -23,5 +25,14 @@ public class BottomFacade {
 
     public Bottom getBottom(String name) throws Exception {
         return bottomMapper.getBottom(name);
+    }
+
+    public ArrayList<String> getAllBottoms() {
+        try {
+            return bottomMapper.getAllBottoms();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

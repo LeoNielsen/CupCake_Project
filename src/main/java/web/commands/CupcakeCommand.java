@@ -1,6 +1,7 @@
 package web.commands;
 
 import business.exceptions.UserException;
+import business.services.BottomFacade;
 import business.services.ToppingFacade;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,10 +19,13 @@ public class CupcakeCommand extends CommandUnprotectedPage {
         HttpSession session = request.getSession();
 
         ToppingFacade toppingFacade = new ToppingFacade(database);
+        BottomFacade bottomFacade = new BottomFacade(database);
 
         ArrayList<String> toppings = toppingFacade.getAllToppings();
+        ArrayList<String> bottoms = bottomFacade.getAllBottoms();
 
         session.setAttribute("toppings", toppings);
+        session.setAttribute("bottoms", bottoms);
 
         return "shopcupcakepage";
     }

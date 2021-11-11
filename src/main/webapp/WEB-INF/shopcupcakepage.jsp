@@ -58,11 +58,14 @@
 
                                 <label for="bottom">Choose bottom:</label>
                                 <select name="bottom" id="bottom">
-                                    <option value="chocolate">Chocolate</option>
-                                    <option value="vanilla">Vanilla</option>
-                                    <option value="nutmeg">Nutmeg</option>
-                                    <option value="pistacio">Pistacio</option>
-                                    <option value="almond">Almond</option>
+                                    <c:forEach var="bottom" items="${sessionScope.bottoms}">
+                                        <option value="${bottom}">${bottom}</option>
+                                    </c:forEach>
+<%--                                    <option value="chocolate">Chocolate</option>--%>
+<%--                                    <option value="vanilla">Vanilla</option>--%>
+<%--                                    <option value="nutmeg">Nutmeg</option>--%>
+<%--                                    <option value="pistacio">Pistacio</option>--%>
+<%--                                    <option value="almond">Almond</option>--%>
                                 </select>
                             </div>
 
