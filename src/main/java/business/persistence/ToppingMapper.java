@@ -3,6 +3,7 @@ package business.persistence;
 import business.entities.Topping;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class ToppingMapper {
 
@@ -53,4 +54,27 @@ public class ToppingMapper {
             throw new Exception("Cloud not validate Topping");
         }
     }
+
+    public ArrayList<String> getAllToppings() throws Exception {
+        ArrayList<String> toppings = new ArrayList<>();
+
+        try (Connection connection = database.connect()) {
+            String sql = "SELECT name FROM topping";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    String name = rs.getString("name");
+                    toppings.add(name);
+                }
+                return toppings;
+            } catch (Exception e) {
+                throw new Exception("Cloud not validate Topping");
+            }
+        } catch (SQLException throwables) {
+            throw new Exception("Cloud not validate Topping");
+        }
+    }
+
+
 }

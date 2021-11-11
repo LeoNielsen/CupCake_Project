@@ -4,6 +4,8 @@ import business.entities.Topping;
 import business.persistence.Database;
 import business.persistence.ToppingMapper;
 
+import java.util.ArrayList;
+
 public class ToppingFacade {
 
     ToppingMapper toppingMapper;
@@ -20,6 +22,15 @@ public class ToppingFacade {
 
     public Topping getTopping(String name) throws Exception {
         return toppingMapper.getToppping(name);
+    }
+
+    public ArrayList<String> getAllToppings() {
+        try {
+            return toppingMapper.getAllToppings();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 

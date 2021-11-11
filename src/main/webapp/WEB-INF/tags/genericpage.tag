@@ -62,7 +62,7 @@
                 <a class="link-button"><h4>Find us</h4></a>
             </li>
             <li>
-                <a class="link-button" href="${pageContext.request.contextPath}/fc/shopcupcakepage"><h4>Menu</h4></a>
+                <a class="link-button" href="${pageContext.request.contextPath}/fc/cupcakecommand"><h4>Menu</h4></a>
             </li>
             <li>
                 <c:if test="${addHomeLink == null }">
