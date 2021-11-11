@@ -34,7 +34,7 @@
                                 <th>TOTAL</th>
                                 <th></th>
                             </tr>
-
+                            <c:set var="number" value="-1"></c:set>
                             <c:forEach items="${sessionScope.cart.cupcakes}" var="cupcake">
                                 <tr>
                                     <th>
@@ -47,7 +47,10 @@
                                     <th><h4>${cupcake.price}</h4></th>
                                     <th><h4>${cupcake.total}</h4></th>
                                     <th>
-                                        <button class="remove-button"><i class="fas fa-remove"></i></button>
+                                        <form action="${pageContext.request.contextPath}/fc/removefromcartcommand" method="post">
+                                            <input type="hidden" name="cupcake" value="${number + 1}">
+                                            <button class="remove-button"><i class="fas fa-remove"></i></button>
+                                        </form>
                                     </th>
                                 </tr>
                             </c:forEach>
