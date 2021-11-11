@@ -19,7 +19,7 @@ public class UserMapper
         //TODO: fix address.
         try (Connection connection = database.connect())
         {
-            String sql = "INSERT INTO users (email, password, role, account_balance, firstname, lastname, id_adresse, phone_nr) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO users (email, password, role, account_balance, firstname, lastname, phone_nr, street_name, house_nr, user_zipcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
             {
@@ -29,8 +29,10 @@ public class UserMapper
                 ps.setFloat(4, user.getAccountbalance());
                 ps.setString(5, user.getFirstname());
                 ps.setString(6, user.getLastname());
-                ps.setInt(7, 1);
-                ps.setString(8, user.getPhoneNr());
+                ps.setString(7, user.getPhoneNr());
+                ps.setString(8, user.getStreename());
+                ps.setString(9, user.getHouseNr());
+                ps.setString(10, user.getZipcode());
                 ps.executeUpdate();
                 ResultSet ids = ps.getGeneratedKeys();
                 ids.next();
