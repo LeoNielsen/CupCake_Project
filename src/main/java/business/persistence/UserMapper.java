@@ -4,6 +4,7 @@ import business.exceptions.UserException;
 import business.entities.User;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class UserMapper
 {
@@ -102,6 +103,40 @@ public class UserMapper
             throwables.printStackTrace();
         }
         return false;
+    }
+
+    public ArrayList<User> getAllUsers() throws Exception {
+        ArrayList<User> users = new ArrayList<>();
+
+        try (Connection connection = database.connect()) {
+            String sql = "SELECT * FROM users ";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    int id = rs.getInt("id");
+                    String email = rs.getString("email");
+                    String password = rs.getString("password");
+                    String role = rs.getString("role");
+                    float acBalance = rs.getFloat("account_balance");
+                    String firstname = rs.getString("firstname");
+                    String lastname = rs.getString("lastname");
+                    String phoneNr = rs.getString("phone_nr");
+                    String streetName = rs.getString("street_name");
+                    String houseNr = rs.getString("house_nr");
+                    String zipcode = rs.getString("user_zipcode");
+                    User user = new User(id, email, password, role, acBalance, firstname,
+                            lastname, phoneNr, streetName, houseNr, zipcode);
+
+                    users.add(user);
+                }
+                return users;
+            } catch (Exception e) {
+                throw new Exception("Could not find users");
+            }
+        } catch (SQLException throwables) {
+            throw new Exception("Could not find users");
+        }
     }
 
 }

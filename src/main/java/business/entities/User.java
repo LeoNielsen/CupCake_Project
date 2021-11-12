@@ -19,6 +19,8 @@ public class User
 
     }
 
+
+
     private int id; // just used to demo retrieval of autogen keys in UserMapper
     private String email;
     private String password; // Should be hashed and secured
@@ -40,6 +42,23 @@ public class User
         this.role = role;
         this.firstname = firstname;
     }
+
+    public User(int id, String email, String password, String role, float acBalance, String firstname, String lastname, String phoneNr, String streetName, String houseNr, String zipcode)
+    {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.role = role;
+        this.accountbalance = acBalance;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.streename = streetName;
+        this.houseNr = houseNr;
+        this.zipcode = zipcode;
+        this.phoneNr = phoneNr;
+
+    }
+
 
     public float getAccountbalance()
     {
