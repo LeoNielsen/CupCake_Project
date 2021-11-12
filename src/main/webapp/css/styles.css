@@ -44,7 +44,7 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .large-container {
-    padding-top: 175px;
+    padding-top: 200px;
     height: 700px;
     background-color: #ccc;
 }
@@ -62,6 +62,8 @@ body, h1, h2, h3, h4, h5, h6 {
 
 .login-container h1, a {
     text-align: center;
+    position: absolute;
+    z-index: 6;
 }
 
 
@@ -70,7 +72,6 @@ input[type=text], input[type=password], input[type=number] {
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 20px;
-    box-sizing: border-box;
     outline: none;
     width: 100%;
 }
@@ -119,6 +120,7 @@ input[type=text]:focus, input[type=password]:focus {
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
+    z-index: 2;
 }
 
 .inner-container {
@@ -318,6 +320,13 @@ button {
     padding-bottom: 0;
 }
 
+.row3-grid {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 10px;
+    padding-bottom: 0;
+}
+
 .white-large-section {
     margin: auto auto auto auto;
     width: 80%;
@@ -363,6 +372,45 @@ select {
 .title-container {
     text-align: center;
     padding-bottom: 50px;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    border-radius: 20px;
+    top: 100%;
+    z-index: 3;
+}
+
+.dropdown-content a {
+    padding: 10px 24px;
+    text-decoration: none;
+    border-radius: 20px;
+    display: block;
+    color: #3D3D3D;
+
+}
+
+.dropdown-content a:hover {
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .purple-small-link-button {
+    background-color: rebeccapurple;
 }
 
 

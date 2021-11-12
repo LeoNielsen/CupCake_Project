@@ -11,36 +11,42 @@
     </jsp:attribute>
 
     <jsp:body>
-        <!-- LOGIN -->
-        <div class="large-container">
-            <div class="login-container">
-                <h1>Log in</h1>
-
-                <form name="login" action="${pageContext.request.contextPath}/fc/logincommand" method="post">
-                    <div class="text-input-container">
-                        <div class="text-input-element">
-                            <label for="email">Enter email:</label><br>
-                            <input type="text" id="email" name="email" placeholder="Enter your email ..."><br>
-                        </div>
-                        <div class="text-input-element">
-                            <label for="password">Enter password:</label><br>
-                            <input type="password" id="password" name="password"
-                                   placeholder="Enter your password ..."><br>
-                            <a class="blue-link">Forgot password?</a>
+        <div class="grey-large-container">
+            <div class="white-small-box">
+                <div class="row-3-grid" style="gap: 20px">
+                    <div class="large-title-grid-element">
+                        <div class="center-text">
+                            <h1>Log in</h1>
                         </div>
                     </div>
-                    <div class="clickable-input-container">
-                        <input class="purple-large-input-submit" type="submit" value="Login"><br>
-                        <a class="green-large-link-button" href="${pageContext.request.contextPath}/fc/registerpage">Create account</a><br>
-                    </div>
-
-                </form>
+                    <form name="login" action="${pageContext.request.contextPath}/fc/logincommand"
+                          method="post">
+                        <div>
+                            <div class="row-2-grid">
+                                <div style="padding-bottom: 55px">
+                                    <label class="l-label" for="email">ENTER EMAIL</label><br>
+                                    <input class="border-bottom-input-text" type="text" id="email" name="email"
+                                           placeholder="Email.."><br>
+                                </div>
+                                <div style="padding-bottom: 20px">
+                                    <label class="l-label" for="password">ENTER PASSWORD</label><br>
+                                    <input class="border-bottom-input-text" type="password" id="password"
+                                           name="password"
+                                           placeholder="Password.."><br>
+                                    <div class="center-flex" style="padding: 35px 0 50px 0">
+                                        <a class="blue-link">Forgot password?</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <input class="purple-large-button" type="submit"
+                                   value="Login"><br>
+                            <a class="green-large-button" href="${pageContext.request.contextPath}/fc/registerpage">Create account</a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-
-        <footer>
-
-        </footer>
-
     </jsp:body>
 </t:genericpage>
