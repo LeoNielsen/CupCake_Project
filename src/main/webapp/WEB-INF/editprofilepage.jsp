@@ -9,83 +9,72 @@
     <jsp:attribute name="footer">
     </jsp:attribute>
     <jsp:body>
-
         <div class="grey-large-container">
             <div class="white-small-box">
                 <div class="large-title-grid-element">
                     <div class="center-text">
-                        <h1>Create account</h1>
+                        <h1> Edit profile</h1>
                     </div>
                 </div>
                 <form action="${pageContext.request.contextPath}/fc/registercommand" method="post">
-                    <div class="row-6-grid" style="gap: 45px">
+                    <div class="row-4-grid" style="gap: 45px">
                         <div>
                             <div class="col-2-grid" style="gap: 25px">
                                 <div>
-                                    <label for="firstname" class="small-title-label" >First name</label><br>
-                                    <input class="border-input-text" type="text" id="firstname" name="firstname" placeholder="Enter your first name ..."><br>
+                                    <label for="firstname" class="small-title-label">First name</label><br>
+                                    <input class="border-input-text" type="text" id="firstname" name="firstname"
+                                           value="Serverus"><br>
                                 </div>
                                 <div>
                                     <label for="lastname" class="small-title-label">Last name</label><br>
-                                    <input class="border-input-text" type="text" id="lastname" name="lastname" placeholder="Enter your first name ..."><br>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <label for="email" class="small-title-label">Email</label><br>
-                            <input class="border-input-text" type="text" id="email" name="email" placeholder="Enter your email ..."><br>
-                        </div>
-                        <div>
-                            <div class="row-2-grid" style="gap: 20px">
-                                <div>
-                                    <label for="password1" class="small-title-label">Password</label><br>
-                                    <input class="border-input-text" type="password" id="password1" name="password1"
-                                           placeholder="Enter your password ..."><br>
-                                </div>
-                                <div>
-                                    <label for="password2" class="small-title-label"> Password again</label><br>
-                                    <input class="border-input-text" type="password" id="password2" name="password2"
-                                           placeholder="Enter your password again ..."><br>
+                                    <input class="border-input-text" type="text" id="lastname" name="lastname"
+                                           value="Snape"><br>
                                 </div>
                             </div>
                         </div>
                         <div>
                             <label for="phonenr" class="small-title-label">Phone number</label><br>
-                            <input class="border-input-text" type="text" id="phonenr" name="phonenr" placeholder="Enter your phone number ..."><br>
+                            <input class="border-input-text" type="text" id="phonenr" name="phonenr"
+                                   value="11111111"><br>
                         </div>
                         <div>
                             <div class="row-2-grid" style="gap: 20px">
                                 <div class="center-flex">
                                     <div style="width: 100%; padding-right: 10px">
                                         <label for="streetname" class="small-title-label">Street</label><br>
-                                        <input class="border-input-text" type="text" id="streetname" name="streetbane" placeholder="Enter streetname ..."><br>
+                                        <input class="border-input-text" type="text" id="streetname" name="streetbane"
+                                               value="tårnværelse"><br>
                                     </div>
                                     <div>
                                         <label for="housenr" class="small-title-label">House number</label><br>
-                                        <input class="border-input-text" type="text" id="housenr" name="housenr" placeholder="Enter housenumber ..."><br>
+                                        <input class="border-input-text" type="text" id="housenr" name="housenr"
+                                               value="501"><br>
                                     </div>
                                 </div>
                                 <div class="center-flex">
                                     <div style="width: 100%; padding-right: 10px">
                                         <label for="city" class="small-title-label">City</label><br>
-                                        <input class="border-input-text" type="text" id="city" name="city" placeholder="Enter city ..."><br>
+                                        <input class="border-input-text" type="text" id="city" name="city"
+                                               value="Hogwarts"><br>
                                     </div>
                                     <div>
                                         <label for="zipcode" class="small-title-label">Zip code</label><br>
-                                        <input class="border-input-text" type="text" id="zipcode" name="zipcode" placeholder="Enter zip code ..."><br>
+                                        <input class="border-input-text" type="text" id="zipcode" name="zipcode"
+                                               value="0001"><br>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div style="padding-top: 35px">
-                            <input class="purple-large-button" type="submit" value="Create account">
+                            <div class="col-2-grid" style="gap: 10px">
+                                <a class="grey-large-button"
+                                   href="${pageContext.request.contextPath}/fc/profilepage">Cancel</a>
+                                <input class="green-large-button" type="submit" value="Save changes  ✓">
+                            </div>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-
     </jsp:body>
 </t:genericpage>
-
-

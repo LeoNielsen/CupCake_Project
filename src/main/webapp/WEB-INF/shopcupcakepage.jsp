@@ -10,7 +10,7 @@
     </jsp:attribute>
 
     <jsp:body>
-        <div class="large-container">
+        <div class="large-container1">
 
             <div class="white-large-section">
                 <div class="title-container">
@@ -28,7 +28,7 @@
                             </div>
                         </div>
                         <div>
-                            <a class="purple-small-link-button" href="${pageContext.request.contextPath}">Back
+                            <a class="purple-small-button" href="${pageContext.request.contextPath}">Back
                                 to home</a>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                         <form action="${pageContext.request.contextPath}/fc/shopcupcakecommand" method="post">
                             <div>
                                 <label for="quantity">Quantity:</label>
-                                <input type="number" id="quantity" name="quantity" min="1" max="20" value="1">
+                                <input class="border-input-text" type="number" id="quantity" name="quantity" min="1" max="20" value="1">
                             </div>
                             <div>
                                 <label for="topping">Choose topping:</label>
@@ -70,7 +70,7 @@
                             </div>
 
                             <div style="padding-top: 20px">
-                                <input class="purple-large-input-submit" type="submit" value="Add to cart">
+                                <input class="purple-large-button" type="submit" value="Add to cart">
                             </div>
                         </form>
                     </div>
