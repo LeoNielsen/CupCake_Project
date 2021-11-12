@@ -58,7 +58,7 @@
                                 <div class="center-flex">
                                     <div style="width: 100%; padding-right: 10px">
                                         <label for="streetname" class="small-title-label">Street</label><br>
-                                        <input class="border-input-text" type="text" id="streetname" name="streetbane" placeholder="Enter streetname ..."><br>
+                                        <input class="border-input-text" type="text" id="streetname" name="streetname" placeholder="Enter streetname ..."><br>
                                     </div>
                                     <div>
                                         <label for="housenr" class="small-title-label">House number</label><br>

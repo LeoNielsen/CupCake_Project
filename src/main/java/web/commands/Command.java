@@ -34,7 +34,7 @@ public abstract class Command
         commands.put("shopcupcakepage", new CommandUnprotectedPage("shopcupcakepage"));
         commands.put("shopcupcakecommand", new ShopCupcakeCommand(""));
         commands.put("cupcakecommand", new CupcakeCommand(""));
-        commands.put("ordercommand", new OrderCommand("","customer"));
+        commands.put("ordercommand", new OrderCommand("orderrecievedpage","customer"));
         commands.put("paymentcommand", new PaymentCommand(""));
         commands.put("orderrecievedpage", new CommandProtectedPage("orderrecievedpage","customer"));
         commands.put("orderpage", new CommandUnprotectedPage("orderpage")); //TODO: ændre to protected

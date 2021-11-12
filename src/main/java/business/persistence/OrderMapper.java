@@ -65,7 +65,7 @@ public class OrderMapper {
     public ArrayList<Integer> getOrderId(int user_id) throws Exception {
        ArrayList<Integer> orders = new ArrayList<>();
         try (Connection connection = database.connect()) {
-            String sql = "SELECT order_id FROM user_order WHERE id_user = ?";
+            String sql = "SELECT id FROM user_order WHERE id_user = ?";
 
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ps.setInt(1,user_id);
@@ -86,7 +86,7 @@ public class OrderMapper {
     public ArrayList<Cupcake> getAllCupcake(int order_id) throws Exception {
         ArrayList<Cupcake> cupcakes = new ArrayList<>();
         try (Connection connection = database.connect()) {
-            String sql = "SELECT * FROM userorders WHERE id_order = ?";
+            String sql = "SELECT * FROM userorders WHERE id = ?";
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ps.setInt(1,order_id);
                 ResultSet rs = ps.executeQuery();

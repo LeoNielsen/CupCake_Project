@@ -34,6 +34,6 @@ public class OrderCommand extends CommandProtectedPage{
 
         session.setAttribute("status", order);
 
-        return "orderrecievedpage";
+        return pageToShow;
     }
 }

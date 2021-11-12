@@ -35,30 +35,23 @@
                                             <th>DATE</th>
                                             <th>STATUS</th>
                                         </tr>
-                                        <tr>
-                                            <th># #####</th>
-                                            <th>
-                                                <h4>##### cupcake</h4>
-                                                <h5>with ##### topping</h5>
-                                            </th>
-                                            <th>#####</th>
-                                            <th>##### kr</th>
-                                            <th>##### kr</th>
-                                            <th>##-##-####</th>
-                                            <th>#####</th>
-                                        </tr>
-                                        <tr>
-                                            <th># #####</th>
-                                            <th>
-                                                <h4>##### cupcake</h4>
-                                                <h5>with ##### topping</h5>
-                                            </th>
-                                            <th>#####</th>
-                                            <th>##### kr</th>
-                                            <th>##### kr</th>
-                                            <th>##-##-####</th>
-                                            <th>#####</th>
-                                        </tr>
+                                        <c:forEach var="order" items="${sessionScope.orderlist}">
+                                            <c:forEach var="cupcake" items="${order.cupcakes}">
+                                                <tr>
+                                                    <th>${order.id}</th>
+                                                    <th>
+                                                        <h4>${cupcake.bottom.name} cupcake</h4>
+                                                        <h5>with ${cupcake.topping.name} topping</h5>
+                                                    </th>
+                                                    <th>${cupcake.quantity}</th>
+                                                    <th>${cupcake.price} kr</th>
+                                                    <th>${cupcake.total} kr</th>
+                                                    <th>${order.orderDate}</th>
+                                                    <th>${order.status}</th>
+                                                </tr>
+                                            </c:forEach>
+                                        </c:forEach>
+
                                     </table>
                                 </div>
                             </div>

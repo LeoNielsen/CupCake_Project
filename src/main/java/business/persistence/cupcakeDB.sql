@@ -85,3 +85,11 @@ INSERT INTO `base`VALUES
 ('pistacio', 5),
 ('almond', 5);
 UNLOCK TABLES;
+
+create view userOrders as
+select o.*, o.id as order_id , c.id as id_cupcake, c.base_name, c.topping_name, c.quantity,
+       b.price as base_price ,t.price as topping_price
+FROM user_order o
+         join cupcake c on o.id = c.id_order
+         join base b on c.base_name = b.name
+         join topping t on c.topping_name = t.name;

@@ -26,12 +26,12 @@ public class OrderFacade {
 
     public ArrayList<Order> getAllOrder(User user) throws UserException {
         ArrayList<Order> orders = new ArrayList<>();
-        ArrayList<Integer> idorders = null;
+        ArrayList<Integer> idOrders;
         try {
-            idorders = orderMapper.getOrderId(user.getId());
-            for(int i : idorders) {
-                ArrayList<Cupcake> cupcakes = orderMapper.getAllCupcake(i);
-                Order order = orderMapper.getAllOrdersUser(i, user, cupcakes);
+            idOrders = orderMapper.getOrderId(user.getId());
+            for(int id : idOrders) {
+                ArrayList<Cupcake> cupcakes = orderMapper.getAllCupcake(id);
+                Order order = orderMapper.getAllOrdersUser(id, user, cupcakes);
                 orders.add(order);
             }
         } catch (Exception e) {
