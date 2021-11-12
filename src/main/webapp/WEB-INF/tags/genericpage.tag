@@ -45,7 +45,7 @@
                     <c:if test="${sessionScope.user != null}">
                         <div class="dropdown">
                             <a class="purple-button"
-                               href="${pageContext.request.contextPath}/fc/logoutcommand">
+                               href="${pageContext.request.contextPath}/fc/profilepage">
                                 <h4>My profile</h4></a>
                             <div class="dropdown-content">
                                 <a href="${pageContext.request.contextPath}/fc/profilepage">Profile</a>

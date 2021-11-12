@@ -55,7 +55,7 @@ public class UserMapper
     {
         try (Connection connection = database.connect())
         {
-            String sql = "SELECT id, role, firstname, account_balance FROM users WHERE email=? AND password=?";
+            String sql = "SELECT * FROM users WHERE email=? AND password=?";
 
             try (PreparedStatement ps = connection.prepareStatement(sql))
             {
@@ -66,12 +66,14 @@ public class UserMapper
                 {
                     String role = rs.getString("role");
                     String firstname = rs.getString("firstname");
+                    String lastname = rs.getString("lastname");
+                    String phonenr = rs.getString("phone_nr");
+                    String streetname = rs.getString("street_name");
+                    String housenr = rs.getString("house_nr");
+                    String zipcode = rs.getString("user_zipcode");
                     int id = rs.getInt("id");
                     float balance = rs.getFloat("account_balance");
-                    User user = new User(email, password, role, firstname);
-                    user.setId(id);
-                    user.setAccountbalance(balance);
-                    return user;
+                    return new User(id,email, password, role,balance, firstname, lastname, phonenr, streetname, housenr, zipcode);
                 } else
                 {
                     throw new UserException("Could not validate user");

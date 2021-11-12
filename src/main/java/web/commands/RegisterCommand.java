@@ -49,6 +49,8 @@ public class RegisterCommand extends CommandUnprotectedPage
             session.setAttribute("user", user);
             session.setAttribute("role", user.getRole());
             session.setAttribute("firstname", user.getFirstname());
+            session.setAttribute("lastname", user.getLastname());
+            session.setAttribute("streetname", user.getHouseNr());
 
             ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
             if (cart == null){

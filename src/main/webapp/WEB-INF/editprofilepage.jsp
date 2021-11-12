@@ -23,19 +23,19 @@
                                 <div>
                                     <label for="firstname" class="small-title-label">First name</label><br>
                                     <input class="border-input-text" type="text" id="firstname" name="firstname"
-                                           value="Serverus"><br>
+                                           value="${sessionScope.user.firstname}"><br>
                                 </div>
                                 <div>
                                     <label for="lastname" class="small-title-label">Last name</label><br>
                                     <input class="border-input-text" type="text" id="lastname" name="lastname"
-                                           value="Snape"><br>
+                                           value="${sessionScope.user.lastname}"><br>
                                 </div>
                             </div>
                         </div>
                         <div>
                             <label for="phonenr" class="small-title-label">Phone number</label><br>
                             <input class="border-input-text" type="text" id="phonenr" name="phonenr"
-                                   value="11111111"><br>
+                                   value="${sessionScope.user.phoneNr}"><br>
                         </div>
                         <div>
                             <div class="row-2-grid" style="gap: 20px">
@@ -43,24 +43,24 @@
                                     <div style="width: 100%; padding-right: 10px">
                                         <label for="streetname" class="small-title-label">Street</label><br>
                                         <input class="border-input-text" type="text" id="streetname" name="streetbane"
-                                               value="tårnværelse"><br>
+                                               value="${sessionScope.user.streename}"><br>
                                     </div>
                                     <div>
                                         <label for="housenr" class="small-title-label">House number</label><br>
                                         <input class="border-input-text" type="text" id="housenr" name="housenr"
-                                               value="501"><br>
+                                               value="${sessionScope.user.houseNr}"><br>
                                     </div>
                                 </div>
                                 <div class="center-flex">
                                     <div style="width: 100%; padding-right: 10px">
                                         <label for="city" class="small-title-label">City</label><br>
                                         <input class="border-input-text" type="text" id="city" name="city"
-                                               value="Hogwarts"><br>
+                                               value="${sessionScope.user.city}"><br>
                                     </div>
                                     <div>
                                         <label for="zipcode" class="small-title-label">Zip code</label><br>
                                         <input class="border-input-text" type="text" id="zipcode" name="zipcode"
-                                               value="0001"><br>
+                                               value="${sessionScope.user.zipcode}"><br>
                                     </div>
                                 </div>
                             </div>

@@ -16,29 +16,29 @@
                         <i style="font-size:100px" class="fas">&#xf2bd;</i>
                     </div>
                     <div class="center-text">
-                        <h1 style="font-weight: normal">snape@gmail.com</h1>
+                        <h1 style="font-weight: normal">${sessionScope.email}</h1>
                     </div>
                 </div>
                 <div class="row-6-grid" style="gap: 25px">
                     <div>
                         <label class="small-title-label">First name</label><br>
-                        <label>Serverus</label>
+                        <label>${sessionScope.user.firstname}</label>
                     </div>
                     <div>
                         <label class="small-title-label">Last name</label><br>
-                        <label>Snape</label>
+                        <label>${sessionScope.user.lastname}</label>
                     </div>
-                    <div>
-                        <label class="small-title-label">Role</label><br>
-                        <label>Magical customer</label>
-                    </div>
+<%--                    <div>--%>
+<%--                        <label class="small-title-label">Role</label><br>--%>
+<%--                        <label>Magical customer</label>--%>
+<%--                    </div>--%>
                     <div>
                         <label class="small-title-label">Phone number</label><br>
-                        <label>11 11 11 11</label>
+                        <label>${sessionScope.user.phoneNr}</label>
                     </div>
                     <div>
                         <label class="small-title-label">Address</label><br>
-                        <label>Hogwarts, tårnværelse 501</label>
+                        <label>${sessionScope.user.city} ${sessionScope.user.zipcode}, ${sessionScope.user.streename} ${sessionScope.user.houseNr}</label>
                     </div>
                     <div style="padding-top: 35px">
                         <div class="col-2-grid" style="gap: 10px">
