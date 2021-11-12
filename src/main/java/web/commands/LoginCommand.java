@@ -43,8 +43,8 @@ public class LoginCommand extends CommandUnprotectedPage
 
         session.setAttribute("cart", cart);
 
-        String pageToShow =  user.getRole() + "page";
-        return REDIRECT_INDICATOR + pageToShow;
+//        String pageToShow =  user.getRole() + "page";
+       return REDIRECT_INDICATOR + "index"; //REDIRECT_INDICATOR + pageToShow;
         }
         catch (UserException ex)
         {

@@ -39,33 +39,33 @@ public class OrderMapper {
         }
     }
 
-    public ArrayList<Order> getAllOrders() throws Exception {
-        ArrayList<Order> orders = new ArrayList<>();
-
-        try (Connection connection = database.connect()) {
-            String sql = "SELECT * FROM user_order ";
-
-            try (PreparedStatement ps = connection.prepareStatement(sql)) {
-                ResultSet rs = ps.executeQuery();
-                while (rs.next()) {
-                    int id = rs.getInt("id");
-                    int idUser = rs.getInt("id_user");
-                    String status = rs.getString("status");
-                    float total = rs.getFloat("total_price");
-                    Timestamp timestamp = rs.getTimestamp("order_date");
-
-                    Order order = new Order();
-
-                    orders.add(order);
-                }
-                return orders;
-            } catch (Exception e) {
-                throw new Exception("Could not find users");
-            }
-        } catch (SQLException throwables) {
-            throw new Exception("Could not find users");
-        }
-    }
+//    public ArrayList<Order> getAllOrders() throws Exception {
+//        ArrayList<Order> orders = new ArrayList<>();
+//
+//        try (Connection connection = database.connect()) {
+//            String sql = "SELECT * FROM user_order ";
+//
+//            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+//                ResultSet rs = ps.executeQuery();
+//                while (rs.next()) {
+//                    int id = rs.getInt("id");
+//                    int idUser = rs.getInt("id_user");
+//                    String status = rs.getString("status");
+//                    float total = rs.getFloat("total_price");
+//                    Timestamp timestamp = rs.getTimestamp("order_date");
+//
+//                    Order order = new Order();
+//
+//                    orders.add(order);
+//                }
+//                return orders;
+//            } catch (Exception e) {
+//                throw new Exception("Could not find users");
+//            }
+//        } catch (SQLException throwables) {
+//            throw new Exception("Could not find users");
+//        }
+//    }
 
 
 }

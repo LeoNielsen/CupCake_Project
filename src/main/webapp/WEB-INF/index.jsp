@@ -15,13 +15,18 @@
     <jsp:body>
 
         <!-- IMAGE BANNER-->
-        <div class="img-container" style="background-image: url('images/img.png')">
+        <div class="img-container" style="background-image: url('${pageContext.request.contextPath}/images/img.png')">
             <div class="large-container">
                 <div class="section">
                     <div class="white-text">
                         <div class="left-text">
                             <div class="small-title-p">
-                                <label class="title-label">Welcome to Olsker Cupcake</label>
+                                <c:if test="${sessionScope.user == null}">
+                                    <label class="title-label">Welcome to Olsker Cupcake</label>
+                                </c:if>
+                                <c:if test="${sessionScope.user != null}">
+                                    <label class="title-label">Welcome to ${sessionScope.user.email}</label>
+                                </c:if>
                             </div>
                             <div>
                                 <label class="text-label">Lorem ipsum dolor sit amet, consectetur adipiscing elit.

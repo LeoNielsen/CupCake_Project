@@ -50,7 +50,7 @@
                             <div class="dropdown-content">
                                 <a href="${pageContext.request.contextPath}/fc/profilepage">Profile</a>
                                 <a href="${pageContext.request.contextPath}/fc/orderpage">Order</a>
-                                <a>Sign out</a>
+                                <a href="${pageContext.request.contextPath}/fc/logoutcommand">Sign out</a>
                             </div>
                         </div>
                     </c:if>
@@ -75,7 +75,7 @@
             </li>
             <li style="float: left">
                 <c:if test="${sessionScope.user != null}">
-                    <label class="topnav-label" style="padding-left: 200px">snap@gmail.com</label>
+                    <label class="topnav-label" style="padding-left: 200px">Hello, ${sessionScope.user.firstname}</label>
                 </c:if>
             </li>
         </ul>
