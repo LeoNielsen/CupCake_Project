@@ -35,6 +35,11 @@ public class ShoppingCart {
         cupcakes.remove(cupcake);
         total-=cupcake.getTotal();
     }
+    public void remove(int idx) {
+        Cupcake cupcake = cupcakes.get(idx);
+        total-=cupcake.getTotal();
+        cupcakes.remove(idx);
+    }
 
     public ArrayList<Cupcake> getCupcakes() {
         return cupcakes;
