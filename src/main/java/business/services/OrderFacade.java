@@ -3,6 +3,7 @@ package business.services;
 import business.entities.Cupcake;
 import business.entities.Order;
 import business.entities.User;
+import business.exceptions.UserException;
 import business.persistence.Database;
 import business.persistence.OrderMapper;
 
@@ -21,6 +22,24 @@ public class OrderFacade {
         Order order = new Order(cupcakes,user,status, totalprice);
         orderMapper.saveOrder(order);
         return order;
+    }
+
+    public ArrayList<Order> getAllOrder(User user) throws UserException {
+        ArrayList<Order> orders = new ArrayList<>();
+        ArrayList<Integer> idorders = null;
+        try {
+            idorders = orderMapper.getOrderId(user.getId());
+            for(int i : idorders) {
+                ArrayList<Cupcake> cupcakes = orderMapper.getAllCupcake(i);
+                Order order = orderMapper.getAllOrdersUser(i, user, cupcakes);
+                orders.add(order);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        return orders;
     }
 
 

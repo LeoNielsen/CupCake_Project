@@ -4,6 +4,7 @@ import business.entities.Cupcake;
 import business.entities.Order;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CupcakeMapper {
@@ -36,9 +37,8 @@ public class CupcakeMapper {
                     throwables.printStackTrace();
                 }
             }
-            } catch(SQLException ex){
-                ex.printStackTrace();
-            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
-
 }

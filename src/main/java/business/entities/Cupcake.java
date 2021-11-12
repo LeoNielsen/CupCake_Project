@@ -15,6 +15,14 @@ public class Cupcake {
         total = price * quantity;
     }
 
+    public Cupcake(int id, Bottom bottom, Topping topping, int quantity) {
+        this.topping = topping;
+        this.bottom = bottom;
+        this.price = topping.getPrice() + bottom.getPrice();
+        this.quantity = quantity;
+        this.total = price * quantity;
+    }
+
     public Topping getTopping() {
         return topping;
     }

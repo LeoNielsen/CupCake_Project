@@ -20,6 +20,15 @@ public class Order {
         orderDate = new Timestamp(System.currentTimeMillis());
     }
 
+    public Order(int id, ArrayList<Cupcake> cupcakes, User user, String status, Timestamp orderDate, float totalPrice) {
+        this.id = id;
+        this.cupcakes = cupcakes;
+        this.user = user;
+        this.status = status;
+        this.orderDate = orderDate;
+        this.totalPrice = totalPrice;
+    }
+
     public int getId() {
         return id;
     }
