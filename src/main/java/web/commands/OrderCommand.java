@@ -2,13 +2,13 @@ package web.commands;
 
 import business.entities.Order;
 import business.entities.ShoppingCart;
-import business.persistence.OrderMapper;
 import business.services.CupcakeFacade;
 import business.services.OrderFacade;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 public class OrderCommand extends CommandProtectedPage{
 
@@ -26,12 +26,20 @@ public class OrderCommand extends CommandProtectedPage{
 
         HttpSession session = request.getSession();
 
+
+        ArrayList<Order> orders = (ArrayList<Order>) session.getAttribute("orderlist");
+        if (orders == null){
+            orders = new ArrayList<>();
+        }
+
         ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
 
         String status = "Pending";
         Order order = orderFacade.saveOrder(cart.getCupcakes(), cart.getUser(), status, cart.getTotal());
         cupcakeFacade.saveCupcakes(order);
+        orders.add(order);
 
+        session.setAttribute("orderlist", orders);
         session.setAttribute("status", order);
 
         return pageToShow;

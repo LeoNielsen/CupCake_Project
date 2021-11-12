@@ -30,6 +30,10 @@ public class LoginCommand extends CommandUnprotectedPage {
         try {
             User user = userFacade.login(email, password);
             ArrayList<Order> orders = orderFacade.getAllOrder(user);
+            if(orders == null){
+                orders = new ArrayList<>();
+            }
+
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
             session.setAttribute("role", user.getRole());

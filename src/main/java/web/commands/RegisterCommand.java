@@ -1,22 +1,28 @@
 package web.commands;
 
+import business.entities.Order;
+import business.entities.ShoppingCart;
 import business.entities.User;
 import business.persistence.Database;
+import business.services.OrderFacade;
 import business.services.UserFacade;
 import business.exceptions.UserException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 public class RegisterCommand extends CommandUnprotectedPage
 {
     private UserFacade userFacade;
+    private OrderFacade orderFacade;
 
     public RegisterCommand(String pageToShow)
     {
         super(pageToShow);
         userFacade = new UserFacade(database);
+        orderFacade = new OrderFacade(database);
     }
 
     @Override
@@ -36,13 +42,32 @@ public class RegisterCommand extends CommandUnprotectedPage
         if (password1.equals(password2))
         {
             User user = userFacade.createUser(email, password1,firstname,lastname,streetname,housenr,zipcode,city,phonenr);
+            user.setRole("customer");
             HttpSession session = request.getSession();
 
             session.setAttribute("email", email);
             session.setAttribute("user", user);
             session.setAttribute("role", user.getRole());
             session.setAttribute("firstname", user.getFirstname());
-            return user.getRole() + "page";
+
+            ShoppingCart cart = (ShoppingCart) session.getAttribute("cart");
+            if (cart == null){
+                cart = new ShoppingCart();
+            }
+
+            cart.setUser(user);
+
+            session.setAttribute("cart", cart);
+
+
+            ArrayList<Order> orders = orderFacade.getAllOrder(user);
+            if(orders == null){
+                orders = new ArrayList<>();
+            }
+
+            session.setAttribute("orderlist",orders);
+
+            return REDIRECT_INDICATOR + "index";
         }
         else
         {
