@@ -10,9 +10,9 @@
     </jsp:attribute>
     <jsp:body>
         <div class="grey-large-container">
-            <div class="large-box">
+            <div class="large-box" style="padding: 0">
                 <div class="col-2-grid" style="box-sizing: border-box; gap: 20px; width: 100%">
-                    <div style="box-sizing: border-box; width: 100%; padding: 25px; background-color: white">
+                    <div style="box-sizing: border-box; width: 100%; padding: 50px; background-color: white">
                         <div class="large-title-grid-element">
                             <div class="left-text">
                                 <h1>Find us</h1>
@@ -44,7 +44,7 @@
                                 Go back to home</a>
                         </div>
                     </div>
-                    <div style="box-sizing: border-box; background-color: #3C1460; padding: 25px">
+                    <div style="box-sizing: border-box; background-color: #3C1460; padding: 50px">
                         <div class="white-text">
                             <div class="large-title-grid-element" style="padding-top: 20px">
                                 <div class="center-text">
