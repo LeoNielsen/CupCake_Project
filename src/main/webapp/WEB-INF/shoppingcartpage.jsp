@@ -27,41 +27,46 @@
                             </c:if>
                         </div>
                     </div>
-                    <c:if test="${sessionScope.cartlist == null}">
-                        <div class="title-container">
-                            <h4 style="font-weight: normal">Your cart is empty</h4>
+                    <c:if test="${sessionScope.cartlist == null || sessionScope.cartlist.size() == 0}">
+                        <div class="center-grid-element">
+                            <div class="title-container">
+                                <h4 style="font-weight: normal">Your cart is empty</h4>
+                            </div>
                         </div>
                     </c:if>
-                    <c:if test="${sessionScope.cartlist != null}">
-                        <table class="center-grid-element">
-                            <tr class="table-labels">
-                                <th>PRODUCT DETAILS</th>
-                                <th>QUANTITY</th>
-                                <th>COST</th>
-                                <th>TOTAL</th>
-                                <th></th>
-                            </tr>
-                            <c:set var="number" value="-1"></c:set>
-                            <c:forEach items="${sessionScope.cart.cupcakes}" var="cupcake">
-                                <tr>
-                                    <th>
-                                        <div class="left-grid">
-                                            <h4>${cupcake.topping.name} cupcake</h4>
-                                            <h5>with ${cupcake.bottom.name} topping</h5>
-                                        </div>
-                                    </th>
-                                    <th><h4>${cupcake.quantity}</h4></th>
-                                    <th><h4>${cupcake.price}</h4></th>
-                                    <th><h4>${cupcake.total}</h4></th>
-                                    <th>
-                                        <form action="${pageContext.request.contextPath}/fc/removefromcartcommand" method="post">
-                                            <input type="hidden" name="cupcake" value="${number + 1}">
-                                            <button class="remove-button"><i class="fas fa-remove"></i></button>
-                                        </form>
-                                    </th>
+                    <c:if test="${sessionScope.cartlist != null && sessionScope.cartlist.size() != 0}">
+                        <div class="center-grid-element">
+                            <table class="collapse-table" >
+                                <tr class="table-labels">
+                                    <th class="left-text">PRODUCT DETAILS</th>
+                                    <th>QUANTITY</th>
+                                    <th>COST</th>
+                                    <th>TOTAL</th>
+                                    <th></th>
                                 </tr>
-                            </c:forEach>
-                        </table>
+                                <c:set var="number" value="-1"></c:set>
+                                <c:forEach items="${sessionScope.cartlist}" var="cupcake">
+                                    <tr>
+                                        <th>
+                                            <div class="left-grid">
+                                                <h4>${cupcake.topping.name} cupcake</h4>
+                                                <h5>with ${cupcake.bottom.name} topping</h5>
+                                            </div>
+                                        </th>
+                                        <th><h4>${cupcake.quantity}</h4></th>
+                                        <th><h4>${cupcake.price}</h4></th>
+                                        <th><h4>${cupcake.total}</h4></th>
+                                        <th>
+                                            <form action="${pageContext.request.contextPath}/fc/removefromcartcommand" method="post">
+                                                <input type="hidden" name="cupcake" value="${number + 1}">
+                                                <button class="remove-button"><i class="fas fa-remove"></i></button>
+                                            </form>
+                                        </th>
+                                    </tr>
+                                </c:forEach>
+                            </table>
+                        </div>
+
                     </c:if>
 
                     <div class="bottom-section">
