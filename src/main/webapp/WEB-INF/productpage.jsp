@@ -45,7 +45,7 @@
                             <div class="title-grid-element">
                                 <div class="left-text">
                                     <h2>Bottoms <a class="red-button"
-                                                   href="${pageContext.request.contextPath}/fc/editprofile"><i
+                                                   href="${pageContext.request.contextPath}/fc/editproductpage"><i
                                             class="fas fa-edit"></i></a></h2>
                                 </div>
                             </div>
