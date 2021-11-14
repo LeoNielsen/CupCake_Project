@@ -29,7 +29,7 @@
                     </div>
                     <c:if test="${sessionScope.cartlist == null || sessionScope.cartlist.size() == 0}">
                         <div class="center-grid-element">
-                            <div class="title-container">
+                            <div class="center-text" style="padding: 50px">
                                 <h4 style="font-weight: normal">Your cart is empty</h4>
                             </div>
                         </div>
@@ -83,7 +83,7 @@
                             <h1>Order summary</h1>
                         </div>
                         <div class="white-text">
-                            <div class="row-3-grid">
+                            <div class="row-2-grid">
                                 <div>
                                     <h4>TOTAL:</h4>
                                     <c:if test="${sessionScope.cart != null}">
@@ -93,17 +93,7 @@
                                         <h2>0.00 kr.</h2>
                                     </c:if>
                                 </div>
-                                <div>
-                                    <label style="font-weight: bold" for="paymentmethod">How would you like to
-                                        pay?</label>
-                                    <div style="padding-bottom: 2px">
-                                    </div>
-                                    <select name="paymentmethod" id="paymentmethod">
-                                        <option value="">Pay now</option>
-                                        <option value="">Pay in shop</option>
-                                    </select>
-                                </div>
-                                <div style="padding-top: 20px">
+                                <div style="padding-top: 50px">
                                     <input class="green-large-button" type="submit" value="Make order">
                                 </div>
                             </div>

@@ -407,7 +407,7 @@ th {
 }
 
 .collapse-table tr {
-    border-bottom: 1px solid #EAEAEA;
+    border-bottom: 1px solid #CFCFCF;
 
 }
 
@@ -719,7 +719,7 @@ th {
 }
 
 .shopping-cart-container .shopping-cart-section, .shopping-cart-container .order-cart-section {
-    padding: 25px;
+    padding: 50px;
 }
 
 .shopping-cart-section {
