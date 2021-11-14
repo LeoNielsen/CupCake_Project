@@ -43,6 +43,7 @@ public abstract class Command
         commands.put("customerdetailspage", new CommandUnprotectedPage("customerdetailspage")); //TODO: ændre to protected
         commands.put("orderdetailspage", new CommandUnprotectedPage("orderdetailspage")); //TODO: ændre to protected
         commands.put("paymentpage", new CommandUnprotectedPage("paymentpage")); //TODO: ændre to protected
+        commands.put("productpage", new CommandUnprotectedPage("productpage")); //TODO: ændre to protected
     }
 
     public static Command fromPath(
