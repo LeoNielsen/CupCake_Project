@@ -12,7 +12,7 @@
     <jsp:body>
         <div class="grey-large-container">
             <div class="white-large-box">
-                <div class="row-4-grid" style="gap: 10px">
+                <div class="row-3-grid" style="gap: 10px">
                     <div class="large-title-grid-element">
                         <div class="left-text">
                             <h1><i class="fas">&#xf2bd;</i> snape@gmail.com</h1>
@@ -20,14 +20,11 @@
                         </div>
                     </div>
                     <div>
-                        <!--TODO: settings, search field-->
-                    </div>
-                    <div>
                         <div class="left-text">
                             <div class="title-grid-element" style="display: inline">
                                 <h2>Details <a class="red-button"
                                                href="${pageContext.request.contextPath}/fc/editprofile"><i
-                                        class='fas fa-edit'></i></a></h2>
+                                        class="fas fa-edit"></i></a></h2>
 
                             </div>
                         </div>
@@ -88,7 +85,7 @@
                                 <th><h3>##-##-####</h3></th>
                                 <th><h3>Processing</h3></th>
                                 <th><a class="purple-button"
-                                       href="${pageContext.request.contextPath}/fc/customerdetailspage"
+                                       href="${pageContext.request.contextPath}/fc/orderdetailspage"
                                        style="padding: 10px 10px">See more</a></th>
                             </tr>
                         </table>
