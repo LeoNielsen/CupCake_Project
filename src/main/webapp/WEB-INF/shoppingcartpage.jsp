@@ -36,7 +36,7 @@
                     </c:if>
                     <c:if test="${sessionScope.cartlist != null && sessionScope.cartlist.size() != 0}">
                         <div class="center-grid-element">
-                            <table class="collapse-table" >
+                            <table class="collapse-table">
                                 <tr class="table-labels">
                                     <th class="left-text">PRODUCT DETAILS</th>
                                     <th>QUANTITY</th>
@@ -49,15 +49,16 @@
                                     <tr>
                                         <th>
                                             <div class="left-grid">
-                                                <h4>${cupcake.topping.name} cupcake</h4>
-                                                <h5>with ${cupcake.bottom.name} topping</h5>
+                                                <h3>${cupcake.topping.name} cupcake</h3>
+                                                <h4>with ${cupcake.bottom.name} topping</h4>
                                             </div>
                                         </th>
-                                        <th><h4>${cupcake.quantity}</h4></th>
-                                        <th><h4>${cupcake.price}</h4></th>
-                                        <th><h4>${cupcake.total}</h4></th>
+                                        <th><h3>${cupcake.quantity}</h3></th>
+                                        <th><h3>${cupcake.price}</h3></th>
+                                        <th><h3>${cupcake.total}</h3></th>
                                         <th>
-                                            <form action="${pageContext.request.contextPath}/fc/removefromcartcommand" method="post">
+                                            <form action="${pageContext.request.contextPath}/fc/removefromcartcommand"
+                                                  method="post">
                                                 <input type="hidden" name="cupcake" value="${number + 1}">
                                                 <button class="remove-button"><i class="fas fa-remove"></i></button>
                                             </form>
@@ -93,7 +94,8 @@
                                     </c:if>
                                 </div>
                                 <div>
-                                    <label style="font-weight: bold" for="paymentmethod">How would you like to pay?</label>
+                                    <label style="font-weight: bold" for="paymentmethod">How would you like to
+                                        pay?</label>
                                     <div style="padding-bottom: 2px">
                                     </div>
                                     <select name="paymentmethod" id="paymentmethod">

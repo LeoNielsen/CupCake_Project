@@ -26,7 +26,7 @@ public abstract class Command
         commands.put("logoutcommand", new LogoutCommand(""));
         commands.put("registerpage", new CommandUnprotectedPage("registerpage"));
         commands.put("registercommand", new RegisterCommand(""));
-        commands.put("customerpage", new CommandProtectedPage("customerpage", "customer"));
+        commands.put("customerpage", new CommandUnprotectedPage("customerpage"));//TODO: ændre to protected
         commands.put("employeepage", new CommandProtectedPage("employeepage", "employee"));
         commands.put("finduspage", new CommandUnprotectedPage("finduspage"));
         commands.put("shoppingcartpage", new CommandUnprotectedPage("shoppingcartpage"));
@@ -40,6 +40,7 @@ public abstract class Command
         commands.put("orderpage", new CommandUnprotectedPage("orderpage")); //TODO: ændre to protected
         commands.put("profilepage", new CommandUnprotectedPage("profilepage")); //TODO: ændre to protected
         commands.put("editprofilepage", new CommandUnprotectedPage("editprofilepage")); //TODO: ændre to protected
+        commands.put("customerdetailspage", new CommandUnprotectedPage("customerdetailspage")); //TODO: ændre to protected
     }
 
     public static Command fromPath(

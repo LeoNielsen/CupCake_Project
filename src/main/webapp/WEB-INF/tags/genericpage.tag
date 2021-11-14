@@ -57,6 +57,8 @@
                 </c:if>
 
             </li>
+
+            <!--TODO: lav kun synlig for customer bruger-->
             <li>
                 <a class="white-button" href="${pageContext.request.contextPath}/fc/shoppingcartpage"><i
                         class="fas fa-shopping-cart"></i></a>
@@ -65,8 +67,20 @@
                 <a class="white-button" href="${pageContext.request.contextPath}/fc/finduspage"><h4>Find us</h4></a>
             </li>
             <li>
-                <a class="white-button" href="${pageContext.request.contextPath}/fc/cupcakecommand"><h4>Menu</h4></a>
+                <a class="white-button" href="${pageContext.request.contextPath}/fc/cupcakecommand"><h4>Shop</h4></a>
             </li>
+
+            <!--TODO: Lav kun synlig for admin bruger-->
+            <li>
+                <a class="white-button" href="${pageContext.request.contextPath}/fc/storepage"><i class="fas fa-store"></i></a>
+            </li>
+            <li>
+                <a class="white-button" href="${pageContext.request.contextPath}/fc/customerpage"><h4>Customers</h4></a>
+            </li>
+            <li>
+                <a class="white-button" href="${pageContext.request.contextPath}/fc/orderpage"><h4>Orders</h4></a>
+            </li>
+
             <li>
                 <c:if test="${addHomeLink == null }">
                     <a class="white-button" href="<%=request.getContextPath()%>"><h4>Home</h4></a>
@@ -74,7 +88,8 @@
             </li>
             <li style="float: left">
                 <c:if test="${sessionScope.user != null}">
-                    <label class="topnav-label" style="padding-left: 200px">Hello, ${sessionScope.user.firstname}</label>
+                    <label class="topnav-label"
+                           style="padding-left: 200px">Hello, ${sessionScope.user.firstname}</label>
                 </c:if>
             </li>
         </ul>

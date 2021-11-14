@@ -4,36 +4,55 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Homepage
+         Customers
     </jsp:attribute>
     <jsp:attribute name="footer">
     </jsp:attribute>
 
     <jsp:body>
-        <!-- IMAGE BANNER -->
-        <div class="img-container" style="background-image: url('${pageContext.request.contextPath}images/img.png')">
-            <div class="large-container">
-                <div class="section">
-                    <div class="white-text">
+        <div class="grey-large-container">
+            <div class="white-large-box">
+                <div class="row-3-grid" style="gap: 20px">
+                    <div class="large-title-grid-element">
                         <div class="left-text">
-                            <div class="small-title-p">
-                                <label class="title-label">Welcome to ${sessionScope.user.email}</label>
-                            </div>
-                            <div>
-                                <label class="text-label">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                    Etiam semper diam at erat
-                                    pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, consequat
-                                    gravida libero
-                                    rhoncus</label>
-                            </div>
+                            <h1>Customers</h1>
                         </div>
                     </div>
-                    <div class="top-p">
-                        <a class="white-small-button" href="${pageContext.request.contextPath}/fc/orderpage"><h4>See
-                            more</h4></a>
+                    <div>
+                        <!--TODO: settings, search field-->
+                    </div>
+                    <div>
+                        <table class="collapse-table">
+                            <tr class="table-labels">
+                                <th class="left-text">CUSTOMER</th>
+                                <th>FIRST NAME</th>
+                                <th>LAST NAME</th>
+                                <th>Phone</th>
+                                <th>Address</th>
+                                <th>ORDER TOTAL</th>
+                                <th></th>
+                            </tr>
+                            <tr>
+                                <th class="left-text"><h3>snap@gmail.com</h3></th>
+                                <th><h3>Serverus</h3></th>
+                                <th><h3>Snape</h3></th>
+                                <th><h3>11223344</h3></th>
+                                <th><h3>Hogwarts, Tårnværelse 501</h3></th>
+                                <th><h3>51</h3></th>
+                                <th><a class="purple-button" href="${pageContext.request.contextPath}/fc/customerdetailspage" style="padding: 10px 5px">See more</a></th>
+                            </tr>
+                            <tr>
+                                <th class="left-text"><h3>snap@gmail.com</h3></th>
+                                <th><h3>Serverus</h3></th>
+                                <th><h3>Snape</h3></th>
+                                <th><h3>11223344</h3></th>
+                                <th><h3>Hogwarts, Tårnværelse 501</h3></th>
+                                <th><h3>51</h3></th>
+                                <th><a class="purple-button" href="${pageContext.request.contextPath}/fc/customerdetailspage" style="padding: 10px 5px">See more</a></th>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-
             </div>
         </div>
     </jsp:body>

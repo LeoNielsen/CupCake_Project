@@ -380,7 +380,6 @@ table .table-labels {
 }
 
 th {
-    padding: 10px;
 }
 
 
@@ -392,17 +391,26 @@ th {
     background-color: white;
     border-top: 1px solid  #CFCFCF;
     border-bottom: 1px solid #CFCFCF;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 15px;
     color: black;
 }
 
-.collapse-table th {
+.collapse-table .table-labels th {
+    padding: 20px 0 20px 0;
+}
 
+.collapse-table th h3, .collapse-table th h4{
+    font-weight: normal;
+}
+
+.collapse-table th {
+    padding: 35px 0 35px 0px;
 }
 
 .collapse-table tr {
     border-bottom: 1px solid #EAEAEA;
+
 }
 
 
@@ -558,12 +566,22 @@ th {
     background-color: transparent;
     border: none;
     color: #3D3D3D;
-    padding: 10px 24px;
 }
 
 .remove-button:hover {
     color: red;
     cursor: pointer;
+}
+
+.red-button {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    color: black;
+}
+
+.red-button:hover {
+    color: red;
 }
 
 /* ----- dropdown ----- */
@@ -653,11 +671,26 @@ th {
 }
 
 .center-container {
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: auto auto auto;
     padding: 200px 50px 200px 50px;
     background-color: #ccc;
+    border: 1px solid black;
 }
+
+.list-container {
+    box-sizing: border-box;
+    grid-column: 2;
+    display: grid;
+    border: 1px solid pink;
+    grid-template-rows: auto auto auto;
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    padding: 25px;
+}
+
 
 
 .shopping-cart-container {
