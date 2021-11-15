@@ -3,7 +3,6 @@ package web.commands;
 import business.entities.Order;
 import business.entities.ShoppingCart;
 import business.entities.User;
-import business.persistence.Database;
 import business.services.OrderFacade;
 import business.services.UserFacade;
 import business.exceptions.UserException;
@@ -62,7 +61,7 @@ public class RegisterCommand extends CommandUnprotectedPage
             session.setAttribute("cart", cart);
 
 
-            ArrayList<Order> orders = orderFacade.getAllOrder(user);
+            ArrayList<Order> orders = orderFacade.getAllUserOrders(user);
             if(orders == null){
                 orders = new ArrayList<>();
             }

@@ -29,7 +29,7 @@ public class LoginCommand extends CommandUnprotectedPage {
 
         try {
             User user = userFacade.login(email, password);
-            ArrayList<Order> orders = orderFacade.getAllOrder(user);
+            ArrayList<Order> orders = orderFacade.getAllUserOrders(user);
             if(orders == null){
                 orders = new ArrayList<>();
             }

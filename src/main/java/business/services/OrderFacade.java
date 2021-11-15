@@ -24,7 +24,7 @@ public class OrderFacade {
         return order;
     }
 
-    public ArrayList<Order> getAllOrder(User user) throws UserException {
+    public ArrayList<Order> getAllUserOrders(User user) throws UserException {
         ArrayList<Order> orders = new ArrayList<>();
         ArrayList<Integer> idOrders;
         try {
@@ -40,6 +40,19 @@ public class OrderFacade {
 
 
         return orders;
+    }
+
+    public ArrayList<Order> getAllOrders(ArrayList<User> users) throws UserException
+    {
+        ArrayList<Order> orders = new ArrayList<>();
+        for (User user : users)
+        {
+
+            orders.addAll(getAllUserOrders(user));
+        }
+
+        return orders;
+
     }
 
 

@@ -37,7 +37,8 @@ public abstract class Command
         commands.put("ordercommand", new OrderCommand("orderrecievedpage","customer"));
         commands.put("paymentcommand", new PaymentCommand(""));
         commands.put("orderrecievedpage", new CommandProtectedPage("orderrecievedpage","customer"));
-        commands.put("orderpage", new CommandUnprotectedPage("orderpage")); //TODO: ændre to protected
+        commands.put("allorderpage", new OrderListCommand("", "employee"));
+        commands.put("orderpage", new CommandUnprotectedPage( "orderpage"));
         commands.put("profilepage", new CommandUnprotectedPage("profilepage")); //TODO: ændre to protected
         commands.put("editprofilepage", new CommandUnprotectedPage("editprofilepage")); //TODO: ændre to protected
         commands.put("customerdetailspage", new CommandUnprotectedPage("customerdetailspage")); //TODO: ændre to protected

@@ -81,7 +81,7 @@
                 <a class="white-button" href="${pageContext.request.contextPath}/fc/customerpage"><h4>Customers</h4></a>
             </li>
             <li>
-                <a class="white-button" href="${pageContext.request.contextPath}/fc/orderpage"><h4>Orders</h4></a>
+                <a class="white-button" href="${pageContext.request.contextPath}/fc/allorderpage"><h4>Orders</h4></a>
             </li>
             </c:if>
 
