@@ -59,6 +59,7 @@
             </li>
 
             <!--TODO: lav kun synlig for customer bruger-->
+            <c:if test="${sessionScope.user.role.equals('customer')}">
             <li>
                 <a class="white-button" href="${pageContext.request.contextPath}/fc/shoppingcartpage"><i
                         class="fas fa-shopping-cart"></i></a>
@@ -69,8 +70,10 @@
             <li>
                 <a class="white-button" href="${pageContext.request.contextPath}/fc/cupcakecommand"><h4>Shop</h4></a>
             </li>
+            </c:if>
 
             <!--TODO: Lav kun synlig for admin bruger-->
+            <c:if test="${sessionScope.user.role.equals('employee')}">
             <li>
                 <a class="white-button" href="${pageContext.request.contextPath}/fc/productpage"><i class="fas fa-store"></i></a>
             </li>
@@ -80,6 +83,7 @@
             <li>
                 <a class="white-button" href="${pageContext.request.contextPath}/fc/orderpage"><h4>Orders</h4></a>
             </li>
+            </c:if>
 
             <li>
                 <c:if test="${addHomeLink == null }">

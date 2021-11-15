@@ -1,5 +1,6 @@
 package business.persistence;
 
+import business.entities.Admin;
 import business.exceptions.UserException;
 import business.entities.User;
 

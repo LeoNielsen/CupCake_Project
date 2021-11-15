@@ -1,6 +1,7 @@
 package business.persistence;
 
 import business.entities.*;
+import business.exceptions.UserException;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -106,6 +107,30 @@ public class OrderMapper {
             }
         } catch (SQLException throwables) {
             throw new Exception("Could not find users");
+        }
+    }
+
+    public int deleteOrder(int orderId) throws UserException
+    {
+        try (Connection connection = database.connect())
+        {
+            String sql = "DELETE FROM user_order " +
+                    "WHERE orderid = ? AND " +
+                    "exercise_id NOT IN (SELECT exercise_id FROM bmi_entry)";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql))
+            {
+                ps.setInt(1, orderId);
+                int rowsAffected = ps.executeUpdate();
+                return rowsAffected;
+
+            } catch (SQLException ex)
+            {
+                throw new UserException(ex.getMessage());
+            }
+        } catch (SQLException ex)
+        {
+            throw new UserException(ex.getMessage());
         }
     }
 
