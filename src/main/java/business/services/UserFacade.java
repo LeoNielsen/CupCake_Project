@@ -6,6 +6,7 @@ import business.persistence.UserMapper;
 import business.exceptions.UserException;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class UserFacade
 {
@@ -31,6 +32,11 @@ public class UserFacade
     public boolean updateBalance(int userId, float balance)throws SQLException
     {
         return userMapper.updateBalance(userId, balance);
+    }
+
+    public ArrayList<User> getAllusers() throws UserException
+    {
+        return userMapper.getAllUsers();
     }
 
 }

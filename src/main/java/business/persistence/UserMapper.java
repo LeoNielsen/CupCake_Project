@@ -108,7 +108,7 @@ public class UserMapper
         return false;
     }
 
-    public ArrayList<User> getAllUsers() throws Exception {
+    public ArrayList<User> getAllUsers() throws UserException {
         ArrayList<User> users = new ArrayList<>();
 
         try (Connection connection = database.connect()) {
@@ -135,10 +135,10 @@ public class UserMapper
                 }
                 return users;
             } catch (Exception e) {
-                throw new Exception("Could not find users");
+                throw new UserException("Could not find users");
             }
         } catch (SQLException throwables) {
-            throw new Exception("Could not find users");
+            throw new UserException("Could not find users");
         }
     }
 

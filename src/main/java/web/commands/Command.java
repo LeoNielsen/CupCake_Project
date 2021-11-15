@@ -26,7 +26,7 @@ public abstract class Command
         commands.put("logoutcommand", new LogoutCommand(""));
         commands.put("registerpage", new CommandUnprotectedPage("registerpage"));
         commands.put("registercommand", new RegisterCommand(""));
-        commands.put("customerpage", new CommandUnprotectedPage("customerpage"));//TODO: ændre to protected
+        commands.put("customerpage", new CustomerCommand("", "employee"));
         commands.put("employeepage", new CommandProtectedPage("employeepage", "employee"));
         commands.put("finduspage", new CommandUnprotectedPage("finduspage"));
         commands.put("shoppingcartpage", new CommandUnprotectedPage("shoppingcartpage"));

@@ -37,24 +37,18 @@
                                 <th>ORDER TOTAL</th>
                                 <th></th>
                             </tr>
+                            <c:forEach var="userinf" items="${sessionScope.users}">
                             <tr>
-                                <th class="left-text"><h3>snap@gmail.com</h3></th>
-                                <th><h3>Serverus</h3></th>
-                                <th><h3>Snape</h3></th>
-                                <th><h3>11223344</h3></th>
-                                <th><h3>Hogwarts, Tårnværelse 501</h3></th>
-                                <th><h3>51</h3></th>
+                                <th class="left-text"><h3>${userinf.email}</h3></th>
+                                <th><h3>${userinf.firstname}</h3></th>
+                                <th><h3>${userinf.lastname}</h3></th>
+                                <th><h3>${userinf.phoneNr}</h3></th>
+                                <th><h3>${userinf.city} ${userinf.zipcode}, ${userinf.streename} ${userinf.houseNr}</h3></th>
+                                <th><h3>51</h3></th><%-- todo get order total --%>
                                 <th><a class="purple-button" href="${pageContext.request.contextPath}/fc/customerdetailspage" style="padding: 10px 5px">See more</a></th>
                             </tr>
-                            <tr>
-                                <th class="left-text"><h3>snap@gmail.com</h3></th>
-                                <th><h3>Serverus</h3></th>
-                                <th><h3>Snape</h3></th>
-                                <th><h3>11223344</h3></th>
-                                <th><h3>Hogwarts, Tårnværelse 501</h3></th>
-                                <th><h3>51</h3></th>
-                                <th><a class="purple-button" href="${pageContext.request.contextPath}/fc/customerdetailspage" style="padding: 10px 5px">See more</a></th>
-                            </tr>
+                            </c:forEach>
+
                         </table>
                     </div>
                 </div>
