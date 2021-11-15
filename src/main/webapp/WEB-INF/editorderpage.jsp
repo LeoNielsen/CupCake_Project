@@ -21,7 +21,7 @@
                         <div class="row-2-grid">
                             <div>
                                 <div class="title-grid-element" style="padding-bottom: 10px">
-                                    <h3 style="font-weight: bold">Order #1234</h3>
+                                    <h3 style="font-weight: bold">Nr. 1234</h3>
                                 </div>
                                 <label style="font-weight: bold" for="status">Change status</label><br>
                                 <select style="max-width: 200px" name="status" id="status">

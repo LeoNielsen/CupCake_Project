@@ -12,12 +12,11 @@
     <jsp:body>
         <div class="grey-large-container">
             <div class="white-large-box">
-                <div class="row-4-grid" style="gap: 10px">
-
+                <div class="row-2-grid" style="gap: 10px">
                     <div class="col-2-grid">
                         <div class="large-title-grid-element">
                             <div class="left-text">
-                                <h1>${sessionScope.seemoreorder.id}</h1>
+                                <h1>Nr. ${sessionScope.seemoreorder.id}</h1>
                                 <h3><i class="fas">&#xf328;</i> Order details</h3>
                             </div>
                         </div>
@@ -27,14 +26,15 @@
                         </div>
                     </div>
                     <div>
-                        <!--TODO: settings, search field-->
-                    </div>
-                    <div>
                         <div class="left-text">
                             <div class="title-grid-element">
                                 <div class="col-3-grid">
                                     <div class="left-grid">
-                                        <h2>Order items</h2>
+                                        <h2>Order items
+                                        <!--TODO: if employee, skal den linke til edit siden -->
+                                            <a class="red-button" href="${pageContext.request.contextPath}/fc/editorderpage"><i
+                                                class="fas fa-edit"></i></a>
+                                        </h2>
                                     </div>
                                     <div class="right-grid">
                                         <h3>${sessionScope.seemoreorder.totalItems} Total</h3>

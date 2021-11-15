@@ -52,7 +52,7 @@
                                             <input type="hidden" name="order" value="${index = index + 1}">
                                             <input type="hidden" name="customerorderlist" value="true">
                                         <th><input type="submit" value="See more" class="purple-button"
-                                               style="padding: 10px 10px"></th>
+                                               style="padding: 10px 10px; width: 85px"></th>
                                         </form>
                                     </tr>
                             </c:forEach>

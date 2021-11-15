@@ -77,7 +77,12 @@
                                     </div>
                                 </div>
                                 <div style="padding-top: 50px">
-                                    <input class="green-large-button" type="submit" value="Add to cart">
+                                    <div class="row-2-grid" style="gap: 10px">
+                                        <input class="green-large-button" type="submit" value="Add to cart">
+                                        <a class="purple-no-fill-button" href="${pageContext.request.contextPath}/fc/shoppingcartpage">Go to cart <i
+                                                class="fas">&#xf061;</i></a>
+                                    </div>
+
                                 </div>
                             </div>
                         </form>

@@ -12,11 +12,43 @@
     <jsp:body>
         <div class="grey-large-container">
             <div class="white-large-box">
-                <div class="row-3-grid" style="gap: 20px">
+                <div class="row-4-grid" style="gap: 20px">
                     <div class="large-title-grid-element">
                         <div class="left-text">
                             <h1>Orders</h1>
                         </div>
+                    </div>
+                    <div>
+                        <div class="row-2-grid" style="padding-bottom: 20px">
+                            <div class="left-text">
+                                <h3>Status</h3>
+                            </div>
+                            <div class="center-flex">
+                                <div class="col-2-grid" style="width: 100%">
+                                    <div class="col-3-grid" style="width: 30%; gap: 10px">
+                                        <div>
+                                            <input class="purple-large-button" style="max-width: 100px" type="submit"
+                                                   value="In hold">
+                                        </div>
+                                        <div>
+                                            <input class="purple-large-button" style="max-width: 100px" type="submit"
+                                                   value="Proccessing">
+                                        </div>
+                                        <div>
+                                            <input class="purple-large-button" style="max-width: 100px" type="submit"
+                                                   value="Done">
+                                        </div>
+                                    </div>
+                                    <div class="right-flex">
+                                        <input class="purple-large-button" style="max-width: 100px" type="submit"
+                                               value="Show all">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
                     </div>
 
                     <div class="col-3-grid">
@@ -53,7 +85,8 @@
                                           method="post">
                                         <input type="hidden" name="order" value="${index = index + 1}">
                                         <input type="hidden" name="customerorderlist" value="false">
-                                        <th><input type="submit" value="see more" class="purple-button" style="padding: 10px 10px"></th>
+                                        <th><input type="submit" value="see more" class="purple-button"
+                                                   style="padding: 10px 10px; width: 85px"></th>
                                     </form>
                                 </tr>
 

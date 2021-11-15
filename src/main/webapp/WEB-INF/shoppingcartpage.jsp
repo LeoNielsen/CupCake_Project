@@ -71,9 +71,9 @@
                     </c:if>
 
                     <div class="bottom-section">
-                        <div class="left-grid">
-                            <a class="purple-small-button" href="${pageContext.request.contextPath}/fc/cupcakecommand">Go
-                                back to menu</a>
+                        <div class="left-grid" style="padding-top: 25px">
+                            <a class="purple-no-fill-button" href="${pageContext.request.contextPath}/fc/cupcakecommand"><i
+                                class="fas">&#xf060;</i> Continue shopping</a>
                         </div>
                     </div>
                 </div>

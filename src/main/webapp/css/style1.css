@@ -224,6 +224,12 @@ input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer
     align-items: center;
 }
 
+.left-flex {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
 .right-flex {
     display: flex;
     justify-content: right;
@@ -476,7 +482,7 @@ th h3, th h4 {
 
 
 /* ----- buttons ----- */
-.white-small-button, .white-button, .white-large-button, .purple-small-button, .purple-button,
+.white-small-button, .white-button, .white-large-button, .active-button, .purple-small-button, .purple-button,
 .purple-large-button, .green-large-button, .white-green-large-button, .red-large-button, .grey-large-button {
     font-size: 15px;
     text-align: center;
@@ -488,7 +494,7 @@ th h3, th h4 {
 
 }
 
-.white-small-button:hover, .white-button:hover, .white-large-button:hover, .purple-small-button:hover, .purple-button:hover,
+.white-small-button:hover, .white-button:hover, .white-large-button:hover, .active-button:hover, .purple-small-button:hover, .purple-button:hover,
 .purple-large-button:hover, .green-large-button:hover, .white-green-large-button:hover, .red-large-button:hover, .grey-large-button:hover {
     font-weight: bold;
     cursor: pointer;
@@ -506,7 +512,7 @@ th h3, th h4 {
     padding: 10px 24px;
 }
 
-.white-large-button, .purple-large-button, .green-large-button, .white-green-large-button, .red-large-button, .grey-large-button {
+.white-large-button, .active-button, .purple-large-button, .green-large-button, .white-green-large-button, .red-large-button, .grey-large-button {
     min-width: 200px;
     width: 100%;
     padding: 14px 24px;
@@ -522,12 +528,12 @@ th h3, th h4 {
     color: white;
 }
 
-.purple-small-button, .purple-button, .purple-large-button {
+.purple-small-button, .purple-button, .purple-large-button, .active-button{
     background-color: #7A15C7;
     color: white;
 }
 
-.purple-small-button:hover, .purple-button:hover, .purple-large-button:hover {
+.purple-small-button:hover, .purple-button:hover, .purple-large-button:hover, .active-button:hover {
     background-color: #3C1460;
 }
 
@@ -612,6 +618,10 @@ th h3, th h4 {
 
 .red-button:hover {
     color: red;
+}
+
+.active-button:active {
+    background-color: #069A41;
 }
 
 /* ----- dropdown ----- */
