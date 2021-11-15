@@ -33,7 +33,7 @@
                                 <th>FIRST NAME</th>
                                 <th>LAST NAME</th>
                                 <th>Phone</th>
-                                <th>Address</th>
+                                <th>Role</th>
                                 <th>ORDER TOTAL</th>
                                 <th></th>
                             </tr>
@@ -43,7 +43,8 @@
                                 <th><h3>${userinf.firstname}</h3></th>
                                 <th><h3>${userinf.lastname}</h3></th>
                                 <th><h3>${userinf.phoneNr}</h3></th>
-                                <th><h3>${userinf.city} ${userinf.zipcode}, ${userinf.streename} ${userinf.houseNr}</h3></th>
+                                <th><h3>${userinf.role}</h3></th>
+<%--                                <th><h3>${userinf.city} ${userinf.zipcode}, ${userinf.streename} ${userinf.houseNr}</h3></th>--%>
                                 <th><h3>51</h3></th><%-- todo get order total --%>
                                 <th><a class="purple-button" href="${pageContext.request.contextPath}/fc/customerdetailspage" style="padding: 10px 5px">See more</a></th>
                             </tr>
