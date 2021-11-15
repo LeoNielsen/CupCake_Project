@@ -59,7 +59,7 @@
             </li>
 
             <!--TODO: lav kun synlig for customer bruger-->
-            <c:if test="${sessionScope.user.role.equals('customer')}">
+            <c:if test="${sessionScope.user.role != 'employee'}">
             <li>
                 <a class="white-button" href="${pageContext.request.contextPath}/fc/shoppingcartpage"><i
                         class="fas fa-shopping-cart"></i></a>
