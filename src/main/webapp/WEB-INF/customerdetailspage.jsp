@@ -70,7 +70,6 @@
                         <table class="collapse-table">
                             <tr class="table-labels">
                                 <th class="left-text">ORDER</th>
-                                <th>CUSTOMER</th>
                                 <th>ITEMS</th>
                                 <th>TOTAL</th>
                                 <th>DATE</th>
@@ -80,7 +79,6 @@
                             <c:forEach var="order" items="${sessionScope.orderlist}">
                                 <tr>
                                     <th class="left-text"><h3>${order.id}</h3></th>
-                                    <th><h3>${order.user.email}</h3></th>
                                     <th><h3>${order.totalItems}</h3></th>
                                     <th><h3>${order.totalPrice} kr</h3></th>
                                     <th><h3>${order.orderDate}</h3></th>

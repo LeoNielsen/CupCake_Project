@@ -17,13 +17,13 @@
                     <div class="col-2-grid">
                         <div class="large-title-grid-element">
                             <div class="left-text">
-                                <h1># 1234</h1>
+                                <h1>${sessionScope.seemoreorder.id}</h1>
                                 <h3><i class="fas">&#xf328;</i> Order details</h3>
                             </div>
                         </div>
                         <div class="right-text">
                             <h2>Status</h2>
-                            <h3>Processing</h3>
+                            <h3>${sessionScope.seemoreorder.status}</h3>
                         </div>
                     </div>
                     <div>
@@ -37,7 +37,7 @@
                                         <h2>Order items</h2>
                                     </div>
                                     <div class="right-grid">
-                                        <h3>1 Total</h3>
+                                        <h3>${sessionScope.seemoreorder.totalItems} Total</h3>
                                     </div>
                                 </div>
                             </div>
@@ -46,18 +46,21 @@
                             <tr class="table-labels">
                                 <th class="left-text">PRODUCT DETAILS</th>
                                 <th>QUANTITY</th>
-                                <th>COST</th>
+                                <th>PRICE</th>
                                 <th>TOTAL</th>
                             </tr>
-                            <tr>
-                                <th class="left-text">
-                                    <h3>topping cupcake</h3>
-                                    <h4>with button topping</h4>
-                                </th>
-                                <th><h3>3</h3></th>
-                                <th><h3>30 kr</h3></th>
-                                <th><h3>90 kr</h3></th>
-                            </tr>
+
+                            <c:forEach var="cupcake" items="${sessionScope.seemoreorder.cupcakes}">
+                                <tr>
+                                    <th class="left-text">
+                                        <h3>${cupcake.bottom} cupcake</h3>
+                                        <h4>with ${cupcake.topping} topping</h4>
+                                    </th>
+                                    <th><h3>${cupcake.quantity}</h3></th>
+                                    <th><h3>${cupcake.price} kr</h3></th>
+                                    <th><h3>${cupcake.total} kr</h3></th>
+                                </tr>
+                            </c:forEach>
                         </table>
                     </div>
                 </div>

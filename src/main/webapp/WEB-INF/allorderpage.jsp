@@ -32,25 +32,29 @@
                             <tr class="table-labels">
                                 <th class="left-text">ORDER</th>
                                 <th>CUSTOMER</th>
+                                <th>PHONE</th>
                                 <th>ITEMS</th>
                                 <th>TOTAL</th>
                                 <th>DATE</th>
                                 <th>STATUS</th>
                                 <th></th>
                             </tr>
+                            <c:set var="index" value="-1"></c:set>
                             <c:forEach var="order" items="${sessionScope.allorders}">
-
-                                    <tr>
-                                        <th class="left-text"><h3>${order.id}</h3></th>
-                                        <th><h3>${order.user.email}</h3></th>
-                                        <th><h3>${order.totalItems}</h3></th>
-                                        <th><h3>${order.totalPrice} kr</h3></th>
-                                        <th><h3>${order.orderDate}</h3></th>
-                                        <th><h3>${order.status}</h3></th>
-                                        <th><a class="purple-button"
-                                               href="${pageContext.request.contextPath}/fc/orderdetailspage"
-                                               style="padding: 10px 10px">See more</a></th>
-                                    </tr>
+                                <tr>
+                                    <th class="left-text"><h3>${order.id}</h3></th>
+                                    <th><h3>${order.user.email}</h3></th>
+                                    <th><h3>${order.user.phoneNr}</h3></th>
+                                    <th><h3>${order.totalItems}</h3></th>
+                                    <th><h3>${order.totalPrice} kr</h3></th>
+                                    <th><h3>${order.orderDate}</h3></th>
+                                    <th><h3>${order.status}</h3></th>
+                                    <form action="${pageContext.request.contextPath}/fc/orderdetailcommand"
+                                          method="post">
+                                        <input type="hidden" name="index" value="${index+1}">
+                                        <th><input type="submit" value="see more" class="purple-button" style="padding: 10px 10px"></th>
+                                    </form>
+                                </tr>
 
                             </c:forEach>
                         </table>
