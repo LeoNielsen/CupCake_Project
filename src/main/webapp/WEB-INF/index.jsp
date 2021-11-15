@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div class="top-p">
-                        <a class="white-small-button" href="${pageContext.request.contextPath}/fc/orderpage"><h4>See
+                        <a class="white-small-button" href="${pageContext.request.contextPath}/fc/editorderpage"><h4>See
                             more</h4></a>
                     </div>
                 </div>

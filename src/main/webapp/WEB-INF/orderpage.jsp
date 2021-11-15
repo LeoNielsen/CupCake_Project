@@ -4,61 +4,61 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Login page
+         Orders
     </jsp:attribute>
-
     <jsp:attribute name="footer">
     </jsp:attribute>
 
     <jsp:body>
         <div class="grey-large-container">
-            <div class="large-section">
-                <div class="row-1-grid">
-                    <div class="white-box">
-                        <div class="row-2-grid">
-                            <div class="box-content">
-                                <div class="l-bottom-p">
-                                    <div class="title-p">
-                                        <div class="center-text">
-                                            <h1>Your orders</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="center-flex"> <!--TODO: ressionscop, foreach..-->
-                                    <table>
-                                        <tr class="table-labels">
-                                            <th>ORDER</th>
-                                            <th>PRODUCT DETAILS</th>
-                                            <th>QUANTITY</th>
-                                            <th>PRICE</th>
-                                            <th>TOTAL</th>
-                                            <th>DATE</th>
-                                            <th>STATUS</th>
-                                        </tr>
-                                        <c:forEach var="order" items="${sessionScope.orderlist}">
-                                            <c:forEach var="cupcake" items="${order.cupcakes}">
-                                                <tr>
-                                                    <th>${order.id}</th>
-                                                    <th>
-                                                        <h4>${cupcake.bottom.name} cupcake</h4>
-                                                        <h5>with ${cupcake.topping.name} topping</h5>
-                                                    </th>
-                                                    <th>${cupcake.quantity}</th>
-                                                    <th>${cupcake.price} kr</th>
-                                                    <th>${cupcake.total} kr</th>
-                                                    <th>${order.orderDate}</th>
-                                                    <th>${order.status}</th>
-                                                </tr>
-                                            </c:forEach>
-                                        </c:forEach>
-
-                                    </table>
-                                </div>
-                            </div>
+            <div class="white-large-box">
+                <div class="row-3-grid" style="gap: 20px">
+                    <div class="large-title-grid-element">
+                        <div class="left-text">
+                            <h1>Orders</h1>
                         </div>
+                    </div>
+
+                    <div class="col-3-grid">
+                        <div class="left-grid">
+                            <h2>Orders</h2>
+                        </div>
+                        <div class="right-grid">
+                            <h3>1 Total</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <table class="collapse-table">
+                            <tr class="table-labels">
+                                <th class="left-text">ORDER</th>
+                                <th>CUSTOMER</th>
+                                <th>ITEMS</th>
+                                <th>TOTAL</th>
+                                <th>DATE</th>
+                                <th>STATUS</th>
+                                <th></th>
+                            </tr>
+                            <c:forEach var="order" items="${sessionScope.orderlist}">
+                                <c:forEach var="cupcake" items="${order.cupcakes}">
+                                    <tr>
+                                        <th class="left-text"><h3>${order.id}</h3></th>
+                                        <th><h3>snap@gmail.com</h3></th>
+                                        <th><h3>3</h3></th>
+                                        <th><h3>${cupcake.total} kr</h3></th>
+                                        <th><h3>${order.orderDate}</h3></th>
+                                        <th><h3>${order.status}</h3></th>
+                                        <th><a class="purple-button"
+                                               href="${pageContext.request.contextPath}/fc/orderdetailspage"
+                                               style="padding: 10px 10px">See more</a></th>
+                                    </tr>
+                                </c:forEach>
+                            </c:forEach>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
     </jsp:body>
+
 </t:genericpage>
+

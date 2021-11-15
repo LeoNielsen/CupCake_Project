@@ -18,8 +18,13 @@
                             <h1>Customers</h1>
                         </div>
                     </div>
-                    <div>
-                        <!--TODO: settings, search field-->
+                    <div class="col-3-grid">
+                        <div class="left-grid">
+                            <h2>Customers</h2>
+                        </div>
+                        <div class="right-grid">
+                            <h3>1 Total</h3>
+                        </div>
                     </div>
                     <div>
                         <table class="collapse-table">

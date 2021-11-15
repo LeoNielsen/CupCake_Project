@@ -1,16 +1,70 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Mie
-  Date: 14-11-2021
-  Time: 12:23
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-</body>
-</html>
+<t:genericpage>
+    <jsp:attribute name="header">
+         Order details
+    </jsp:attribute>
+    <jsp:attribute name="footer">
+    </jsp:attribute>
+
+    <jsp:body>
+        <div class="grey-large-container">
+            <div class="white-large-box">
+                <div class="row-4-grid" style="gap: 10px">
+
+                    <div class="col-2-grid">
+                        <div class="large-title-grid-element">
+                            <div class="left-text">
+                                <h1># 1234</h1>
+                                <h3><i class="fas">&#xf328;</i> Order details</h3>
+                            </div>
+                        </div>
+                        <div class="right-text">
+                            <h2>Status</h2>
+                            <h3>Processing</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <!--TODO: settings, search field-->
+                    </div>
+                    <div>
+                        <div class="left-text">
+                            <div class="title-grid-element">
+                                <div class="col-3-grid">
+                                    <div class="left-grid">
+                                        <h2>Order items</h2>
+                                    </div>
+                                    <div class="right-grid">
+                                        <h3>1 Total</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="collapse-table">
+                            <tr class="table-labels">
+                                <th class="left-text">PRODUCT DETAILS</th>
+                                <th>QUANTITY</th>
+                                <th>COST</th>
+                                <th>TOTAL</th>
+                            </tr>
+                            <tr>
+                                <th class="left-text">
+                                    <h3>topping cupcake</h3>
+                                    <h4>with button topping</h4>
+                                </th>
+                                <th><h3>3</h3></th>
+                                <th><h3>30 kr</h3></th>
+                                <th><h3>90 kr</h3></th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </jsp:body>
+
+</t:genericpage>
+
+

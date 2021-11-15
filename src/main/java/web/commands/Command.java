@@ -45,6 +45,7 @@ public abstract class Command
         commands.put("paymentpage", new CommandUnprotectedPage("paymentpage")); //TODO: ændre to protected
         commands.put("productpage", new CommandUnprotectedPage("productpage")); //TODO: ændre to protected
         commands.put("editproductpage", new CommandUnprotectedPage("editproductpage")); //TODO: ændre to protected
+        commands.put("editorderpage", new CommandUnprotectedPage("editorderpage")); //TODO: ændre to protected
     }
 
     public static Command fromPath(

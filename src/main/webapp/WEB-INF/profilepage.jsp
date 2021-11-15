@@ -42,7 +42,7 @@
                     </div>
                     <div style="padding-top: 35px">
                         <div class="col-2-grid" style="gap: 10px">
-                            <a class="red-large-button""
+                            <a class="red-large-button"
                             href="${pageContext.request.contextPath}/fc/editprofilepage">Delete profile<i
                                 style="font-size:15px; color: white; padding-left: 10px"
                                 class="far">&#xf2ed;</i></a>
