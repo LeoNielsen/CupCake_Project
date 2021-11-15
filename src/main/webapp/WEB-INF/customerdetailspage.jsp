@@ -76,6 +76,7 @@
                                 <th>STATUS</th>
                                 <th></th>
                             </tr>
+                            <c:set var="index" value="-1"></c:set>
                             <c:forEach var="order" items="${sessionScope.orderlist}">
                                 <tr>
                                     <th class="left-text"><h3>${order.id}</h3></th>
@@ -83,9 +84,12 @@
                                     <th><h3>${order.totalPrice} kr</h3></th>
                                     <th><h3>${order.orderDate}</h3></th>
                                     <th><h3>${order.status}</h3></th>
-                                    <th><a class="purple-button"
-                                           href="${pageContext.request.contextPath}/fc/orderdetailspage"
-                                           style="padding: 10px 10px">See more</a></th>
+                                    <form action="${pageContext.request.contextPath}/fc/orderdetailcommand" method="post">
+                                        <input type="hidden" name="order" value="${index = index + 1}">
+                                        <input type="hidden" name="customerorderlist" value="true">
+                                        <th><input type="submit" value="See more" class="purple-button"
+                                                   style="padding: 10px 10px"></th>
+                                    </form>
                                 </tr>
                             </c:forEach>
                         </table>

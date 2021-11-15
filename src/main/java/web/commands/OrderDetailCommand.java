@@ -20,8 +20,16 @@ public class OrderDetailCommand extends CommandUnprotectedPage{
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
         HttpSession session = request.getSession();
         int index = Integer.parseInt(request.getParameter("order"));
-        ArrayList<Order> orders = (ArrayList<Order>) session.getAttribute("allorders");
-        Order order = orders.get(index);
+        boolean isCustomerOrderList = Boolean.parseBoolean(request.getParameter("customerorderlist"));
+        ArrayList<Order> orders;
+        Order order;
+
+        if(isCustomerOrderList){
+            orders = (ArrayList<Order>) session.getAttribute("orderlist");
+        } else {
+            orders = (ArrayList<Order>) session.getAttribute("allorders");
+        }
+        order = orders.get(index);
         session.setAttribute("seemoreorder", order);
         return "orderdetailspage";
     }
