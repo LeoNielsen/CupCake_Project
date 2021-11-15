@@ -47,8 +47,8 @@
                                 <th><h3>${userinf.role}</h3></th>
 <%--                                <th><h3>${userinf.city} ${userinf.zipcode}, ${userinf.streename} ${userinf.houseNr}</h3></th>--%>
                                 <th><h3>${sessionScope.orderlist.size()}</h3></th><%-- todo get order total --%>
-                                <form action="${pageContext.request.contextPath}/fc/customerdetailspage" method="post">
-                                    <input type="hidden" value="${index+1}">
+                                <form action="${pageContext.request.contextPath}/fc/userdetailcommand" method="post">
+                                    <input type="hidden" name="index" value="${index+1}">
                                 <th><input type="submit" value="seemore" class="purple-button"  style="padding: 10px 5px"></th>
                                 </form>
                             </tr>

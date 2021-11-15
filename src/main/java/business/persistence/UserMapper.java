@@ -7,24 +7,19 @@ import business.entities.User;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class UserMapper
-{
+public class UserMapper {
     private Database database;
 
-    public UserMapper(Database database)
-    {
+    public UserMapper(Database database) {
         this.database = database;
     }
 
-    public void createUser(User user) throws UserException
-    {
+    public void createUser(User user) throws UserException {
         //TODO: fix address.
-        try (Connection connection = database.connect())
-        {
+        try (Connection connection = database.connect()) {
             String sql = "INSERT INTO users (email, password, role, account_balance, firstname, lastname, phone_nr, street_name, house_nr, user_zipcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
-            {
+            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 ps.setString(1, user.getEmail());
                 ps.setString(2, user.getPassword());
                 ps.setString(3, user.getRole());
@@ -40,31 +35,23 @@ public class UserMapper
                 ids.next();
                 int id = ids.getInt(1);
                 user.setId(id);
-            }
-            catch (SQLException ex)
-            {
+            } catch (SQLException ex) {
                 throw new UserException(ex.getMessage());
             }
-        }
-        catch (SQLException ex)
-        {
+        } catch (SQLException ex) {
             throw new UserException(ex.getMessage());
         }
     }
 
-    public User login(String email, String password) throws UserException
-    {
-        try (Connection connection = database.connect())
-        {
+    public User login(String email, String password) throws UserException {
+        try (Connection connection = database.connect()) {
             String sql = "SELECT * FROM users WHERE email=? AND password=?";
 
-            try (PreparedStatement ps = connection.prepareStatement(sql))
-            {
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ps.setString(2, password);
                 ps.setString(1, email);
                 ResultSet rs = ps.executeQuery();
-                if (rs.next())
-                {
+                if (rs.next()) {
                     String role = rs.getString("role");
                     String firstname = rs.getString("firstname");
                     String lastname = rs.getString("lastname");
@@ -74,26 +61,21 @@ public class UserMapper
                     String zipcode = rs.getString("user_zipcode");
                     int id = rs.getInt("id");
                     float balance = rs.getFloat("account_balance");
-                    return new User(id,email, password, role,balance, firstname, lastname, phonenr, streetname, housenr, zipcode);
-                } else
-                {
+                    return new User(id, email, password, role, balance, firstname, lastname, phonenr, streetname, housenr, zipcode);
+                } else {
                     throw new UserException("Could not validate user");
                 }
-            }
-            catch (SQLException ex)
-            {
+            } catch (SQLException ex) {
                 throw new UserException(ex.getMessage());
             }
-        }
-        catch (SQLException ex)
-        {
+        } catch (SQLException ex) {
             throw new UserException("Connection to database could not be established");
         }
     }
 
     public boolean updateBalance(int userId, float balance) throws SQLException {
         try (Connection connection = database.connect()) {
-            String sql = "UPDATE users "+
+            String sql = "UPDATE users " +
                     "SET account_balance = ? " +
                     "WHERE id = ? ";
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -142,4 +124,27 @@ public class UserMapper
         }
     }
 
+    public int getTotalUserOrderCount(User user) {
+        int orderCount = 0;
+
+        try (Connection connection = database.connect()) {
+            String sql = "select count(id_user) from user_order where id_user = ?";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ps.setInt(1, user.getId());
+                ResultSet rs = ps.executeQuery();
+
+                while (rs.next()) {
+                    orderCount = rs.getInt(1);
+                }
+
+                return orderCount;
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return orderCount;
+    }
 }

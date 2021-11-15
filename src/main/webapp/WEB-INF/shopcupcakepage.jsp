@@ -31,7 +31,7 @@
                     </div>
 
                     <div style="box-sizing: border-box; width: 100%">
-                        <form>
+                        <form action="${pageContext.request.contextPath}/fc/shopcupcakecommand" method="post">
                             <div class="row-3-grid">
                                 <div class="left-text">
                                     <div class="row-2-grid" style="padding-bottom: 25px">

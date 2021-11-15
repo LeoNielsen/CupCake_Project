@@ -17,7 +17,7 @@
                         <h1>Payment <i class="fas">&#xf09d;</i></h1>
                     </div>
                 </div>
-                <form action="${pageContext.request.contextPath}/fc/registercommand" method="post">
+                <form action="${pageContext.request.contextPath}/fc/ordercommand" method="post">
                     <div class="row-5-grid" style="gap: 45px">
                         <div>
                             <label style="font-size: 25px; color: #3D3D3D; font-weight: bold">Payment amount:</label> <br>

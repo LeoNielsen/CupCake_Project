@@ -30,7 +30,7 @@ public class UserDetailCommand extends CommandProtectedPage
         try
         {
             ArrayList<Order> orders = orderFacade.getAllUserOrders(user);
-            session.setAttribute("orderList", orders);
+            session.setAttribute("orderlist", orders);
         } catch (UserException e)
         {
             e.printStackTrace();

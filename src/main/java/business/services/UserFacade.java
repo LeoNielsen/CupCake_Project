@@ -39,4 +39,8 @@ public class UserFacade
         return userMapper.getAllUsers();
     }
 
+    public int getTotalUserOrderCount(User user){
+        return userMapper.getTotalUserOrderCount(user);
+    }
+
 }
