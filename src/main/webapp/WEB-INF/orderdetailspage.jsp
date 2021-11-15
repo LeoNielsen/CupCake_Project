@@ -53,8 +53,8 @@
                             <c:forEach var="cupcake" items="${sessionScope.seemoreorder.cupcakes}">
                                 <tr>
                                     <th class="left-text">
-                                        <h3>${cupcake.bottom} cupcake</h3>
-                                        <h4>with ${cupcake.topping} topping</h4>
+                                        <h3>${cupcake.bottom.name} cupcake</h3>
+                                        <h4>with ${cupcake.topping.name} topping</h4>
                                     </th>
                                     <th><h3>${cupcake.quantity}</h3></th>
                                     <th><h3>${cupcake.price} kr</h3></th>

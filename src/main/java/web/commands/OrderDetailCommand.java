@@ -19,7 +19,7 @@ public class OrderDetailCommand extends CommandUnprotectedPage{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
         HttpSession session = request.getSession();
-        int index = Integer.parseInt(request.getParameter("index"));
+        int index = Integer.parseInt(request.getParameter("order"));
         ArrayList<Order> orders = (ArrayList<Order>) session.getAttribute("allorders");
         Order order = orders.get(index);
         session.setAttribute("seemoreorder", order);

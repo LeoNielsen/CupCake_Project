@@ -51,7 +51,7 @@
                                     <th><h3>${order.status}</h3></th>
                                     <form action="${pageContext.request.contextPath}/fc/orderdetailcommand"
                                           method="post">
-                                        <input type="hidden" name="index" value="${index+1}">
+                                        <input type="hidden" name="order" value="${index = index + 1}">
                                         <th><input type="submit" value="see more" class="purple-button" style="padding: 10px 10px"></th>
                                     </form>
                                 </tr>

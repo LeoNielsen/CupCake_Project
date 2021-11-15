@@ -49,8 +49,8 @@
                                     <tr>
                                         <th>
                                             <div class="left-grid">
-                                                <h3>${cupcake.topping.name} cupcake</h3>
-                                                <h4>with ${cupcake.bottom.name} topping</h4>
+                                                <h3>${cupcake.bottom.name} cupcake</h3>
+                                                <h4>with ${cupcake.topping.name} topping</h4>
                                             </div>
                                         </th>
                                         <th><h3>${cupcake.quantity}</h3></th>
@@ -59,7 +59,7 @@
                                         <th>
                                             <form action="${pageContext.request.contextPath}/fc/removefromcartcommand"
                                                   method="post">
-                                                <input type="hidden" name="cupcake" value="${number + 1}">
+                                                <input type="hidden" name="cupcake" value="${number = number + 1}">
                                                 <button class="remove-button"><i class="fas fa-remove"></i></button>
                                             </form>
                                         </th>
