@@ -23,7 +23,7 @@
                             <h2>Customers</h2>
                         </div>
                         <div class="right-grid">
-                            <h3>1 Total</h3>
+                            <h3>${sessionScope.users.size()} Total</h3>
                         </div>
                     </div>
                     <div>
@@ -37,6 +37,7 @@
                                 <th>ORDER TOTAL</th>
                                 <th></th>
                             </tr>
+                            <c:set var="index" value="-1"></c:set>
                             <c:forEach var="userinf" items="${sessionScope.users}">
                             <tr>
                                 <th class="left-text"><h3>${userinf.email}</h3></th>
@@ -45,8 +46,11 @@
                                 <th><h3>${userinf.phoneNr}</h3></th>
                                 <th><h3>${userinf.role}</h3></th>
 <%--                                <th><h3>${userinf.city} ${userinf.zipcode}, ${userinf.streename} ${userinf.houseNr}</h3></th>--%>
-                                <th><h3>51</h3></th><%-- todo get order total --%>
-                                <th><a class="purple-button" href="${pageContext.request.contextPath}/fc/customerdetailspage" style="padding: 10px 5px">See more</a></th>
+                                <th><h3>${sessionScope.orderlist.size()}</h3></th><%-- todo get order total --%>
+                                <form action="${pageContext.request.contextPath}/fc/customerdetailspage" method="post">
+                                    <input type="hidden" value="${index+1}">
+                                <th><input type="submit" value="seemore" class="purple-button"  style="padding: 10px 5px"></th>
+                                </form>
                             </tr>
                             </c:forEach>
 

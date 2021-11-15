@@ -24,7 +24,7 @@
                             <h2>Orders</h2>
                         </div>
                         <div class="right-grid">
-                            <h3>1 Total</h3>
+                            <h3>${sessionScope.allorders.size()} Total</h3>
                         </div>
                     </div>
                     <div>
@@ -43,7 +43,7 @@
                                     <tr>
                                         <th class="left-text"><h3>${order.id}</h3></th>
                                         <th><h3>${order.user.email}</h3></th>
-                                        <th><h3>${order.cupcakes.size()}</h3></th>
+                                        <th><h3>${order.totalItems}</h3></th>
                                         <th><h3>${order.totalPrice} kr</h3></th>
                                         <th><h3>${order.orderDate}</h3></th>
                                         <th><h3>${order.status}</h3></th>

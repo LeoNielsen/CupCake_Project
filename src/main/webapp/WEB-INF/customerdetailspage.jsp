@@ -15,7 +15,7 @@
                 <div class="row-3-grid" style="gap: 10px">
                     <div class="large-title-grid-element">
                         <div class="left-text">
-                            <h1><i class="fas">&#xf2bd;</i> snape@gmail.com</h1>
+                            <h1><i class="fas">&#xf2bd;</i> ${sessionScope.seemoreuser.email}</h1>
                             <h3>Customer details</h3>
                         </div>
                     </div>
@@ -33,23 +33,23 @@
                             <div class="row-5-grid" style="gap: 25px">
                                 <div>
                                     <label class="small-title-label">First name</label><br>
-                                    <label>First name</label>
+                                    <label>${sessionScope.seemoreuser.firstname}</label>
                                 </div>
                                 <div>
                                     <label class="small-title-label">Last name</label><br>
-                                    <label>First name</label>
+                                    <label>${sessionScope.seemoreuser.lastname}</label>
                                 </div>
                                 <div>
                                     <label class="small-title-label">Phone number</label><br>
-                                    <label>First name</label>
+                                    <label>${sessionScope.seemoreuser.phoneNr}</label>
                                 </div>
                                 <div>
                                     <label class="small-title-label">City</label><br>
-                                    <label>city zipcode</label>
+                                    <label>${sessionScope.seemoreuser.city} ${sessionScope.seemoreuser.zipcode}</label>
                                 </div>
                                 <div>
                                     <label class="small-title-label">Address</label><br>
-                                    <label>streename houseNr</label>
+                                    <label>${sessionScope.seemoreuser.streename} ${sessionScope.seemoreuser.houseNr}</label>
                                 </div>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                                         <h2>Orders</h2>
                                     </div>
                                     <div class="right-grid">
-                                        <h3>1 Total</h3>
+                                        <h3>${sessionScope.orderlist.size()} Total</h3>
                                     </div>
                                 </div>
                             </div>
@@ -77,17 +77,19 @@
                                 <th>STATUS</th>
                                 <th></th>
                             </tr>
-                            <tr>
-                                <th class="left-text"><h3>snap@gmail.com</h3></th>
-                                <th><h3>snap@gmail.com</h3></th>
-                                <th><h3>3</h3></th>
-                                <th><h3>30 kr</h3></th>
-                                <th><h3>##-##-####</h3></th>
-                                <th><h3>Processing</h3></th>
-                                <th><a class="purple-button"
-                                       href="${pageContext.request.contextPath}/fc/orderdetailspage"
-                                       style="padding: 10px 10px">See more</a></th>
-                            </tr>
+                            <c:forEach var="order" items="${sessionScope.orderlist}">
+                                <tr>
+                                    <th class="left-text"><h3>${order.id}</h3></th>
+                                    <th><h3>${order.user.email}</h3></th>
+                                    <th><h3>${order.totalItems}</h3></th>
+                                    <th><h3>${order.totalPrice} kr</h3></th>
+                                    <th><h3>${order.orderDate}</h3></th>
+                                    <th><h3>${order.status}</h3></th>
+                                    <th><a class="purple-button"
+                                           href="${pageContext.request.contextPath}/fc/orderdetailspage"
+                                           style="padding: 10px 10px">See more</a></th>
+                                </tr>
+                            </c:forEach>
                         </table>
                     </div>
                 </div>

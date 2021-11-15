@@ -9,6 +9,7 @@ public class Order {
     private User user;
     private String status;
     private Timestamp orderDate;
+    private int totalItems;
 
     private float totalPrice;
 
@@ -18,6 +19,7 @@ public class Order {
         this.status = status;
         this.totalPrice = totalPrice;
         orderDate = new Timestamp(System.currentTimeMillis());
+        this.totalItems = getTotalItems();
     }
 
     public Order(int id, ArrayList<Cupcake> cupcakes, User user, String status, Timestamp orderDate, float totalPrice) {
@@ -27,6 +29,24 @@ public class Order {
         this.status = status;
         this.orderDate = orderDate;
         this.totalPrice = totalPrice;
+        this.totalItems = getTotalItems();
+    }
+
+    public void setTotalItems(int totalItems)
+    {
+        this.totalItems = totalItems;
+    }
+
+    public int getTotalItems()
+    {
+        int sum = 0;
+        for (Cupcake cupcake : cupcakes)
+        {
+            sum += cupcake.getQuantity();
+
+        }
+        return sum;
+
     }
 
     public int getId() {

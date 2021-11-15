@@ -24,7 +24,7 @@
                             <h2>Orders</h2>
                         </div>
                         <div class="right-grid">
-                            <h3>1 Total</h3>
+                            <h3>${sessionScope.orderlist.size()} Total</h3>
                         </div>
                     </div>
                     <div>
@@ -39,19 +39,17 @@
                                 <th></th>
                             </tr>
                             <c:forEach var="order" items="${sessionScope.orderlist}">
-                                <c:forEach var="cupcake" items="${order.cupcakes}">
                                     <tr>
                                         <th class="left-text"><h3>${order.id}</h3></th>
-                                        <th><h3>snap@gmail.com</h3></th>
-                                        <th><h3>3</h3></th>
-                                        <th><h3>${cupcake.total} kr</h3></th>
+                                        <th><h3>${order.user.email}</h3></th>
+                                        <th><h3>${order.totalItems}</h3></th>
+                                        <th><h3>${order.totalPrice} kr</h3></th>
                                         <th><h3>${order.orderDate}</h3></th>
                                         <th><h3>${order.status}</h3></th>
                                         <th><a class="purple-button"
                                                href="${pageContext.request.contextPath}/fc/orderdetailspage"
                                                style="padding: 10px 10px">See more</a></th>
                                     </tr>
-                                </c:forEach>
                             </c:forEach>
                         </table>
                     </div>
