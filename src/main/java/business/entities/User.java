@@ -34,6 +34,7 @@ public class User
     private String city;
     private String phoneNr;
 
+    private int totalOrders;
 
     public User(String email, String password, String role, String firstname)
     {
@@ -59,6 +60,13 @@ public class User
 
     }
 
+    public int getTotalOrders() {
+        return totalOrders;
+    }
+
+    public void setTotalOrders(int totalOrders) {
+        this.totalOrders = totalOrders;
+    }
 
     public float getAccountbalance()
     {

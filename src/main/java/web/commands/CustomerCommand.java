@@ -26,7 +26,9 @@ public class CustomerCommand extends CommandProtectedPage
 
         try
         {
-            ArrayList<User> usersList = userFacade.getAllusers();
+            ArrayList<User> usersList = userFacade.getAllUsers();
+
+
             session.setAttribute("users", usersList);
         } catch (UserException e)
         {

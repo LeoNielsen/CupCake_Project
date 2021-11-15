@@ -30,7 +30,7 @@ public class OrderListCommand extends CommandProtectedPage
         ArrayList<User> users = null;
         try
         {
-            users = userFacade.getAllusers();
+            users = userFacade.getAllUsers();
             ArrayList<Order> orders = orderFacade.getAllOrders(users);
             session.setAttribute("allorders", orders);
         } catch (UserException e)
