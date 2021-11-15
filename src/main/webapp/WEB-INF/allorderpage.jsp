@@ -25,24 +25,29 @@
                             </div>
                             <div class="center-flex">
                                 <div class="col-2-grid" style="width: 100%">
-                                    <div class="col-3-grid" style="width: 30%; gap: 10px">
-                                        <div>
-                                            <input class="purple-large-button" style="max-width: 100px" type="submit"
-                                                   value="In hold">
+                                    <form>
+                                        <div class="col-3-grid" style="width: 30%; gap: 10px">
+                                            <div>
+                                                <input class="purple-large-button" style="max-width: 100px"
+                                                       type="submit"
+                                                       value="In hold">
+                                            </div>
+                                            <div>
+                                                <input class="purple-large-button" style="max-width: 100px"
+                                                       type="submit"
+                                                       value="Proccessing">
+                                            </div>
+                                            <div>
+                                                <input class="purple-large-button" style="max-width: 100px"
+                                                       type="submit"
+                                                       value="Done">
+                                            </div>
                                         </div>
-                                        <div>
+                                        <div class="right-flex">
                                             <input class="purple-large-button" style="max-width: 100px" type="submit"
-                                                   value="Proccessing">
+                                                   value="Show all">
                                         </div>
-                                        <div>
-                                            <input class="purple-large-button" style="max-width: 100px" type="submit"
-                                                   value="Done">
-                                        </div>
-                                    </div>
-                                    <div class="right-flex">
-                                        <input class="purple-large-button" style="max-width: 100px" type="submit"
-                                               value="Show all">
-                                    </div>
+                                    </form>
                                 </div>
 
                             </div>
