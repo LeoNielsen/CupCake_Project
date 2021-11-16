@@ -10,6 +10,7 @@ import business.services.UserFacade;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 
 public class SaveOrderCommand extends CommandProtectedPage{
 
@@ -32,6 +33,8 @@ public class SaveOrderCommand extends CommandProtectedPage{
         HttpSession session = request.getSession();
         int cupcakeid = (int) session.getAttribute("cupcakeid");
 
+//        ArrayList<Order> orders = (ArrayList<Order>) session.getAttribute("allorders");
+
         int orderId = Integer.parseInt(request.getParameter("id"));
         int userId = Integer.parseInt(request.getParameter("userid"));
         String status = request.getParameter("status");
@@ -51,6 +54,10 @@ public class SaveOrderCommand extends CommandProtectedPage{
             cupcake.setBottom(bottom);
             cupcake.setQuantity(quantity);
             cupcake.setTotal(total);
+
+//            orders.add(order);
+//            session.setAttribute("allorders",orders);
+            session.setAttribute("seemoreorder",order);
 
         } catch (UserException e) {
             e.printStackTrace();
