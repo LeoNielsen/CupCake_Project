@@ -24,7 +24,7 @@ public class ToppingFacade {
         return toppingMapper.getToppping(name);
     }
 
-    public ArrayList<String> getAllToppings() {
+    public ArrayList<Topping> getAllToppings() {
         try {
             return toppingMapper.getAllToppings();
         } catch (Exception e) {

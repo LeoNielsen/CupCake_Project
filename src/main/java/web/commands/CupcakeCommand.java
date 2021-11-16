@@ -1,5 +1,7 @@
 package web.commands;
 
+import business.entities.Bottom;
+import business.entities.Topping;
 import business.exceptions.UserException;
 import business.services.BottomFacade;
 import business.services.ToppingFacade;
@@ -16,16 +18,15 @@ public class CupcakeCommand extends CommandUnprotectedPage {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
-        HttpSession session = request.getSession();
 
         ToppingFacade toppingFacade = new ToppingFacade(database);
         BottomFacade bottomFacade = new BottomFacade(database);
 
-        ArrayList<String> toppings = toppingFacade.getAllToppings();
-        ArrayList<String> bottoms = bottomFacade.getAllBottoms();
+        ArrayList<Topping> toppings = toppingFacade.getAllToppings();
+        ArrayList<Bottom> bottoms = bottomFacade.getAllBottoms();
 
-        session.setAttribute("toppings", toppings);
-        session.setAttribute("bottoms", bottoms);
+        request.getServletContext().setAttribute("toppings", toppings);
+        request.getServletContext().setAttribute("bottoms", bottoms);
 
         return "shopcupcakepage";
     }

@@ -55,17 +55,18 @@ public class ToppingMapper {
         }
     }
 
-    public ArrayList<String> getAllToppings() throws Exception {
-        ArrayList<String> toppings = new ArrayList<>();
+    public ArrayList<Topping> getAllToppings() throws Exception {
+        ArrayList<Topping> toppings = new ArrayList<>();
 
         try (Connection connection = database.connect()) {
-            String sql = "SELECT name FROM topping";
+            String sql = "SELECT * FROM topping";
 
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
                     String name = rs.getString("name");
-                    toppings.add(name);
+                    float price = rs.getFloat("price");
+                    toppings.add(new Topping(name, price));
                 }
                 return toppings;
             } catch (Exception e) {

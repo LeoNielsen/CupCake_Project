@@ -55,16 +55,16 @@
                                         <div>
                                             <label for="topping">Choose topping</label>
                                             <select name="topping" id="topping">
-                                                <c:forEach var="topping" items="${sessionScope.toppings}">
-                                                    <option value="${topping}">${topping}</option>
+                                                <c:forEach var="topping" items="${applicationScope.toppings}">
+                                                    <option value="${topping.name}">${topping.name}</option>
                                                 </c:forEach>
                                             </select>
                                         </div>
                                         <div>
                                             <label for="bottom">Choose bottom</label>
                                             <select name="bottom" id="bottom">
-                                                <c:forEach var="bottom" items="${sessionScope.bottoms}">
-                                                    <option value="${bottom}">${bottom}</option>
+                                                <c:forEach var="bottom" items="${applicationScope.bottoms}">
+                                                    <option value="${bottom.name}">${bottom.name}</option>
                                                 </c:forEach>
                                             </select>
                                         </div>

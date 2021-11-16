@@ -26,8 +26,8 @@
                                 <label style="font-weight: bold" for="status">Change status</label><br>
                                 <select style="max-width: 200px" name="status" id="status">
                                     <!--TODO: håndtering af status?-->
-                                    <c:forEach var="s" items="${sessionScope.}">
-                                        <option value="${bottom}">${bottom}</option>
+                                    <c:forEach var="s" items="${sessionScope.bottoms}">
+                                        <option value="${s}">${s}</option>
                                     </c:forEach>
                                 </select>
                             </div>
@@ -56,21 +56,34 @@
                                     <c:forEach var="cupcake" items="${sessionScope.seemoreorder.cupcakes}">
                                         <tr>
                                             <th style="padding-right: 15px">
-                                                <select style="min-width: 250px" name="bottom" id="bottom">
-                                                    <c:forEach var="bottom" items="${sessionScope.bottoms}">
-                                                        <option value="${cupcake.bottom.name}">${cupcake.bottom.name}</option>
-                                                    </c:forEach>
-                                                </select>
-                                            </th>
-                                            <th style="padding-right: 15px">
                                                 <select style="min-width: 250px" name="topping" id="topping">
-                                                    <c:forEach var="topping" items="${sessionScope.toppings}">
-                                                        <option value="${cupcake.topping.name}">${cupcake.topping.name}</option>
+                                                    <c:forEach var="topping" items="${applicationScope.toppings}">
+                                                        <c:if test="${!cupcake.topping.name.equals(topping.name)}">
+                                                            <option value="${topping.name}">${topping.name}</option>
+                                                        </c:if>
+                                                        <c:if test="${cupcake.topping.name.equals(topping.name)}">
+                                                            <option value="${topping.name}"
+                                                                    selected>${topping.name}</option>
+                                                        </c:if>
                                                     </c:forEach>
                                                 </select>
                                             </th>
                                             <th style="padding-right: 15px">
-                                                <input class="border-input-text" type="number" value="${cupcake.quantity}">
+                                                <select style="min-width: 250px" name="bottom" id="bottom">
+                                                    <c:forEach var="bottom" items="${applicationScope.bottoms}">
+                                                        <c:if test="${!cupcake.topping.name.equals(bottom.name)}">
+                                                            <option value="${bottom.name}">${bottom.name}</option>
+                                                        </c:if>
+                                                        <c:if test="${cupcake.bottom.name.equals(bottom.name)}">
+                                                            <option value="${bottom.name}"
+                                                                    selected>${bottom.name}</option>
+                                                        </c:if>
+                                                    </c:forEach>
+                                                </select>
+                                            </th>
+                                            <th style="padding-right: 15px">
+                                                <input class="border-input-text" type="number"
+                                                       value="${cupcake.quantity}">
                                             </th>
                                             <th style="padding-right: 15px">
                                                 <input class="border-input-text" type="number" value="${cupcake.price}">

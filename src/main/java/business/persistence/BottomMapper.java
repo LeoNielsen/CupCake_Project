@@ -58,17 +58,18 @@ public class BottomMapper {
         }
     }
 
-    public ArrayList<String> getAllBottoms() throws Exception {
-        ArrayList<String> bottoms = new ArrayList<>();
+    public ArrayList<Bottom> getAllBottoms() throws Exception {
+        ArrayList<Bottom> bottoms = new ArrayList<>();
 
         try (Connection connection = database.connect()) {
-            String sql = "SELECT name FROM base";
+            String sql = "SELECT * FROM base";
 
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
                     String name = rs.getString("name");
-                    bottoms.add(name);
+                    float price = rs.getFloat("price");
+                    bottoms.add(new Bottom(name, price));
                 }
                 return bottoms;
             } catch (Exception e) {

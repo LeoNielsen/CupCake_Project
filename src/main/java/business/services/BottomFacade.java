@@ -27,7 +27,7 @@ public class BottomFacade {
         return bottomMapper.getBottom(name);
     }
 
-    public ArrayList<String> getAllBottoms() {
+    public ArrayList<Bottom> getAllBottoms() {
         try {
             return bottomMapper.getAllBottoms();
         } catch (Exception e) {
