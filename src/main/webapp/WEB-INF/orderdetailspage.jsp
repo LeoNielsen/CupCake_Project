@@ -31,9 +31,10 @@
                                 <div class="col-3-grid">
                                     <div class="left-grid">
                                         <h2>Order items
-                                        <!--TODO: if employee, skal den linke til edit siden -->
-                                            <a class="red-button" href="${pageContext.request.contextPath}/fc/editorderpage"><i
-                                                class="fas fa-edit"></i></a>
+                                            <c:if test="${sessionScope.user.role.equals('employee')}">
+                                                <a class="red-button" href="${pageContext.request.contextPath}/fc/editorderpage"><i
+                                                        class="fas fa-edit"></i></a>
+                                            </c:if>
                                         </h2>
                                     </div>
                                     <div class="right-grid">

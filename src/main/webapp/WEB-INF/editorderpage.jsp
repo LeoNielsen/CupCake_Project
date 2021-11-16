@@ -21,11 +21,12 @@
                         <div class="row-2-grid">
                             <div>
                                 <div class="title-grid-element" style="padding-bottom: 10px">
-                                    <h3 style="font-weight: bold">Nr. 1234</h3>
+                                    <h3 style="font-weight: bold">Nr. ${sessionScope.seemoreorder.id}</h3>
                                 </div>
                                 <label style="font-weight: bold" for="status">Change status</label><br>
                                 <select style="max-width: 200px" name="status" id="status">
-                                    <c:forEach var="bottom" items="${sessionScope.bottoms}">
+                                    <!--TODO: håndtering af status?-->
+                                    <c:forEach var="s" items="${sessionScope.}">
                                         <option value="${bottom}">${bottom}</option>
                                     </c:forEach>
                                 </select>
@@ -38,7 +39,7 @@
                                         <h2>Change order items</h2>
                                     </div>
                                     <div class="right-grid">
-                                        <h3>1 Total</h3>
+                                        <h3>${sessionScope.seemoreorder.totalItems} Total</h3>
                                     </div>
                                 </div>
                             </div>
@@ -52,34 +53,37 @@
                                         <th class="left-text">TOTAL</th>
                                         <th></th>
                                     </tr>
-                                    <tr>
-                                        <th style="padding-right: 15px">
-                                            <select style="min-width: 250px" name="status" id="status">
-                                                <c:forEach var="bottom" items="${sessionScope.bottoms}">
-                                                    <option value="${bottom}">${bottom}</option>
-                                                </c:forEach>
-                                            </select>
-                                        </th>
-                                        <th style="padding-right: 15px">
-                                            <select style="min-width: 250px" name="status" id="status">
-                                                <c:forEach var="bottom" items="${sessionScope.bottoms}">
-                                                    <option value="${bottom}">${bottom}</option>
-                                                </c:forEach>
-                                            </select>
-                                        </th>
-                                        <th style="padding-right: 15px">
-                                            <input class="border-input-text" type="number" value="10">
-                                        </th>
-                                        <th style="padding-right: 15px">
-                                            <input class="border-input-text" type="number" value="10">
-                                        </th>
-                                        <th style="padding-right: 15px">
-                                            <input class="border-input-text" type="number" value="10">
-                                        </th>
-                                        <th>
-                                            <button class="remove-button"><i class="fas fa-remove"></i></button>
-                                        </th>
-                                    </tr>
+                                    <c:forEach var="cupcake" items="${sessionScope.seemoreorder.cupcakes}">
+                                        <tr>
+                                            <th style="padding-right: 15px">
+                                                <select style="min-width: 250px" name="bottom" id="bottom">
+                                                    <c:forEach var="bottom" items="${sessionScope.bottoms}">
+                                                        <option value="${cupcake.bottom.name}">${cupcake.bottom.name}</option>
+                                                    </c:forEach>
+                                                </select>
+                                            </th>
+                                            <th style="padding-right: 15px">
+                                                <select style="min-width: 250px" name="topping" id="topping">
+                                                    <c:forEach var="topping" items="${sessionScope.toppings}">
+                                                        <option value="${cupcake.topping.name}">${cupcake.topping.name}</option>
+                                                    </c:forEach>
+                                                </select>
+                                            </th>
+                                            <th style="padding-right: 15px">
+                                                <input class="border-input-text" type="number" value="${cupcake.quantity}">
+                                            </th>
+                                            <th style="padding-right: 15px">
+                                                <input class="border-input-text" type="number" value="${cupcake.price}">
+                                            </th>
+                                            <th style="padding-right: 15px">
+                                                <input class="border-input-text" type="number" value="${cupcake.total}">
+                                            </th>
+                                            <th>
+                                                <button class="remove-button"><i class="fas fa-remove"></i></button>
+                                            </th>
+                                        </tr>
+                                    </c:forEach>
+
                                 </table>
                             </div>
                         </div>
