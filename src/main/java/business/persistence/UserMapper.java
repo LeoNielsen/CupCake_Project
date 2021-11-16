@@ -90,6 +90,39 @@ public class UserMapper {
         return false;
     }
 
+    public User getUser (int userid) throws UserException{
+        User user = null;
+        try (Connection connection = database.connect()) {
+            String sql = "SELECT * FROM users WHERE id = ?";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ps.setInt(1, userid);
+                ResultSet rs = ps.executeQuery();
+                while (rs.next()) {
+                    int id = rs.getInt("id");
+                    String email = rs.getString("email");
+                    String password = rs.getString("password");
+                    String role = rs.getString("role");
+                    float acBalance = rs.getFloat("account_balance");
+                    String firstname = rs.getString("firstname");
+                    String lastname = rs.getString("lastname");
+                    String phoneNr = rs.getString("phone_nr");
+                    String streetName = rs.getString("street_name");
+                    String houseNr = rs.getString("house_nr");
+                    String zipcode = rs.getString("user_zipcode");
+                    user = new User(id, email, password, role, acBalance, firstname,
+                            lastname, phoneNr, streetName, houseNr, zipcode);
+                }
+                return user;
+            } catch (Exception e) {
+                throw new UserException("Could not find users");
+            }
+        } catch (SQLException throwables) {
+            throw new UserException("Could not find users");
+        }
+    }
+
+
     public ArrayList<User> getAllUsers() throws UserException {
         ArrayList<User> users = new ArrayList<>();
 

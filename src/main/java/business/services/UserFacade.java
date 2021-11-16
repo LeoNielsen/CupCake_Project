@@ -34,6 +34,10 @@ public class UserFacade
         return userMapper.updateBalance(userId, balance);
     }
 
+    public User getUser(int id) throws UserException {
+        return userMapper.getUser(id);
+    }
+
     public ArrayList<User> getAllUsers() throws UserException
     {
         ArrayList<User> users = userMapper.getAllUsers();

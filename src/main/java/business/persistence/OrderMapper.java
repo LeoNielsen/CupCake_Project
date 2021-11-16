@@ -15,6 +15,23 @@ public class OrderMapper {
         this.database = database;
     }
 
+    public boolean updateBalance(int userId, float balance) throws SQLException {
+        try (Connection connection = database.connect()) {
+            String sql = "UPDATE users " +
+                    "SET account_balance = ? " +
+                    "WHERE id = ? ";
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setDouble(1, balance);
+            ps.setInt(2, userId);
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException throwables) {
+            System.out.println("yo");
+            throwables.printStackTrace();
+        }
+        return false;
+    }
+
     public void saveOrder(Order order) {
 
         try (Connection connection = database.connect()) {

@@ -13,13 +13,12 @@ import java.util.ArrayList;
 public class OrderFacade {
     OrderMapper orderMapper;
 
-    public OrderFacade(Database database)
-    {
+    public OrderFacade(Database database) {
         orderMapper = new OrderMapper(database);
     }
 
-    public Order saveOrder(ArrayList<Cupcake> cupcakes, User user, String status, float totalprice){
-        Order order = new Order(cupcakes,user,status, totalprice);
+    public Order saveOrder(ArrayList<Cupcake> cupcakes, User user, String status, float totalprice) {
+        Order order = new Order(cupcakes, user, status, totalprice);
         orderMapper.saveOrder(order);
         return order;
     }
@@ -29,7 +28,7 @@ public class OrderFacade {
         ArrayList<Integer> idOrders;
         try {
             idOrders = orderMapper.getOrderId(user.getId());
-            for(int id : idOrders) {
+            for (int id : idOrders) {
                 ArrayList<Cupcake> cupcakes = orderMapper.getAllCupcake(id);
                 Order order = orderMapper.getAllOrdersUser(id, user, cupcakes);
                 orders.add(order);
@@ -42,11 +41,20 @@ public class OrderFacade {
         return orders;
     }
 
-    public ArrayList<Order> getAllOrders(ArrayList<User> users) throws UserException
-    {
+    public Order getOrder(User user, int orderId) {
+        Order order = null;
+        try {
+            ArrayList<Cupcake> cupcakes = orderMapper.getAllCupcake(orderId);
+            order = orderMapper.getAllOrdersUser(orderId, user, cupcakes);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return order;
+    }
+
+    public ArrayList<Order> getAllOrders(ArrayList<User> users) throws UserException {
         ArrayList<Order> orders = new ArrayList<>();
-        for (User user : users)
-        {
+        for (User user : users) {
 
             orders.addAll(getAllUserOrders(user));
         }
@@ -54,7 +62,6 @@ public class OrderFacade {
         return orders;
 
     }
-
 
 
 }

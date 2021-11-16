@@ -32,7 +32,8 @@
                                     <div class="left-grid">
                                         <h2>Order items
                                             <c:if test="${sessionScope.user.role.equals('employee')}">
-                                                <a class="red-button" href="${pageContext.request.contextPath}/fc/editorderpage"><i
+                                                <a class="red-button"
+                                                   href="${pageContext.request.contextPath}/fc/editorderpage"><i
                                                         class="fas fa-edit"></i></a>
                                             </c:if>
                                         </h2>
@@ -49,6 +50,7 @@
                                 <th>QUANTITY</th>
                                 <th>PRICE</th>
                                 <th>TOTAL</th>
+                                <th></th>
                             </tr>
 
                             <c:forEach var="cupcake" items="${sessionScope.seemoreorder.cupcakes}">
@@ -60,6 +62,16 @@
                                     <th><h3>${cupcake.quantity}</h3></th>
                                     <th><h3>${cupcake.price} kr</h3></th>
                                     <th><h3>${cupcake.total} kr</h3></th>
+
+                                    <form action="${pageContext.request.contextPath}/fc/editorderpage"
+                                          method="post">
+
+                                        <input type="hidden" name="cupcakeid" value="${index = index + 1}">
+                                        <!-- <input type="hidden" name="customerorderlist" value="false"> -->
+                                        <th><input type="submit" value="edit" class="purple-button"
+                                                   style="padding: 10px 10px; width: 85px"></th>
+                                    </form>
+
                                 </tr>
                             </c:forEach>
                         </table>

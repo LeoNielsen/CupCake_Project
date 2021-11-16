@@ -16,12 +16,24 @@
                         <h1>Editing order</h1>
                     </div>
                 </div>
-                <form>
+                <form action="${pageContext.request.contextPath}/fc/editordercommand" method="post">
                     <div class="row-3-grid" style="gap: 50px">
                         <div class="row-2-grid">
                             <div>
+
+                                <!---->
                                 <div class="title-grid-element" style="padding-bottom: 10px">
-                                    <h3 style="font-weight: bold">Nr. ${sessionScope.seemoreorder.id}</h3>
+                                    <div class="col-3-grid">
+                                        <div class="left-grid">
+                                            <h3 style="font-weight: bold" name = "id">Nr. ${sessionScope.seemoreorder.id}</h3>
+                                        </div>
+                                        <div class="right-grid">
+                                            <h3 style="font-weight: bold"> ${sessionScope.seemoreorder.user.email}</h3>
+                                            <input type="hidden" name="userid" value="${sessionScope.seemoreorder.user.id}">
+                                        </div>
+                                    </div>
+                                    <!---->
+
                                 </div>
                                 <label style="font-weight: bold" for="status">Change status</label><br>
                                 <select style="max-width: 200px" name="status" id="status">
@@ -88,11 +100,8 @@
                                                 </select>
                                             </th>
                                             <th style="padding-right: 15px">
-                                                <input class="border-input-text" type="number"
+                                                <input name="quantity" class="border-input-text" type="number"
                                                        value="${cupcake.quantity}">
-                                            </th>
-                                            <th style="padding-right: 15px">
-                                                <input class="border-input-text" type="number" value="${cupcake.price}">
                                             </th>
                                             <th style="padding-right: 15px">
                                                 <input class="border-input-text" type="number" value="${cupcake.total}">
