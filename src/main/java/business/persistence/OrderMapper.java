@@ -15,15 +15,26 @@ public class OrderMapper {
         this.database = database;
     }
 
-    public boolean updateBalance(int userId, float balance) throws SQLException {
+    public boolean updateOrder(int orderId, String status, float totalPrice, String bottom, String topping, int quantity) throws SQLException {
         try (Connection connection = database.connect()) {
-            String sql = "UPDATE users " +
-                    "SET account_balance = ? " +
+            String sql = "UPDATE user_order " +
+                    "SET status = ?, total_price = ?" +
                     "WHERE id = ? ";
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setDouble(1, balance);
-            ps.setInt(2, userId);
+            ps.setString(1, status);
+            ps.setFloat(2, totalPrice);
+            ps.setInt(3, orderId);
             ps.executeUpdate();
+
+            String sql2 = "UPDATE cupcake " +
+                    "SET base_name = ?, topping_name = ?, quantity = ?" +
+                    "WHERE id_order = ? ";
+            PreparedStatement ps2 = connection.prepareStatement(sql2, Statement.RETURN_GENERATED_KEYS);
+            ps2.setString(1, bottom);
+            ps2.setString(2, topping);
+            ps2.setInt(3, quantity);
+            ps2.setInt(4, orderId);
+            ps2.executeUpdate();
             return true;
         } catch (SQLException throwables) {
             System.out.println("yo");

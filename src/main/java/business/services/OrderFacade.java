@@ -7,6 +7,7 @@ import business.exceptions.UserException;
 import business.persistence.Database;
 import business.persistence.OrderMapper;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 
@@ -61,6 +62,11 @@ public class OrderFacade {
 
         return orders;
 
+    }
+
+    public boolean updateOrder(int orderId, String status, float totalPrice, String bottom, String topping, int quantity) throws SQLException
+    {
+        return orderMapper.updateOrder(orderId,status,totalPrice,bottom,topping,quantity);
     }
 
 

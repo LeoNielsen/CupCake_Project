@@ -57,6 +57,7 @@ public class SaveOrderCommand extends CommandProtectedPage{
 
 //            orders.add(order);
 //            session.setAttribute("allorders",orders);
+            orderFacade.updateOrder(orderId,status,total,bottomname,toppingname,quantity);
             session.setAttribute("seemoreorder",order);
 
         } catch (UserException e) {
