@@ -26,9 +26,15 @@
                                 <label style="font-weight: bold" for="status">Change status</label><br>
                                 <select style="max-width: 200px" name="status" id="status">
                                     <!--TODO: håndtering af status?-->
-                                    <c:forEach var="s" items="${sessionScope.bottoms}">
-                                        <option value="${s}">${s}</option>
-                                    </c:forEach>
+<%--                                    <c:forEach var="status" items="${sessionScope.seemoreorder.status}">--%>
+                                        <option value="${sessionScope.seemoreorder.status}" selected>${sessionScope.seemoreorder.status}</option>
+                                        <option value="pending">pending</option>
+                                        <option value="received">received</option>
+                                        <option value="process">process</option>
+                                        <option value="ready">ready</option>
+                                        <option value="cancelled">cancelled</option>
+                                        <option value="stopped">stopped</option>
+<%--                                    </c:forEach>--%>
                                 </select>
                             </div>
                         </div>
@@ -71,7 +77,7 @@
                                             <th style="padding-right: 15px">
                                                 <select style="min-width: 250px" name="bottom" id="bottom">
                                                     <c:forEach var="bottom" items="${applicationScope.bottoms}">
-                                                        <c:if test="${!cupcake.topping.name.equals(bottom.name)}">
+                                                        <c:if test="${!cupcake.bottom.name.equals(bottom.name)}">
                                                             <option value="${bottom.name}">${bottom.name}</option>
                                                         </c:if>
                                                         <c:if test="${cupcake.bottom.name.equals(bottom.name)}">

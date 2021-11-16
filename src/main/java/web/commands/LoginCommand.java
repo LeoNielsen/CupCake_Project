@@ -1,9 +1,9 @@
 package web.commands;
 
-import business.entities.Order;
-import business.entities.ShoppingCart;
-import business.entities.User;
+import business.entities.*;
+import business.services.BottomFacade;
 import business.services.OrderFacade;
+import business.services.ToppingFacade;
 import business.services.UserFacade;
 import business.exceptions.UserException;
 
@@ -48,6 +48,17 @@ public class LoginCommand extends CommandUnprotectedPage {
             cart.setUser(user);
 
             session.setAttribute("cart", cart);
+
+            if(user.getRole().equals("employee")){
+                ToppingFacade toppingFacade = new ToppingFacade(database);
+                BottomFacade bottomFacade = new BottomFacade(database);
+
+                ArrayList<Topping> toppings = toppingFacade.getAllToppings();
+                ArrayList<Bottom> bottoms = bottomFacade.getAllBottoms();
+
+                request.getServletContext().setAttribute("toppings", toppings);
+                request.getServletContext().setAttribute("bottoms", bottoms);
+            }
 
 //        String pageToShow =  user.getRole() + "page";
             return REDIRECT_INDICATOR + "index"; //REDIRECT_INDICATOR + pageToShow;
