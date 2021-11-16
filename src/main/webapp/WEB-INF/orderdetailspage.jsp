@@ -23,6 +23,7 @@
                         <div class="right-text">
                             <h2>Status</h2>
                             <h3>${sessionScope.seemoreorder.status}</h3>
+
                         </div>
                     </div>
                     <div>
@@ -52,7 +53,7 @@
                                 <th>TOTAL</th>
                                 <th></th>
                             </tr>
-
+                            <c:set var="index" value="-1"></c:set>
                             <c:forEach var="cupcake" items="${sessionScope.seemoreorder.cupcakes}">
                                 <tr>
                                     <th class="left-text">
@@ -62,15 +63,18 @@
                                     <th><h3>${cupcake.quantity}</h3></th>
                                     <th><h3>${cupcake.price} kr</h3></th>
                                     <th><h3>${cupcake.total} kr</h3></th>
-
-                                    <form action="${pageContext.request.contextPath}/fc/editorderpage"
+                                    <th>
+                                    <form action="${pageContext.request.contextPath}/fc/editordercommand"
                                           method="post">
 
                                         <input type="hidden" name="cupcakeid" value="${index = index + 1}">
+                                        <input type="hidden" name="id" value="${sessionScope.seemoreorder.id}">
+                                        <input type="hidden" name="userid" value="${sessionScope.seemoreorder.user.id}">
                                         <!-- <input type="hidden" name="customerorderlist" value="false"> -->
-                                        <th><input type="submit" value="edit" class="purple-button"
-                                                   style="padding: 10px 10px; width: 85px"></th>
+                                       <input type="submit" value="edit" class="purple-button"
+                                                   style="padding: 10px 10px; width: 85px">
                                     </form>
+                                    </th>
 
                                 </tr>
                             </c:forEach>

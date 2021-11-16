@@ -16,7 +16,7 @@
                         <h1>Editing order</h1>
                     </div>
                 </div>
-                <form action="${pageContext.request.contextPath}/fc/editordercommand" method="post">
+                <form action="${pageContext.request.contextPath}/fc/saveordercommand" method="post">
                     <div class="row-3-grid" style="gap: 50px">
                         <div class="row-2-grid">
                             <div>
@@ -25,11 +25,12 @@
                                 <div class="title-grid-element" style="padding-bottom: 10px">
                                     <div class="col-3-grid">
                                         <div class="left-grid">
-                                            <h3 style="font-weight: bold" name = "id">Nr. ${sessionScope.seemoreorder.id}</h3>
+                                            <h3 style="font-weight: bold">Nr. ${sessionScope.seemoreorder.id}</h3>
                                         </div>
                                         <div class="right-grid">
                                             <h3 style="font-weight: bold"> ${sessionScope.seemoreorder.user.email}</h3>
                                             <input type="hidden" name="userid" value="${sessionScope.seemoreorder.user.id}">
+                                            <input type="hidden" name="id" value="${sessionScope.seemoreorder.id}">
                                         </div>
                                     </div>
                                     <!---->
@@ -71,15 +72,15 @@
                                         <th class="left-text">TOTAL</th>
                                         <th></th>
                                     </tr>
-                                    <c:forEach var="cupcake" items="${sessionScope.seemoreorder.cupcakes}">
+<%--                                    <c:forEach var="cupcake" items="${sessionScope.seemoreorder.cupcakes}">--%>
                                         <tr>
                                             <th style="padding-right: 15px">
                                                 <select style="min-width: 250px" name="topping" id="topping">
                                                     <c:forEach var="topping" items="${applicationScope.toppings}">
-                                                        <c:if test="${!cupcake.topping.name.equals(topping.name)}">
+                                                        <c:if test="${!sessionScope.editcupcake.topping.name.equals(topping.name)}">
                                                             <option value="${topping.name}">${topping.name}</option>
                                                         </c:if>
-                                                        <c:if test="${cupcake.topping.name.equals(topping.name)}">
+                                                        <c:if test="${sessionScope.editcupcake.topping.name.equals(topping.name)}">
                                                             <option value="${topping.name}"
                                                                     selected>${topping.name}</option>
                                                         </c:if>
@@ -89,10 +90,10 @@
                                             <th style="padding-right: 15px">
                                                 <select style="min-width: 250px" name="bottom" id="bottom">
                                                     <c:forEach var="bottom" items="${applicationScope.bottoms}">
-                                                        <c:if test="${!cupcake.bottom.name.equals(bottom.name)}">
+                                                        <c:if test="${!sessionScope.editcupcake.bottom.name.equals(bottom.name)}">
                                                             <option value="${bottom.name}">${bottom.name}</option>
                                                         </c:if>
-                                                        <c:if test="${cupcake.bottom.name.equals(bottom.name)}">
+                                                        <c:if test="${sessionScope.editcupcake.bottom.name.equals(bottom.name)}">
                                                             <option value="${bottom.name}"
                                                                     selected>${bottom.name}</option>
                                                         </c:if>
@@ -101,16 +102,16 @@
                                             </th>
                                             <th style="padding-right: 15px">
                                                 <input name="quantity" class="border-input-text" type="number"
-                                                       value="${cupcake.quantity}">
+                                                       value="${sessionScope.editcupcake.quantity}">
                                             </th>
                                             <th style="padding-right: 15px">
-                                                <input class="border-input-text" type="number" value="${cupcake.total}">
+                                                <input class="border-input-text" type="number" name="total" value="${sessionScope.editcupcake.total}">
                                             </th>
                                             <th>
                                                 <button class="remove-button"><i class="fas fa-remove"></i></button>
                                             </th>
                                         </tr>
-                                    </c:forEach>
+<%--                                    </c:forEach>--%>
 
                                 </table>
                             </div>
@@ -123,7 +124,7 @@
                                    href="${pageContext.request.contextPath}/fc/editprofilepage">Delete order<i
                                         style="font-size:15px; color: white; padding-left: 10px"
                                         class="far">&#xf2ed;</i></a>
-                                <input class="green-large-button" value="Save changes ✓">
+                                <input type="submit" class="green-large-button" value="Save changes ✓">
                             </div>
                         </div>
                     </div>

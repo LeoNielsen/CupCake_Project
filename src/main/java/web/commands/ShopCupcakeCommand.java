@@ -30,7 +30,7 @@ public class ShopCupcakeCommand extends CommandUnprotectedPage{
         session.setAttribute("cart", cart);
         session.setAttribute("cartlist", cart.getCupcakes());
         session.setAttribute("topping", topping);
-        session.setAttribute("botton", bottom);
+        session.setAttribute("bottom", bottom);
         for(Cupcake c :cart.getCupcakes()) {
             System.out.println(c.getTopping().getName());
         }
