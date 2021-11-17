@@ -15,10 +15,10 @@ public class OrderMapper {
         this.database = database;
     }
 
-    public boolean updateOrder(int orderId, String status, float totalPrice, String bottom, String topping, int quantity) throws SQLException {
+    public void updateOrder(int orderId, String status, float totalPrice) throws SQLException {
         try (Connection connection = database.connect()) {
             String sql = "UPDATE user_order " +
-                    "SET status = ?, total_price = ?" +
+                    "SET status = ?, total_price = ? " +
                     "WHERE id = ? ";
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, status);
@@ -26,21 +26,30 @@ public class OrderMapper {
             ps.setInt(3, orderId);
             ps.executeUpdate();
 
-            String sql2 = "UPDATE cupcake " +
-                    "SET base_name = ?, topping_name = ?, quantity = ?" +
-                    "WHERE id_order = ? ";
-            PreparedStatement ps2 = connection.prepareStatement(sql2, Statement.RETURN_GENERATED_KEYS);
-            ps2.setString(1, bottom);
-            ps2.setString(2, topping);
-            ps2.setInt(3, quantity);
-            ps2.setInt(4, orderId);
-            ps2.executeUpdate();
-            return true;
+
         } catch (SQLException throwables) {
             System.out.println("yo");
             throwables.printStackTrace();
         }
-        return false;
+    }
+
+    public void updateCake(int orderId, String bottom, String topping, int quantity, int cupcakeid){
+
+        try (Connection connection = database.connect()) {
+            String sql = "UPDATE cupcake " +
+                    "SET base_name = ?, topping_name = ?, quantity = ? " +
+                    "WHERE id = ? AND id_order = ?  ";
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, bottom);
+            ps.setString(2, topping);
+            ps.setInt(3, quantity);
+            ps.setInt(4, cupcakeid);
+            ps.setInt(5, orderId);
+            ps.executeUpdate();
+            System.out.println(cupcakeid);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 
     public void saveOrder(Order order) {

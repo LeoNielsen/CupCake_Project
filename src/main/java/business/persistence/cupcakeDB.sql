@@ -65,30 +65,36 @@ SET FOREIGN_KEY_CHECKS = @OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS = @OLD_UNIQUE_CHECKS;
 
 LOCK TABLES `topping` WRITE;
-INSERT INTO `topping`VALUES
-('chocolate', 5),
-('blueberry', 5),
-('raspberry', 5),
-('crispy', 5),
-('strawberry', 5),
-('rum', 5),
-('orange', 5),
-('lemon', 5),
-('bluecheese', 5);
+INSERT INTO `topping`
+VALUES ('chocolate', 5),
+       ('blueberry', 5),
+       ('raspberry', 5),
+       ('crispy', 6),
+       ('strawberry', 6),
+       ('rum', 7),
+       ('orange', 8),
+       ('lemon', 8),
+       ('bluecheese', 9);
 UNLOCK TABLES;
 
 LOCK TABLES `base` WRITE;
-INSERT INTO `base`VALUES
-('chocolate', 5),
-('vanilla', 5),
-('nutmeg', 5),
-('pistacio', 5),
-('almond', 5);
+INSERT INTO `base`
+VALUES ('chocolate', 5),
+       ('vanilla', 5),
+       ('nutmeg', 5),
+       ('pistacio', 6),
+       ('almond', 7);
 UNLOCK TABLES;
 
 create view userOrders as
-select o.*, o.id as order_id , c.id as id_cupcake, c.base_name, c.topping_name, c.quantity,
-       b.price as base_price ,t.price as topping_price
+select o.*,
+       o.id    as order_id,
+       c.id    as id_cupcake,
+       c.base_name,
+       c.topping_name,
+       c.quantity,
+       b.price as base_price,
+       t.price as topping_price
 FROM user_order o
          join cupcake c on o.id = c.id_order
          join base b on c.base_name = b.name

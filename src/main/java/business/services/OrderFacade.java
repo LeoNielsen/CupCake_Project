@@ -64,9 +64,10 @@ public class OrderFacade {
 
     }
 
-    public boolean updateOrder(int orderId, String status, float totalPrice, String bottom, String topping, int quantity) throws SQLException
+    public void updateOrder(int orderId, String status, float totalPrice, String bottom, String topping, int quantity, int cupcakeid) throws SQLException
     {
-        return orderMapper.updateOrder(orderId,status,totalPrice,bottom,topping,quantity);
+        orderMapper.updateCake(orderId,bottom,topping,quantity,cupcakeid);
+        orderMapper.updateOrder(orderId, status, totalPrice);
     }
 
 

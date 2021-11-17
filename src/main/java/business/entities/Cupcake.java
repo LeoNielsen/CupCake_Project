@@ -1,6 +1,7 @@
 package business.entities;
 
 public class Cupcake {
+    private int id;
     private Topping topping;
     private Bottom bottom;
     private float price;
@@ -16,11 +17,20 @@ public class Cupcake {
     }
 
     public Cupcake(int id, Bottom bottom, Topping topping, int quantity) {
+        this.id = id;
         this.topping = topping;
         this.bottom = bottom;
         this.price = topping.getPrice() + bottom.getPrice();
         this.quantity = quantity;
         this.total = price * quantity;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Topping getTopping() {

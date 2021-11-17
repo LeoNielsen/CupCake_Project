@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 
-public class SaveOrderCommand extends CommandProtectedPage{
+public class SaveOrderCommand extends CommandProtectedPage {
 
     private UserFacade userFacade;
     private OrderFacade orderFacade;
@@ -57,8 +57,9 @@ public class SaveOrderCommand extends CommandProtectedPage{
 
 //            orders.add(order);
 //            session.setAttribute("allorders",orders);
-            orderFacade.updateOrder(orderId,status,total,bottomname,toppingname,quantity);
-            session.setAttribute("seemoreorder",order);
+            orderFacade.updateOrder(orderId, status, total, bottomname, toppingname, quantity, cupcake.getId());
+            session.setAttribute("seemoreorder", order);
+
 
         } catch (UserException e) {
             e.printStackTrace();

@@ -42,8 +42,7 @@ public class ToppingMapper {
                 if (rs.next()) {
                     float price = rs.getFloat("price");
 
-                    Topping topping = new Topping(name, price);
-                    return topping;
+                    return new Topping(name, price);
                 } else {
                     throw new Exception("Cloud not validate Topping");
                 }
