@@ -1,8 +1,10 @@
 package web.commands;
 
 import business.entities.Order;
+import business.entities.User;
 import business.exceptions.UserException;
 import business.services.OrderFacade;
+import business.services.UserFacade;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,9 +13,11 @@ import java.util.ArrayList;
 
 public class OrderDetailCommand extends CommandUnprotectedPage{
     private OrderFacade orderFacade;
+    private UserFacade userFacade;
     public OrderDetailCommand(String pageToShow) {
         super(pageToShow);
         orderFacade = new OrderFacade(database);
+        userFacade = new UserFacade(database);
     }
 
     @Override
@@ -27,7 +31,11 @@ public class OrderDetailCommand extends CommandUnprotectedPage{
         if(isCustomerOrderList){
             orders = (ArrayList<Order>) session.getAttribute("orderlist");
         } else {
-            orders = (ArrayList<Order>) session.getAttribute("allorders");
+            ArrayList<User> users;
+
+            users = userFacade.getAllUsers();
+            orders = orderFacade.getAllOrders(users);
+            session.setAttribute("allorders", orders);
         }
         order = orders.get(index);
         session.setAttribute("seemoreorder", order);
