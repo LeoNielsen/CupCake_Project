@@ -87,14 +87,8 @@ VALUES ('chocolate', 5),
 UNLOCK TABLES;
 
 create view userOrders as
-select o.*,
-       o.id    as order_id,
-       c.id    as id_cupcake,
-       c.base_name,
-       c.topping_name,
-       c.quantity,
-       b.price as base_price,
-       t.price as topping_price
+select o.*, o.id as order_id , c.id as id_cupcake, c.base_name, c.topping_name, c.quantity,
+       b.price as base_price ,t.price as topping_price, c.cupcake_total_price
 FROM user_order o
          join cupcake c on o.id = c.id_order
          join base b on c.base_name = b.name

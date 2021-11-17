@@ -44,7 +44,7 @@ public class User
         this.firstname = firstname;
     }
 
-    public User(int id, String email, String password, String role, float acBalance, String firstname, String lastname, String phoneNr, String streetName, String houseNr, String zipcode)
+    public User(int id, String email, String password, String role, float acBalance, String firstname, String lastname, String phoneNr, String streetName, String houseNr, String zipcode, String city)
     {
         this.id = id;
         this.email = email;
@@ -57,6 +57,7 @@ public class User
         this.houseNr = houseNr;
         this.zipcode = zipcode;
         this.phoneNr = phoneNr;
+        this.city = city;
 
     }
 

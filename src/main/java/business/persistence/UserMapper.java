@@ -17,7 +17,7 @@ public class UserMapper {
     public void createUser(User user) throws UserException {
         //TODO: fix address.
         try (Connection connection = database.connect()) {
-            String sql = "INSERT INTO users (email, password, role, account_balance, firstname, lastname, phone_nr, street_name, house_nr, user_zipcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO users (email, password, role, account_balance, firstname, lastname, phone_nr, street_name, house_nr, user_zipcode, city) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?, ?, ?)";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 ps.setString(1, user.getEmail());
@@ -30,6 +30,7 @@ public class UserMapper {
                 ps.setString(8, user.getStreename());
                 ps.setString(9, user.getHouseNr());
                 ps.setString(10, user.getZipcode());
+                ps.setString(11, user.getCity());
                 ps.executeUpdate();
                 ResultSet ids = ps.getGeneratedKeys();
                 ids.next();
@@ -59,9 +60,10 @@ public class UserMapper {
                     String streetname = rs.getString("street_name");
                     String housenr = rs.getString("house_nr");
                     String zipcode = rs.getString("user_zipcode");
+                    String city = rs.getString("city");
                     int id = rs.getInt("id");
                     float balance = rs.getFloat("account_balance");
-                    return new User(id, email, password, role, balance, firstname, lastname, phonenr, streetname, housenr, zipcode);
+                    return new User(id, email, password, role, balance, firstname, lastname, phonenr, streetname, housenr, zipcode, city);
                 } else {
                     throw new UserException("Could not validate user");
                 }
@@ -110,8 +112,9 @@ public class UserMapper {
                     String streetName = rs.getString("street_name");
                     String houseNr = rs.getString("house_nr");
                     String zipcode = rs.getString("user_zipcode");
+                    String city = rs.getString("city");
                     user = new User(id, email, password, role, acBalance, firstname,
-                            lastname, phoneNr, streetName, houseNr, zipcode);
+                            lastname, phoneNr, streetName, houseNr, zipcode, city);
                 }
                 return user;
             } catch (Exception e) {
@@ -143,8 +146,9 @@ public class UserMapper {
                     String streetName = rs.getString("street_name");
                     String houseNr = rs.getString("house_nr");
                     String zipcode = rs.getString("user_zipcode");
+                    String city = rs.getString("city");
                     User user = new User(id, email, password, role, acBalance, firstname,
-                            lastname, phoneNr, streetName, houseNr, zipcode);
+                            lastname, phoneNr, streetName, houseNr, zipcode, city);
 
                     users.add(user);
                 }

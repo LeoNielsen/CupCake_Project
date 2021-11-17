@@ -33,18 +33,19 @@ public class OrderMapper {
         }
     }
 
-    public void updateCake(int orderId, String bottom, String topping, int quantity, int cupcakeid){
+    public void updateCake(int orderId, String bottom, String topping, int quantity, int cupcakeid, float totalprice){
 
         try (Connection connection = database.connect()) {
             String sql = "UPDATE cupcake " +
-                    "SET base_name = ?, topping_name = ?, quantity = ? " +
+                    "SET base_name = ?, topping_name = ?, quantity = ?, cupcake_total_price = ?" +
                     "WHERE id = ? AND id_order = ?  ";
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, bottom);
             ps.setString(2, topping);
             ps.setInt(3, quantity);
-            ps.setInt(4, cupcakeid);
-            ps.setInt(5, orderId);
+            ps.setFloat(4, totalprice);
+            ps.setInt(5, cupcakeid);
+            ps.setInt(6, orderId);
             ps.executeUpdate();
             System.out.println(cupcakeid);
         } catch (SQLException throwables) {
@@ -136,7 +137,8 @@ public class OrderMapper {
                     float baseprice = rs.getFloat("base_price");
                     float toppingprice = rs.getFloat("topping_price");
                     int quantity = rs.getInt("quantity");
-                    cupcakes.add(new Cupcake(id, new Bottom(base, baseprice), new Topping(topping, toppingprice), quantity));
+                    float totalprice = rs.getFloat("cupcake_total_price");
+                    cupcakes.add(new Cupcake(id, new Bottom(base, baseprice), new Topping(topping, toppingprice), quantity, totalprice));
                 }
                 return cupcakes;
             } catch (Exception e) {

@@ -16,13 +16,13 @@ public class Cupcake {
         total = price * quantity;
     }
 
-    public Cupcake(int id, Bottom bottom, Topping topping, int quantity) {
+    public Cupcake(int id, Bottom bottom, Topping topping, int quantity, float total) {
         this.id = id;
         this.topping = topping;
         this.bottom = bottom;
         this.price = topping.getPrice() + bottom.getPrice();
         this.quantity = quantity;
-        this.total = price * quantity;
+        this.total = total;
     }
 
     public int getId() {
