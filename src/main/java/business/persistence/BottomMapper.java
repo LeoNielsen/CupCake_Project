@@ -43,8 +43,7 @@ public class BottomMapper {
                 if (rs.next()) {
                     float price = rs.getFloat("price");
 
-                    Bottom bottom = new Bottom(name, price);
-                    return bottom;
+                    return new Bottom(name, price);
                 } else {
                     throw new Exception("Could not find base");
                 }
