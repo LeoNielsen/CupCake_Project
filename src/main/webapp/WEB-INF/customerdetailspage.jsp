@@ -23,7 +23,7 @@
                         <div class="left-text">
                             <div class="title-grid-element" style="display: inline">
                                 <h2>Details <a class="red-button"
-                                               href="${pageContext.request.contextPath}/fc/editprofilepage"><i
+                                               href="${pageContext.request.contextPath}/fc/editprofileadminpage"><i
                                         class="fas fa-edit"></i></a></h2>
 
                             </div>

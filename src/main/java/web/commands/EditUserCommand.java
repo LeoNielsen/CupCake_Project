@@ -7,6 +7,7 @@ import business.services.UserFacade;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.swing.text.StyledEditorKit;
 
 public class EditUserCommand extends CommandUnprotectedPage{
 
@@ -19,6 +20,7 @@ public class EditUserCommand extends CommandUnprotectedPage{
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
+        User user;
         HttpSession session = request.getSession();
         String firstname = request.getParameter("firstname");
         String lastname = request.getParameter("lastname");
@@ -27,8 +29,15 @@ public class EditUserCommand extends CommandUnprotectedPage{
         String housenr = request.getParameter("housenr");
         String city = request.getParameter("city");
         String zipcode = request.getParameter("zipcode");
+        boolean isAdmin = Boolean.parseBoolean(request.getParameter("admin"));
 
-        User user = (User) session.getAttribute("user");
+
+        if (isAdmin){
+            user = (User) session.getAttribute("seemoreuser");
+        } else {
+            user = (User) session.getAttribute("user");
+        }
+
         user.setFirstname(firstname);
         user.setLastname(lastname);
         user.setPhoneNr(phonenr);
@@ -39,6 +48,10 @@ public class EditUserCommand extends CommandUnprotectedPage{
 
         userFacade.updateUser(user);
 
-        return "profilepage";
+        if(isAdmin){
+            return "customerdetailspage";
+        } else {
+            return "profilepage";
+        }
     }
 }

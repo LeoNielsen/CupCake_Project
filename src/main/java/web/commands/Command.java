@@ -51,6 +51,7 @@ public abstract class Command
         commands.put("editordercommand", new EditOrderCommand("", "employee"));
         commands.put("saveordercommand", new SaveOrderCommand("", "employee"));
         commands.put("editusercommand", new EditUserCommand( ""));
+        commands.put("editprofileadminpage", new CommandUnprotectedPage( "editprofileadminpage"));
     }
 
     public static Command fromPath(

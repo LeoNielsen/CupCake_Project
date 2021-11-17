@@ -23,19 +23,19 @@
                                 <div>
                                     <label for="firstname" class="small-title-label">First name</label><br>
                                     <input class="border-input-text" type="text" id="firstname" name="firstname"
-                                           value="${sessionScope.user.firstname}"><br>
+                                           value="${sessionScope.seemoreuser.firstname}"><br>
                                 </div>
                                 <div>
                                     <label for="lastname" class="small-title-label">Last name</label><br>
                                     <input class="border-input-text" type="text" id="lastname" name="lastname"
-                                           value="${sessionScope.user.lastname}"><br>
+                                           value="${sessionScope.seemoreuser.lastname}"><br>
                                 </div>
                             </div>
                         </div>
                         <div>
                             <label for="phonenr" class="small-title-label">Phone number</label><br>
                             <input class="border-input-text" type="text" id="phonenr" name="phonenr"
-                                   value="${sessionScope.user.phoneNr}"><br>
+                                   value="${sessionScope.seemoreuser.phoneNr}"><br>
                         </div>
                         <div>
                             <div class="row-2-grid" style="gap: 20px">
@@ -43,24 +43,24 @@
                                     <div style="width: 100%; padding-right: 10px">
                                         <label for="streetname" class="small-title-label">Street</label><br>
                                         <input class="border-input-text" type="text" id="streetname" name="streetname"
-                                               value="${sessionScope.user.streetname}"><br>
+                                               value="${sessionScope.seemoreuser.streetname}"><br>
                                     </div>
                                     <div>
                                         <label for="housenr" class="small-title-label">House number</label><br>
                                         <input class="border-input-text" type="text" id="housenr" name="housenr"
-                                               value="${sessionScope.user.houseNr}"><br>
+                                               value="${sessionScope.seemoreuser.houseNr}"><br>
                                     </div>
                                 </div>
                                 <div class="center-flex">
                                     <div style="width: 100%; padding-right: 10px">
                                         <label for="city" class="small-title-label">City</label><br>
                                         <input class="border-input-text" type="text" id="city" name="city"
-                                               value="${sessionScope.user.city}"><br>
+                                               value="${sessionScope.seemoreuser.city}"><br>
                                     </div>
                                     <div>
                                         <label for="zipcode" class="small-title-label">Zip code</label><br>
                                         <input class="border-input-text" type="text" id="zipcode" name="zipcode"
-                                               value="${sessionScope.user.zipcode}"><br>
+                                               value="${sessionScope.seemoreuser.zipcode}"><br>
                                     </div>
                                 </div>
                             </div>
@@ -69,7 +69,7 @@
                             <div class="col-2-grid" style="gap: 10px">
                                 <a class="grey-large-button"
                                    href="${pageContext.request.contextPath}/fc/profilepage">Cancel</a>
-                                <input type="hidden" name="admin" value="false">
+                                <input type="hidden" name="admin" value="true">
                                 <input class="green-large-button" type="submit" value="Save changes  ✓">
                             </div>
                         </div>
