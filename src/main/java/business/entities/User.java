@@ -11,7 +11,7 @@ public class User
         this.accountbalance = accountBalance;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.streename = streetname;
+        this.streetname = streetname;
         this.houseNr = houseNr;
         this.zipcode = zipcode;
         this.city = city;
@@ -28,7 +28,7 @@ public class User
     private float accountbalance;
     private String firstname;
     private String lastname;
-    private String streename;
+    private String streetname;
     private String houseNr;
     private String zipcode;
     private String city;
@@ -53,7 +53,7 @@ public class User
         this.accountbalance = acBalance;
         this.firstname = firstname;
         this.lastname = lastname;
-        this.streename = streetName;
+        this.streetname = streetName;
         this.houseNr = houseNr;
         this.zipcode = zipcode;
         this.phoneNr = phoneNr;
@@ -99,14 +99,14 @@ public class User
         this.lastname = lastname;
     }
 
-    public String getStreename()
+    public String getStreetname()
     {
-        return streename;
+        return streetname;
     }
 
-    public void setStreename(String streename)
+    public void setStreetname(String streetname)
     {
-        this.streename = streename;
+        this.streetname = streetname;
     }
 
     public String getHouseNr()

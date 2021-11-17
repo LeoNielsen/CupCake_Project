@@ -1,6 +1,5 @@
 package business.persistence;
 
-import business.entities.Admin;
 import business.exceptions.UserException;
 import business.entities.User;
 
@@ -27,7 +26,7 @@ public class UserMapper {
                 ps.setString(5, user.getFirstname());
                 ps.setString(6, user.getLastname());
                 ps.setString(7, user.getPhoneNr());
-                ps.setString(8, user.getStreename());
+                ps.setString(8, user.getStreetname());
                 ps.setString(9, user.getHouseNr());
                 ps.setString(10, user.getZipcode());
                 ps.setString(11, user.getCity());
@@ -73,6 +72,31 @@ public class UserMapper {
         } catch (SQLException ex) {
             throw new UserException("Connection to database could not be established");
         }
+    }
+
+    public boolean updateUser(User user) {
+        try (Connection connection = database.connect()) {
+            String sql = "UPDATE users " +
+                    "SET email = ?, password = ?, firstname = ?, lastname = ?, phone_nr = ?, street_name = ?, house_nr = ?, user_zipcode = ?, city = ? " +
+                    "WHERE id = ? ";
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, user.getEmail());
+            ps.setString(2, user.getPassword());
+            ps.setString(3, user.getFirstname());
+            ps.setString(4, user.getLastname());
+            ps.setString(5, user.getPhoneNr());
+            ps.setString(6, user.getStreetname());
+            ps.setString(7, user.getHouseNr());
+            ps.setString(8, user.getZipcode());
+            ps.setString(9, user.getCity());
+            ps.setInt(10, user.getId());
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException throwables) {
+            System.out.println("yo");
+            throwables.printStackTrace();
+        }
+        return false;
     }
 
     public boolean updateBalance(int userId, float balance) throws SQLException {

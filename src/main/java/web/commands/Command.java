@@ -50,6 +50,7 @@ public abstract class Command
         commands.put("editorderpage", new CommandUnprotectedPage("editorderpage")); //TODO: ændre to protected
         commands.put("editordercommand", new EditOrderCommand("", "employee"));
         commands.put("saveordercommand", new SaveOrderCommand("", "employee"));
+        commands.put("editusercommand", new EditUserCommand( ""));
     }
 
     public static Command fromPath(

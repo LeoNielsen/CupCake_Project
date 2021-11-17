@@ -16,7 +16,7 @@
                         <h1> Edit profile</h1>
                     </div>
                 </div>
-                <form action="${pageContext.request.contextPath}/fc/registercommand" method="post">
+                <form action="${pageContext.request.contextPath}/fc/editusercommand" method="post">
                     <div class="row-4-grid" style="gap: 45px">
                         <div>
                             <div class="col-2-grid" style="gap: 25px">
@@ -42,8 +42,8 @@
                                 <div class="center-flex">
                                     <div style="width: 100%; padding-right: 10px">
                                         <label for="streetname" class="small-title-label">Street</label><br>
-                                        <input class="border-input-text" type="text" id="streetname" name="streetbane"
-                                               value="${sessionScope.user.streename}"><br>
+                                        <input class="border-input-text" type="text" id="streetname" name="streetname"
+                                               value="${sessionScope.user.streetname}"><br>
                                     </div>
                                     <div>
                                         <label for="housenr" class="small-title-label">House number</label><br>

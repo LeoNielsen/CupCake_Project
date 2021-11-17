@@ -87,10 +87,9 @@ public class OrderMapper {
                 ps.setInt(1,order_id);
                 ResultSet rs = ps.executeQuery();
                 while (rs.next()) {
-                    float total = rs.getFloat("total_price");
                     Timestamp timestamp = rs.getTimestamp("order_date");
                     String status = rs.getString("status");
-                    order = new Order(order_id, cupcakes, user, status, timestamp, total);
+                    order = new Order(order_id, cupcakes, user, status, timestamp);
                 }
                 return order;
             } catch (Exception e) {

@@ -13,22 +13,22 @@ public class Order {
 
     private float totalPrice;
 
-    public Order(ArrayList<Cupcake> cupcakes, User user, String status, float totalPrice) {
+    public Order(ArrayList<Cupcake> cupcakes, User user, String status) {
         this.cupcakes = cupcakes;
         this.user = user;
         this.status = status;
-        this.totalPrice = totalPrice;
+        this.totalPrice = getTotalPrice();
         orderDate = new Timestamp(System.currentTimeMillis());
         this.totalItems = getTotalItems();
     }
 
-    public Order(int id, ArrayList<Cupcake> cupcakes, User user, String status, Timestamp orderDate, float totalPrice) {
+    public Order(int id, ArrayList<Cupcake> cupcakes, User user, String status, Timestamp orderDate) {
         this.id = id;
         this.cupcakes = cupcakes;
         this.user = user;
         this.status = status;
         this.orderDate = orderDate;
-        this.totalPrice = totalPrice;
+        this.totalPrice = getTotalPrice();
         this.totalItems = getTotalItems();
     }
 
@@ -90,7 +90,13 @@ public class Order {
     }
 
     public float getTotalPrice() {
-        return totalPrice;
+        float total = 0;
+
+        for (Cupcake cupcake : cupcakes) {
+            total += cupcake.getTotal();
+        }
+
+        return total;
     }
 
     public void setTotalPrice(float totalPrice) {

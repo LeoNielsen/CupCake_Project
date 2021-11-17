@@ -23,7 +23,7 @@
                         <div class="left-text">
                             <div class="title-grid-element" style="display: inline">
                                 <h2>Details <a class="red-button"
-                                               href="${pageContext.request.contextPath}/fc/editprofile"><i
+                                               href="${pageContext.request.contextPath}/fc/editprofilepage"><i
                                         class="fas fa-edit"></i></a></h2>
 
                             </div>
@@ -49,7 +49,7 @@
                                 </div>
                                 <div>
                                     <label class="small-title-label">Address</label><br>
-                                    <label>${sessionScope.seemoreuser.streename} ${sessionScope.seemoreuser.houseNr}</label>
+                                    <label>${sessionScope.seemoreuser.streetname} ${sessionScope.seemoreuser.houseNr}</label>
                                 </div>
                             </div>
                         </div>

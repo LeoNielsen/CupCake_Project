@@ -38,7 +38,7 @@
                     </div>
                     <div>
                         <label class="small-title-label">Address</label><br>
-                        <label>${sessionScope.user.city} ${sessionScope.user.zipcode}, ${sessionScope.user.streename} ${sessionScope.user.houseNr}</label>
+                        <label>${sessionScope.user.city} ${sessionScope.user.zipcode}, ${sessionScope.user.streetname} ${sessionScope.user.houseNr}</label>
                     </div>
                     <div style="padding-top: 35px">
                         <div class="col-2-grid" style="gap: 10px">
