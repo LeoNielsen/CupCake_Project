@@ -75,7 +75,7 @@
                         <div style="padding-top: 35px">
                             <div class="col-2-grid" style="gap: 10px">
                                 <a class="grey-large-button"
-                                   href="${pageContext.request.contextPath}/fc/profilepage">Cancel</a>
+                                   href="${pageContext.request.contextPath}/fc/productpage">Cancel</a>
                                 <input class="green-large-button" type="submit" value="Save changes  ✓">
                             </div>
                         </div>

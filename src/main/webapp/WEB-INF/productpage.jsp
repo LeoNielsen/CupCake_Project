@@ -3,7 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <t:genericpage>
     <jsp:attribute name="header">
-         Find us
+         Product page
     </jsp:attribute>
 
     <jsp:attribute name="footer">
@@ -31,10 +31,12 @@
                                         <th class="left-text">Name</th>
                                         <th>Price</th>
                                     </tr>
+                                    <c:forEach var="topping" items="${applicationScope.toppings}">
                                     <tr>
-                                        <th class="left-text"><h3>chocolate</h3></th>
-                                        <th><h3>5 kr.</h3></th>
+                                        <th class="left-text"><h3>${topping.name}</h3></th>
+                                        <th><h3>${topping.price} kr.</h3></th>
                                     </tr>
+                                    </c:forEach>
                                 </table>
                             </div>
 
@@ -55,10 +57,12 @@
                                         <th class="left-text">Name</th>
                                         <th>Price</th>
                                     </tr>
+                                    <c:forEach var="bottom" items="${applicationScope.bottoms}">
                                     <tr>
-                                        <th class="left-text"><h3>chocolate</h3></th>
-                                        <th><h3>5 kr.</h3></th>
+                                        <th class="left-text"><h3>${bottom.name}</h3></th>
+                                        <th><h3>${bottom.price} kr.</h3></th>
                                     </tr>
+                                    </c:forEach>
                                 </table>
                             </div>
                         </div>
