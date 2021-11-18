@@ -22,9 +22,11 @@
 
                             <div class="row-2-grid"
                                  style="min-width: 200px; max-width: 300px; width: 50%; padding: 30px">
-                                <img id="toppingimg" src="${pageContext.request.contextPath}/images/cupcake/topping/chocolate.png"
+                                <img id="toppingimg"
+                                     src="${pageContext.request.contextPath}/images/cupcake/topping/chocolate.png"
                                      style="position: relative; height: auto; width: 100%; display: block">
-                                <img id="bottomimg" src="${pageContext.request.contextPath}/images/cupcake/bottom/chocolate.png"
+                                <img id="bottomimg"
+                                     src="${pageContext.request.contextPath}/images/cupcake/bottom/chocolate.png"
                                      style="position: relative; height: auto; width: 100%; display: block">
                             </div>
                         </div>
@@ -36,8 +38,9 @@
                                 <div class="left-text">
                                     <div class="row-2-grid" style="padding-bottom: 25px">
                                         <div class="title-grid-element" style="padding-top: 0; padding-bottom: 25px">
-                                           <h1 id="bottomtitle" style="font-weight: normal">Chocolate cupcake</h1>
-                                            <h2 id="toppingtitle" style="font-weight: normal">with chocolate topping</h2>
+                                            <h1 id="bottomtitle" style="font-weight: normal">Chocolate cupcake</h1>
+                                            <h2 id="toppingtitle" style="font-weight: normal">with chocolate
+                                                topping</h2>
                                         </div>
                                         <!--
                                         <div class="row-2-grid" style="gap: 5px">
@@ -57,7 +60,16 @@
                                             <label for="topping">Choose topping</label>
                                             <select name="topping" id="topping" onchange="changeTopping()" on>
                                                 <c:forEach var="topping" items="${applicationScope.toppings}">
-                                                    <option value="${topping.name} ${topping.price} kr.">${topping.name}</option>
+                                                    <c:if test="${topping.name.equals('chocolate')}">
+                                                        <option value="${topping.name}"
+                                                                selected>${topping.name} ${topping.price} kr.
+                                                        </option>
+                                                    </c:if>
+                                                    <c:if test="${!topping.name.equals('chocolate')}">
+                                                        <option value="${topping.name}">${topping.name} ${topping.price}
+                                                            kr.
+                                                        </option>
+                                                    </c:if>
                                                 </c:forEach>
                                             </select>
                                         </div>
@@ -65,7 +77,17 @@
                                             <label for="bottom">Choose bottom</label>
                                             <select name="bottom" id="bottom" onchange="changeBottom()">
                                                 <c:forEach var="bottom" items="${applicationScope.bottoms}">
-                                                    <option value="${bottom.name} ${bottom.price} kr.">${bottom.name}</option>
+                                                    <c:if test="${bottom.name.equals('chocolate')}">
+                                                        <option value="${bottom.name}"
+                                                                selected>${bottom.name} ${bottom.price}
+                                                            kr.
+                                                        </option>
+                                                    </c:if>
+                                                    <c:if test="${!bottom.name.equals('chocolate')}">
+                                                        <option value="${bottom.name}">${bottom.name} ${bottom.price}
+                                                            kr.
+                                                        </option>
+                                                    </c:if>
                                                 </c:forEach>
                                             </select>
                                         </div>
@@ -80,7 +102,8 @@
                                 <div style="padding-top: 50px">
                                     <div class="row-2-grid" style="gap: 10px">
                                         <input class="green-large-button" type="submit" value="Add to cart">
-                                        <a class="purple-no-fill-button" href="${pageContext.request.contextPath}/fc/shoppingcartpage">Go to cart <i
+                                        <a class="purple-no-fill-button"
+                                           href="${pageContext.request.contextPath}/fc/shoppingcartpage">Go to cart <i
                                                 class="fas">&#xf061;</i></a>
                                     </div>
 
@@ -100,14 +123,15 @@
         <script>
             function changeTopping() {
                 var t = document.getElementById("topping").value;
-                document.getElementById("toppingimg").src="${pageContext.request.contextPath}/images/cupcake/topping/" + t + ".png";
+                document.getElementById("toppingimg").src = "${pageContext.request.contextPath}/images/cupcake/topping/" + t + ".png";
                 document.getElementById("toppingtitle").innerText = "with " + t + " topping";
             }
+
             function changeBottom() {
                 var b = document.getElementById("bottom").value;
-                document.getElementById("bottomimg").src="${pageContext.request.contextPath}/images/cupcake/bottom/" + b + ".png";
+                document.getElementById("bottomimg").src = "${pageContext.request.contextPath}/images/cupcake/bottom/" + b + ".png";
                 var capitalb = b.charAt(0).toUpperCase() + b.slice(1);
-                document.getElementById("bottomtitle").innerText =  capitalb + " cupcake";
+                document.getElementById("bottomtitle").innerText = capitalb + " cupcake";
             }
         </script>
     </jsp:body>
