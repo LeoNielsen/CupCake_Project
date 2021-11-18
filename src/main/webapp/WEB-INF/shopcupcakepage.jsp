@@ -22,9 +22,9 @@
 
                             <div class="row-2-grid"
                                  style="min-width: 200px; max-width: 300px; width: 50%; padding: 30px">
-                                <img src="${pageContext.request.contextPath}/images/cupcake/topping/chocolate.png"
+                                <img id="toppingimg" src="${pageContext.request.contextPath}/images/cupcake/topping/chocolate.png"
                                      style="position: relative; height: auto; width: 100%; display: block">
-                                <img src="${pageContext.request.contextPath}/images/cupcake/bottom/chocolate.png"
+                                <img id="bottomimg" src="${pageContext.request.contextPath}/images/cupcake/bottom/chocolate.png"
                                      style="position: relative; height: auto; width: 100%; display: block">
                             </div>
                         </div>
@@ -36,9 +36,10 @@
                                 <div class="left-text">
                                     <div class="row-2-grid" style="padding-bottom: 25px">
                                         <div class="title-grid-element" style="padding-top: 0; padding-bottom: 25px">
-                                            <h1 style="font-weight: normal">Bottom cupcake</h1>
-                                            <h2 style="font-weight: normal">with topping</h2>
+                                           <h1 id="bottomtitle" style="font-weight: normal">Chocolate cupcake</h1>
+                                            <h2 id="toppingtitle" style="font-weight: normal">with chocolate topping</h2>
                                         </div>
+                                        <!--
                                         <div class="row-2-grid" style="gap: 5px">
                                             <div>
                                                 <h3 style="font-weight: normal">Topping: 5 kr.</h3>
@@ -46,7 +47,7 @@
                                             <div>
                                                 <h3 style="font-weight: normal">Bottom: 5 kr.</h3>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                 </div>
 
@@ -54,17 +55,17 @@
                                     <div class="col-2-grid" style="gap: 20px">
                                         <div>
                                             <label for="topping">Choose topping</label>
-                                            <select name="topping" id="topping">
+                                            <select name="topping" id="topping" onchange="changeTopping()" on>
                                                 <c:forEach var="topping" items="${applicationScope.toppings}">
-                                                    <option value="${topping.name}">${topping.name}</option>
+                                                    <option value="${topping.name} ${topping.price} kr.">${topping.name}</option>
                                                 </c:forEach>
                                             </select>
                                         </div>
                                         <div>
                                             <label for="bottom">Choose bottom</label>
-                                            <select name="bottom" id="bottom">
+                                            <select name="bottom" id="bottom" onchange="changeBottom()">
                                                 <c:forEach var="bottom" items="${applicationScope.bottoms}">
-                                                    <option value="${bottom.name}">${bottom.name}</option>
+                                                    <option value="${bottom.name} ${bottom.price} kr.">${bottom.name}</option>
                                                 </c:forEach>
                                             </select>
                                         </div>
@@ -96,6 +97,18 @@
                 </div>
             </div>
         </div>
-
+        <script>
+            function changeTopping() {
+                var t = document.getElementById("topping").value;
+                document.getElementById("toppingimg").src="${pageContext.request.contextPath}/images/cupcake/topping/" + t + ".png";
+                document.getElementById("toppingtitle").innerText = "with " + t + " topping";
+            }
+            function changeBottom() {
+                var b = document.getElementById("bottom").value;
+                document.getElementById("bottomimg").src="${pageContext.request.contextPath}/images/cupcake/bottom/" + b + ".png";
+                var capitalb = b.charAt(0).toUpperCase() + b.slice(1);
+                document.getElementById("bottomtitle").innerText =  capitalb + " cupcake";
+            }
+        </script>
     </jsp:body>
 </t:genericpage>
