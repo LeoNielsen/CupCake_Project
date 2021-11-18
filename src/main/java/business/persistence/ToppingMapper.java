@@ -17,12 +17,13 @@ public class ToppingMapper {
 
         try (Connection connection = database.connect()) {
 
-            String sql = "INSERT INTO order (name, price) " +
+            String sql = "INSERT INTO topping (name, price) " +
                     "VALUES(?,?) ON DUPLICATE KEY UPDATE price=?";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 ps.setString(1, topping.getName());
                 ps.setFloat(2, topping.getPrice());
+                ps.setFloat(3, topping.getPrice());
 
                 ps.executeUpdate();
             }

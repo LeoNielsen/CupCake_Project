@@ -46,12 +46,15 @@ public abstract class Command
         commands.put("userdetailcommand", new UserDetailCommand("", "employee"));
         commands.put("paymentpage", new CommandUnprotectedPage("paymentpage")); //TODO: ændre to protected
         commands.put("productpage", new CommandUnprotectedPage("productpage")); //TODO: ændre to protected
-        commands.put("editproductpage", new CommandUnprotectedPage("editproductpage")); //TODO: ændre to protected
+        commands.put("editproducttoppingpage", new CommandUnprotectedPage("editproducttoppingpage")); //TODO: ændre to protected
+        commands.put("editproductbottompage", new CommandUnprotectedPage("editproductbottompage")); //TODO: ændre to protected
         commands.put("editorderpage", new CommandUnprotectedPage("editorderpage")); //TODO: ændre to protected
         commands.put("editordercommand", new EditOrderCommand("", "employee"));
         commands.put("saveordercommand", new SaveOrderCommand("", "employee"));
         commands.put("editusercommand", new EditUserCommand( ""));
         commands.put("editprofileadminpage", new CommandUnprotectedPage( "editprofileadminpage"));
+        commands.put("addtoppingcommand", new AddToppingCommand( "", "employee"));
+        commands.put("addbottomcommand", new AddBottomCommand( "", "employee"));
     }
 
     public static Command fromPath(

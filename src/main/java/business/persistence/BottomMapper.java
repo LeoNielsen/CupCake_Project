@@ -24,6 +24,7 @@ public class BottomMapper {
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
                 ps.setString(1, bottom.getName());
                 ps.setFloat(2, bottom.getPrice());
+                ps.setFloat(3, bottom.getPrice());
 
                 ps.executeUpdate();
             }

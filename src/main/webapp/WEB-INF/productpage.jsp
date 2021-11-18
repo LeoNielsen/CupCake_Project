@@ -21,7 +21,7 @@
                         <div class="row-2-grid" style="gap: 10px">
                             <div class="title-grid-element">
                                 <div class="left-text">
-                                    <h2>Toppings <a class="red-button" href="${pageContext.request.contextPath}/fc/editproductpage"><i
+                                    <h2>Toppings <a class="red-button" href="${pageContext.request.contextPath}/fc/editproducttoppingpage"><i
                                             class="fas fa-edit"></i></a></h2>
                                 </div>
                             </div>
@@ -47,7 +47,7 @@
                             <div class="title-grid-element">
                                 <div class="left-text">
                                     <h2>Bottoms <a class="red-button"
-                                                   href="${pageContext.request.contextPath}/fc/editproductpage"><i
+                                                   href="${pageContext.request.contextPath}/fc/editproductbottompage"><i
                                             class="fas fa-edit"></i></a></h2>
                                 </div>
                             </div>

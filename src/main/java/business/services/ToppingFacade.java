@@ -14,7 +14,7 @@ public class ToppingFacade {
         toppingMapper = new ToppingMapper(database);
     }
 
-    public Topping saveTopping(String name, Float price){
+    public Topping saveTopping(String name, float price){
         Topping topping = new Topping(name, price);
         toppingMapper.saveTopping(topping);
         return topping;
