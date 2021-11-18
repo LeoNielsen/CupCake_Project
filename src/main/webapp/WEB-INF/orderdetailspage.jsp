@@ -31,13 +31,7 @@
                             <div class="title-grid-element">
                                 <div class="col-3-grid">
                                     <div class="left-grid">
-                                        <h2>Order items
-                                            <c:if test="${sessionScope.user.role.equals('employee')}">
-                                                <a class="red-button"
-                                                   href="${pageContext.request.contextPath}/fc/editorderpage"><i
-                                                        class="fas fa-edit"></i></a>
-                                            </c:if>
-                                        </h2>
+                                        <h2>Order items</h2>
                                     </div>
                                     <div class="right-grid">
                                         <h3>${sessionScope.seemoreorder.totalItems} Total</h3>
@@ -51,7 +45,9 @@
                                 <th>QUANTITY</th>
                                 <th>PRICE</th>
                                 <th>TOTAL</th>
-                                <th></th>
+                                <c:if test="${sessionScope.user.role.equals('employee')}">
+                                    <th></th>
+                                </c:if>
                             </tr>
                             <c:set var="index" value="-1"></c:set>
                             <c:forEach var="cupcake" items="${sessionScope.seemoreorder.cupcakes}">
@@ -63,19 +59,21 @@
                                     <th><h3>${cupcake.quantity}</h3></th>
                                     <th><h3>${cupcake.price} kr</h3></th>
                                     <th><h3>${cupcake.total} kr</h3></th>
-                                    <th>
-                                    <form action="${pageContext.request.contextPath}/fc/editordercommand"
-                                          method="post">
+                                    <c:if test="${sessionScope.user.role.equals('employee')}">
+                                        <th>
+                                            <form action="${pageContext.request.contextPath}/fc/editordercommand"
+                                                  method="post">
 
-                                        <input type="hidden" name="cupcakeid" value="${index = index + 1}">
-                                        <input type="hidden" name="id" value="${sessionScope.seemoreorder.id}">
-                                        <input type="hidden" name="userid" value="${sessionScope.seemoreorder.user.id}">
-                                        <!-- <input type="hidden" name="customerorderlist" value="false"> -->
-                                       <input type="submit" value="edit" class="purple-button"
-                                                   style="padding: 10px 10px; width: 85px">
-                                    </form>
-                                    </th>
-
+                                                <input type="hidden" name="cupcakeid" value="${index = index + 1}">
+                                                <input type="hidden" name="id" value="${sessionScope.seemoreorder.id}">
+                                                <input type="hidden" name="userid"
+                                                       value="${sessionScope.seemoreorder.user.id}">
+                                                <!-- <input type="hidden" name="customerorderlist" value="false"> -->
+                                                <input type="submit" value="edit" class="purple-button"
+                                                       style="padding: 10px 10px; width: 85px">
+                                            </form>
+                                        </th>
+                                    </c:if>
                                 </tr>
                             </c:forEach>
                         </table>

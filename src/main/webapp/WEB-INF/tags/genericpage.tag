@@ -49,7 +49,9 @@
                                 <h4>My profile</h4></a>
                             <div class="dropdown-content">
                                 <a href="${pageContext.request.contextPath}/fc/profilepage">Profile</a>
-                                <a href="${pageContext.request.contextPath}/fc/orderpage">Order</a>
+                                <c:if test="${sessionScope.user.role.equals('customer')}">
+                                    <a href="${pageContext.request.contextPath}/fc/orderpage">Order</a>
+                                </c:if>
                                 <a href="${pageContext.request.contextPath}/fc/logoutcommand">Sign out</a>
                             </div>
                         </div>
@@ -60,29 +62,33 @@
 
             <!--TODO: lav kun synlig for customer bruger-->
             <c:if test="${sessionScope.user.role != 'employee'}">
-            <li>
-                <a class="white-button" href="${pageContext.request.contextPath}/fc/shoppingcartpage"><i
-                        class="fas fa-shopping-cart"></i></a>
-            </li>
-            <li>
-                <a class="white-button" href="${pageContext.request.contextPath}/fc/finduspage"><h4>Find us</h4></a>
-            </li>
-            <li>
-                <a class="white-button" href="${pageContext.request.contextPath}/fc/cupcakecommand"><h4>Shop</h4></a>
-            </li>
+                <li>
+                    <a class="white-button" href="${pageContext.request.contextPath}/fc/shoppingcartpage"><i
+                            class="fas fa-shopping-cart"></i></a>
+                </li>
+                <li>
+                    <a class="white-button" href="${pageContext.request.contextPath}/fc/finduspage"><h4>Find us</h4></a>
+                </li>
+                <li>
+                    <a class="white-button" href="${pageContext.request.contextPath}/fc/cupcakecommand"><h4>Shop</h4>
+                    </a>
+                </li>
             </c:if>
 
             <!--TODO: Lav kun synlig for admin bruger-->
             <c:if test="${sessionScope.user.role.equals('employee')}">
-            <li>
-                <a class="white-button" href="${pageContext.request.contextPath}/fc/productpage"><i class="fas fa-store"></i></a>
-            </li>
-            <li>
-                <a class="white-button" href="${pageContext.request.contextPath}/fc/customerpage"><h4>Customers</h4></a>
-            </li>
-            <li>
-                <a class="white-button" href="${pageContext.request.contextPath}/fc/allorderpage"><h4>Orders</h4></a>
-            </li>
+                <li>
+                    <a class="white-button" href="${pageContext.request.contextPath}/fc/productpage"><i
+                            class="fas fa-store"></i></a>
+                </li>
+                <li>
+                    <a class="white-button" href="${pageContext.request.contextPath}/fc/customerpage"><h4>Customers</h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="white-button" href="${pageContext.request.contextPath}/fc/allorderpage"><h4>Orders</h4>
+                    </a>
+                </li>
             </c:if>
 
             <li>
