@@ -12,12 +12,13 @@
     <jsp:body>
         <div class="grey-large-container">
             <div class="white-large-box">
-                <div class="row-4-grid" style="gap: 20px">
+                <div class="row-3-grid" style="gap: 20px">
                     <div class="large-title-grid-element">
                         <div class="left-text">
                             <h1>Orders</h1>
                         </div>
                     </div>
+                    <!--
                     <div>
                         <div class="row-2-grid" style="padding-bottom: 20px">
                             <div class="left-text">
@@ -54,8 +55,7 @@
 
                         </div>
 
-                    </div>
-
+                    </div>-->
                     <div class="col-3-grid">
                         <div class="left-grid">
                             <h2>Orders</h2>

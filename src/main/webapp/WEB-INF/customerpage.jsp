@@ -49,7 +49,7 @@
                                 <th><h3>${userinf.totalOrders}</h3></th><%-- todo get order total --%>
                                 <form action="${pageContext.request.contextPath}/fc/userdetailcommand" method="post">
                                     <input type="hidden" name="index" value="${index = index+1}">
-                                <th><input type="submit" value="seemore" class="purple-button"  style="padding: 10px 5px; width: 85px"></th>
+                                <th><input type="submit" value="see more" class="purple-button"  style="padding: 10px 5px; width: 85px"></th>
                                 </form>
                             </tr>
                             </c:forEach>
